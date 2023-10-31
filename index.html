@@ -14,6 +14,9 @@
         <h1>
             Letter Game
         </h1>
+        <button id="export-save">Export Save</button>
+        <button id="import-save">Import Save</button>
+
         <p>
             Press the key that corresponds to the displayed letter.
         </p>
@@ -264,6 +267,63 @@ bossLevel = 7
                 secretactivated = false;
                 clearInterval(secret);
             }
+            // Function to export the game save
+function exportSave() {
+    const saveData = {
+        score,
+        bossFight,
+        typedLetter,
+        bossWord,
+        typedWord,
+        keymasterBought,
+        keymasterIndex,
+        spaceyBought,
+        bossLevel,
+    };
+
+    localStorage.setItem('letterGameSave', JSON.stringify(saveData));
+}
+
+// Function to import a saved game
+function importSave() {
+    const savedData = localStorage.getItem('letterGameSave');
+    
+    if (savedData) {
+        const saveData = JSON.parse(savedData);
+        score = saveData.score;
+        bossFight = saveData.bossFight;
+        typedLetter = saveData.typedLetter;
+        bossWord = saveData.bossWord;
+        typedWord = saveData.typedWord;
+        keymasterBought = saveData.keymasterBought;
+        keymasterIndex = saveData.keymasterIndex;
+        spaceyBought = saveData.spaceyBought;
+        bossLevel = saveData.bossLevel;
+
+        // Update the game UI elements with loaded data
+        scoreElement.textContent = score;
+        updateGeneratedLetter(bossFight ? bossWord : generatedLetterElement.textContent);
+        updateTypedWord(typedWord);
+
+        if (keymasterBought) {
+            buyKeymasterButton.disabled = true;
+        }
+        if (spaceyBought) {
+            buySpaceyButton.disabled = true;
+        }
+    }
+}
+
+// Add event listeners for the export and import buttons
+const exportSaveButton = document.getElementById('export-save');
+exportSaveButton.addEventListener('click', exportSave);
+
+const importSaveButton = document.getElementById('import-save');
+importSaveButton.addEventListener('click', importSave);
+
+// Load saved game when the page loads
+window.addEventListener('load', importSave);
+
             buyKeymasterButton.addEventListener('click', buyKeymaster);
             buySpaceyButton.addEventListener('click', buySpacey);
             document.addEventListener('keydown', handleKeyPress);
