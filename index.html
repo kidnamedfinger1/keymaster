@@ -14,9 +14,13 @@
         <h1>
             Letter Game
         </h1>
-        <button id="export-save">Export Save</button>
-        <button id="import-save">Import Save</button>
-
+        <button id="export-save">
+            Export Save
+        </button>
+        <input type="file" id="import-save" style="display: none;">
+        <button id="import-save-button">
+            Import Save
+        </button>
         <p>
             Press the key that corresponds to the displayed letter.
         </p>
@@ -126,7 +130,7 @@
                 } else {
                     for (let i = 0; i < length; i++) {
                         const randomIndex = Math.floor(Math.random() * lettersPlus.length);
-                            result += lettersPlus[randomIndex];
+                        result += lettersPlus[randomIndex];
                     }
                 }
                 return result;
@@ -155,8 +159,7 @@
                     // Set the score to 100
                     score = 125;
                     scoreElement.textContent = score;
-bossLevel = 7
-                    debugKeys.q = false;
+                    bossLevel = 7 debugKeys.q = false;
                     debugKeys.w = false;
                     debugKeys.e = false;
                     debugKeys.r = false;
@@ -268,61 +271,76 @@ bossLevel = 7
                 clearInterval(secret);
             }
             // Function to export the game save
-function exportSave() {
-    const saveData = {
-        score,
-        bossFight,
-        typedLetter,
-        bossWord,
-        typedWord,
-        keymasterBought,
-        keymasterIndex,
-        spaceyBought,
-        bossLevel,
-    };
+            // Function to export the game save as a JSON file
+            function exportGameSave() {
+                const gameSave = {
+                    score,
+                    bossFight,
+                    typedLetter,
+                    bossWord,
+                    typedWord,
+                    secretactivated,
+                    keymasterBought,
+                    keymasterIndex,
+                    spaceyBought,
+                    bossLevel
+                };
 
-    localStorage.setItem('letterGameSave', JSON.stringify(saveData));
-}
+                const gameSaveJSON = JSON.stringify(gameSave);
+                const blob = new Blob([gameSaveJSON], {
+                    type: 'application/json'
+                });
+                const url = URL.createObjectURL(blob);
 
-// Function to import a saved game
-function importSave() {
-    const savedData = localStorage.getItem('letterGameSave');
-    
-    if (savedData) {
-        const saveData = JSON.parse(savedData);
-        score = saveData.score;
-        bossFight = saveData.bossFight;
-        typedLetter = saveData.typedLetter;
-        bossWord = saveData.bossWord;
-        typedWord = saveData.typedWord;
-        keymasterBought = saveData.keymasterBought;
-        keymasterIndex = saveData.keymasterIndex;
-        spaceyBought = saveData.spaceyBought;
-        bossLevel = saveData.bossLevel;
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'game-save.json';
+                document.body.appendChild(a);
+                a.click();
+                URL.revokeObjectURL(url);
+            }
 
-        // Update the game UI elements with loaded data
-        scoreElement.textContent = score;
-        updateGeneratedLetter(bossFight ? bossWord : generatedLetterElement.textContent);
-        updateTypedWord(typedWord);
+            // Function to import a game save from a JSON file
+            function importGameSave(event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
 
-        if (keymasterBought) {
-            buyKeymasterButton.disabled = true;
-        }
-        if (spaceyBought) {
-            buySpaceyButton.disabled = true;
-        }
-    }
-}
+                reader.onload = function(e) {
+                    const importedGameSave = JSON.parse(e.target.result);
 
-// Add event listeners for the export and import buttons
-const exportSaveButton = document.getElementById('export-save');
-exportSaveButton.addEventListener('click', exportSave);
+                    // Update the game state with the imported data
+                    score = importedGameSave.score;
+                    bossFight = importedGameSave.bossFight;
+                    typedLetter = importedGameSave.typedLetter;
+                    bossWord = importedGameSave.bossWord;
+                    typedWord = importedGameSave.typedWord;
+                    secretactivated = importedGameSave.secretactivated;
+                    keymasterBought = importedGameSave.keymasterBought;
+                    keymasterIndex = importedGameSave.keymasterIndex;
+                    spaceyBought = importedGameSave.spaceyBought;
+                    bossLevel = importedGameSave.bossLevel;
 
-const importSaveButton = document.getElementById('import-save');
-importSaveButton.addEventListener('click', importSave);
+                    // Update the UI to reflect the imported game state
+                    scoreElement.textContent = score;
 
-// Load saved game when the page loads
-window.addEventListener('load', importSave);
+                    if (bossFight) {
+                        updateGeneratedLetter(bossWord);
+                    } else {
+                        updateLetter();
+                    }
+                };
+
+                reader.readAsText(file);
+            }
+
+            // Event listeners for export and import buttons
+            document.getElementById('export-save').addEventListener('click', exportGameSave);
+            document.getElementById('import-save-button').addEventListener('click', () = >{
+                document.getElementById('import-save').click();
+            });
+
+            document.getElementById('import-save').addEventListener('change', importGameSave);
 
             buyKeymasterButton.addEventListener('click', buyKeymaster);
             buySpaceyButton.addEventListener('click', buySpacey);
