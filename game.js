@@ -269,8 +269,15 @@
                     typedWord = importedGameSave.typedWord;
                     secretactivated = importedGameSave.secretactivated;
                     keymasterBought = importedGameSave.keymasterBought;
+                    if (keymasterBought) {
+                    buyKeymasterButton.disabled = true;
+                    keymasterInterval = setInterval(typeKeymasterLetter, 1000);
+                        }
                     keymasterIndex = importedGameSave.keymasterIndex;
                     spaceyBought = importedGameSave.spaceyBought;
+                                            if (spaceyBought) {
+                    buySpaceyButton.disabled = true;
+                    spaceyInterval = setInterval(typeSpaceySpace, 5000);
                     bossLevel = importedGameSave.bossLevel;
 
                     // Update the UI to reflect the imported game state
