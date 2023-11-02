@@ -296,7 +296,7 @@ function importGameSave() {
 
 // Event listeners for export and import buttons
 document.getElementById('export-save').addEventListener('click', exportGameSave);
-document.getElementById('import-save-button').addEventListener('click', () {
+document.getElementById('import-save-button').addEventListener('click', () => {
     document.getElementById('import-save').click();
 });
 
