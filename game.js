@@ -278,8 +278,8 @@ function importGameSave() {
         if (spaceyBought) {
             buySpaceyButton.disabled = true;
             spaceyInterval = setInterval(typeSpaceySpace, 5000);
-            bossLevel = importedGameSave.bossLevel;
         }
+            bossLevel = importedGameSave.bossLevel;
 
         // Update the UI to reflect the imported game state
         scoreElement.textContent = score;
