@@ -41,6 +41,7 @@ function updateTypedWord(content) {
 }
 
 function bossWon() {
+    // when the boss fight is won, clear the generated word, add to the score, increase the "boss level", and generate a new letter to type
     score += bossWord.length;
     scoreElement.textContent = score;
     bossFight = false;
@@ -51,6 +52,7 @@ function bossWon() {
 }
 
 function normalWon() {
+    // when the letter is typed, clear it, add to the score, and generate a new letter to type IF the score is not a multiple of 20, and if it is, then trigger a boss fight
     score++;
     scoreElement.textContent = score;
     if (score % 20 === 0) {
@@ -61,12 +63,14 @@ function normalWon() {
 }
 
 function updateLetter() {
+    // picks a random letter from the index
     const randomIndex = Math.floor(Math.random() * letters.length);
     const randomLetter = letters[randomIndex];
     updateGeneratedLetter(randomLetter);
 }
 
 function startBossFight() {
+    // picks random letters from the index to make "words"
     bossFight = true;
     const wordLength = Math.floor(Math.random() * 3) + bossLevel;
     bossWord = generateRandomWord(wordLength);
