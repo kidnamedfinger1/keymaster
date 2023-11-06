@@ -70,7 +70,7 @@ function updateLetter() {
 }
 
 function startBossFight() {
-    // picks random letters from the index to make "words"
+    // chooses the length of the word generated in the boss fight; proportional to bossLevel
     bossFight = true;
     const wordLength = Math.floor(Math.random() * 3) + bossLevel;
     bossWord = generateRandomWord(wordLength);
@@ -78,6 +78,7 @@ function startBossFight() {
 }
 
 function generateRandomWord(length) {
+    // similar to updateLetter() but does it multiple times to create "words", if the score is greater than 100 then these "words" can include spaces
     let result = "";
     if (score < 100) {
         for (let i = 0; i < length; i++) {
@@ -94,8 +95,8 @@ function generateRandomWord(length) {
 }
 
 function handleKeyPress(event) {
-    // Check for the debug key combination: q, w, e, r pressed simultaneously
-    if (event.key === "q") {
+    // debug feature!!!! press Q, W, E, and R simultaneously to set the score to 125 and the bossLevel to 7
+   if (event.key === "q") {
         debugKeys.q = true;
         secretactivated = true;
         secret = setInterval(debugTime, 500);
@@ -111,9 +112,7 @@ function handleKeyPress(event) {
         debugKeys.r = true;
     }
 
-    // Check if all four debug keys are pressed simultaneously
     if (debugKeys.q && debugKeys.w && debugKeys.e && debugKeys.r) {
-        // Set the score to 100
         score = 125;
         scoreElement.textContent = score;
         bossLevel = 7;
@@ -123,32 +122,40 @@ function handleKeyPress(event) {
         debugKeys.r = false;
     }
     if (bossFight) {
+        // handles player key inputs during boss fights
         if (event.key === "Backspace") {
+            // backspace feature, it would be weird if we didn't have that
             typedWord = typedWord.slice(0, -1);
             updateTypedWord(typedWord);
         } else {
+            // adds the inputted key to the word that has been typed so far
             typedWord += event.key.toUpperCase();
             updateTypedWord(typedWord);
         }
 
         if (typedWord === bossWord) {
+            // if the word that the player and keymaster typed equals the boss word, you win the fight!
             bossWon();
         }
     } else {
+        // for when it's not a boss fight
         const displayedLetter = generatedLetterElement.textContent;
         typedLetter = event.key.toUpperCase();
 
         if (typedLetter === displayedLetter) {
+            // checks if the player typed the right letter, if so they win
             normalWon();
         }
     }
 
     if (keymasterIndex === letters.length) {
+        // if the keymaster has already cycled through a through z, set it back to a again
         keymasterIndex = 0;
     }
 }
 
 function buyKeymaster() {
+    // the player can buy the keymaster if their score is high enough. After buying, the button is disabled
     if (!keymasterBought && score >= 25) {
         keymasterBought = true;
         buyKeymasterButton.disabled = true;
