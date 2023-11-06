@@ -13,7 +13,7 @@ let keymasterInterval;
 let spaceyBought = false;
 let spaceyInterval;
 let bossLevel = 1;
-// Add this at the beginning of your script
+
 const debugKeys = {
     q: false,
     w: false,
@@ -31,10 +31,12 @@ const keymasterWord = document.getElementById('keymaster-word');
 const spaceyLetter = document.getElementById('spacey-letter');
 
 function updateGeneratedLetter(content) {
+    // displays the generated letter the player needs to type during non-boss fights
     generatedLetterElement.textContent = content;
 }
 
 function updateTypedWord(content) {
+    // displays the generated word the player needs to type during boss fights
     typedWordElement.textContent = content;
 }
 
