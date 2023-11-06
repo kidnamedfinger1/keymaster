@@ -1,3 +1,4 @@
+
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lettersPlus = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ ';
 let score = 0;
@@ -13,7 +14,7 @@ let keymasterInterval;
 let spaceyBought = false;
 let spaceyInterval;
 let bossLevel = 1;
-// Add this at the beginning of your script
+
 const debugKeys = {
     q: false,
     w: false,
@@ -31,14 +32,17 @@ const keymasterWord = document.getElementById('keymaster-word');
 const spaceyLetter = document.getElementById('spacey-letter');
 
 function updateGeneratedLetter(content) {
+    // displays the generated letter the player needs to type during non-boss fights
     generatedLetterElement.textContent = content;
 }
 
 function updateTypedWord(content) {
+    // displays the generated word the player needs to type during boss fights
     typedWordElement.textContent = content;
 }
 
 function bossWon() {
+    // when the boss fight is won, clear the generated word, add to the score, increase the "boss level", and generate a new letter to type
     score += bossWord.length;
     scoreElement.textContent = score;
     bossFight = false;
@@ -49,6 +53,7 @@ function bossWon() {
 }
 
 function normalWon() {
+    // when the letter is typed, clear it, add to the score, and generate a new letter to type IF the score is not a multiple of 20, and if it is, then trigger a boss fight
     score++;
     scoreElement.textContent = score;
     if (score % 20 === 0) {
@@ -59,12 +64,14 @@ function normalWon() {
 }
 
 function updateLetter() {
+    // picks a random letter from the index
     const randomIndex = Math.floor(Math.random() * letters.length);
     const randomLetter = letters[randomIndex];
     updateGeneratedLetter(randomLetter);
 }
 
 function startBossFight() {
+    // chooses the length of the word generated in the boss fight; proportional to bossLevel
     bossFight = true;
     const wordLength = Math.floor(Math.random() * 3) + bossLevel;
     bossWord = generateRandomWord(wordLength);
@@ -72,6 +79,7 @@ function startBossFight() {
 }
 
 function generateRandomWord(length) {
+    // similar to updateLetter() but does it multiple times to create "words", if the score is greater than 100 then these "words" can include spaces
     let result = "";
     if (score < 100) {
         for (let i = 0; i < length; i++) {
@@ -88,8 +96,8 @@ function generateRandomWord(length) {
 }
 
 function handleKeyPress(event) {
-    // Check for the debug key combination: q, w, e, r pressed simultaneously
-    if (event.key === "q") {
+    // debug feature!!!! press Q, W, E, and R simultaneously to set the score to 125 and the bossLevel to 7
+   if (event.key === "q") {
         debugKeys.q = true;
         secretactivated = true;
         secret = setInterval(debugTime, 500);
@@ -105,9 +113,7 @@ function handleKeyPress(event) {
         debugKeys.r = true;
     }
 
-    // Check if all four debug keys are pressed simultaneously
     if (debugKeys.q && debugKeys.w && debugKeys.e && debugKeys.r) {
-        // Set the score to 100
         score = 125;
         scoreElement.textContent = score;
         bossLevel = 7;
@@ -117,32 +123,35 @@ function handleKeyPress(event) {
         debugKeys.r = false;
     }
     if (bossFight) {
+        // handles player key inputs during boss fights
         if (event.key === "Backspace") {
+            // backspace feature, it would be weird if we didn't have that
             typedWord = typedWord.slice(0, -1);
             updateTypedWord(typedWord);
         } else {
+            // adds the inputted key to the word that has been typed so far
             typedWord += event.key.toUpperCase();
             updateTypedWord(typedWord);
         }
 
         if (typedWord === bossWord) {
+            // if the word that the player and keymaster typed equals the boss word, you win the fight!
             bossWon();
         }
     } else {
+        // for when it's not a boss fight
         const displayedLetter = generatedLetterElement.textContent;
         typedLetter = event.key.toUpperCase();
 
         if (typedLetter === displayedLetter) {
+            // checks if the player typed the right letter, if so they win
             normalWon();
         }
-    }
-
-    if (keymasterIndex === letters.length) {
-        keymasterIndex = 0;
     }
 }
 
 function buyKeymaster() {
+    // the player can buy the keymaster if their score is high enough. After buying, the button is disabled
     if (!keymasterBought && score >= 25) {
         keymasterBought = true;
         buyKeymasterButton.disabled = true;
@@ -151,9 +160,13 @@ function buyKeymaster() {
 }
 
 function handleKeymasterKeyPress() {
+    // handles the keymaster
     const letterToType = letters[keymasterIndex];
 
     if (bossFight) {
+        /* checks if the letter the keymaster is on matches the letter at that position of the generated word, and if so types it. 
+         For example, if the generated boss word is "tsdjf" and the keymaster index is on "s", 
+         it adds "s" to the typed word IF "t" has been typed but not other letters. */
         keymasterLetter.style.display = "none";
         keymasterWord.style.display = "block";
         let temp = typedWord;
@@ -168,6 +181,7 @@ function handleKeymasterKeyPress() {
             bossWon();
         }
     } else {
+        // for non-boss fights. the keymaster checks if the letter its on matches the gnerated letter. If so, it types it. 
         keymasterLetter.style.display = "block";
         keymasterWord.style.display = "none";
         const displayedLetter = generatedLetterElement.textContent;
@@ -177,6 +191,7 @@ function handleKeymasterKeyPress() {
             normalWon();
         }
     }
+    // goes to the next letter. If a, goes to b, if c goes to d, etc
     keymasterIndex++;
 }
 
