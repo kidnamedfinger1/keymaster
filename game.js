@@ -1,3 +1,4 @@
+
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lettersPlus = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ ';
 let score = 0;
@@ -147,11 +148,6 @@ function handleKeyPress(event) {
             normalWon();
         }
     }
-
-    if (keymasterIndex === letters.length) {
-        // if the keymaster has already cycled through a through z, set it back to a again
-        keymasterIndex = 0;
-    }
 }
 
 function buyKeymaster() {
@@ -164,9 +160,13 @@ function buyKeymaster() {
 }
 
 function handleKeymasterKeyPress() {
+    // handles the keymaster
     const letterToType = letters[keymasterIndex];
 
     if (bossFight) {
+        /* checks if the letter the keymaster is on matches the letter at that position of the generated word, and if so types it. 
+         For example, if the generated boss word is "tsdjf" and the keymaster index is on "s", 
+         it adds "s" to the typed word IF "t" has been typed but not other letters. */
         keymasterLetter.style.display = "none";
         keymasterWord.style.display = "block";
         let temp = typedWord;
@@ -181,6 +181,7 @@ function handleKeymasterKeyPress() {
             bossWon();
         }
     } else {
+        // for non-boss fights. the keymaster checks if the letter its on matches the gnerated letter. If so, it types it. 
         keymasterLetter.style.display = "block";
         keymasterWord.style.display = "none";
         const displayedLetter = generatedLetterElement.textContent;
@@ -190,6 +191,7 @@ function handleKeymasterKeyPress() {
             normalWon();
         }
     }
+    // goes to the next letter. If a, goes to b, if c goes to d, etc
     keymasterIndex++;
 }
 
