@@ -191,11 +191,12 @@ function handleKeymasterKeyPress() {
             normalWon();
         }
     }
-    // goes to the next letter. If a, goes to b, if c goes to d, etc
+    // goes to the next letter. If a goes to b, if c goes to d, etc
     keymasterIndex++;
 }
 
 function typeKeymasterLetter() {
+    // checks if keymaster's letter is z (end of the index cycle). If so, resets the letter to A, so that it can cycle through the letters again.
     if (keymasterIndex < letters.length) {
         handleKeymasterKeyPress();
     } else {
@@ -204,6 +205,7 @@ function typeKeymasterLetter() {
 }
 
 function buySpacey() {
+        // the player can buy spacey if their score is high enough. After buying, the button is disabled
     if (!spaceyBought && score >= 100) {
         spaceyBought = true;
         buySpaceyButton.disabled = true;
@@ -212,6 +214,9 @@ function buySpacey() {
 }
 
 function typeSpaceySpace() {
+    /* spacey can only work if it's a boss fight, and the generated word has spaces. 
+    if so, checks if in the current position of the generated word, a space should be typed, and if so types it.
+    so if the generated word is "spafosadjf unda", and "spafosadjf" has already been typed, spacey will type a space. */
     if (bossFight) {
         if (bossWord.indexOf(' ') > -1) {
             let temp = typedWord;
@@ -230,6 +235,7 @@ function typeSpaceySpace() {
 }
 
 function debugTime() {
+    // if the player has pressed q, but not w, e, and r after half a second, pressing those keys won't activate the debug feature until q is pressed again so that way the debug isn't activated accidentally
     debugKeys.q = false;
     debugKeys.w = false;
     debugKeys.e = false;
