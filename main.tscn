@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3w4fc13vrtwr"]
+
+[ext_resource type="Script" path="res://Button.gd" id="1_dhobv"]
+
+[node name="main" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 283.0
+offset_top = 458.0
+offset_right = 819.0
+offset_bottom = 617.0
+text = "QUIT"
+script = ExtResource("1_dhobv")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
