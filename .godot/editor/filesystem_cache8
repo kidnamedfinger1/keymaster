@@ -1,11 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699466532
-icon.svg::CompressedTexture2D::2420217346897167153::1699295937::1699295946::1::::<><>::
-::res://addons/::1699466475
-::res://addons/godot-git-plugin/::1699466475
-git_plugin.gdextension::GDExtension::-1::1699466032::0::1::::<><>::
-plugin.cfg::TextFile::-1::1699466032::0::1::::<><>::
-THIRDPARTY.md::TextFile::-1::1699466032::0::1::::<><>::
-::res://addons/godot-git-plugin/linux/::1699466475
-::res://addons/godot-git-plugin/macos/::1699466475
-::res://addons/godot-git-plugin/win64/::1699466475
+::res://::1699639222
+Button.gd::GDScript::-1::1699638760::0::1::::<>Button<>::
+icon.svg::CompressedTexture2D::2420217346897167153::1699638760::1699638760::1::::<><>::
+main.tscn::PackedScene::6785315168112736801::1699638760::0::1::::<><>::res://Button.gd
