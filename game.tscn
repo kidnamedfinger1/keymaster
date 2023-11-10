@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://owuc60d45juq"]
 
 [node name="game" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "This is a different screen. If you're seeing this, the play button works."
