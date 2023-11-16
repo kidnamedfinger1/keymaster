@@ -1,10 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=2 format=3 uid="uid://owuc60d45juq"]
 
 [ext_resource type="Script" path="res://gameButton.gd" id="1_omkan"]
 =======
 [gd_scene format=3 uid="uid://d1bea2exxv1qr"]
 >>>>>>> f9fa479b06928ca926eaad6977846b98a5ed314d
+=======
+[gd_scene format=3 uid="uid://owuc60d45juq"]
+>>>>>>> 77a9d7de39496683f893ea07c33e3b4af5a79c28
 
 [node name="game" type="Node2D"]
 
