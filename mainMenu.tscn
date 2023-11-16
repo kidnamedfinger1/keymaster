@@ -23,9 +23,7 @@ script = ExtResource("1_k6kuv")
 <<<<<<< HEAD
 [connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
 [connection signal="pressed" from="quit" to="quit" method="_on_quit_pressed"]
-=======
 [connection signal="pressed" from="quit" to="quit" method="_on_quit_pressed"]
 [connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
->>>>>>> main
 [connection signal="pressed" from="start" to="quit" method="_on_start_pressed"]
 [connection signal="pressed" from="start" to="start" method="_on_pressed"]
