@@ -1,6 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699984795
+::res://::1700157318
 Button.gd::GDScript::-1::1699984631::0::1::::<>Button<>::
-game.tscn::PackedScene::1029279699985122620::1699984631::0::1::::<><>::
+game.tscn::PackedScene::1029279699985122620::1699989034::0::1::::<><>::res://gameButton.gd
+gameButton.gd::GDScript::-1::1699989034::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::5198207342957637707::1699984790::1699984678::1::::<><>::
-mainMenu.tscn::PackedScene::6785315168112736801::1699984631::0::1::::<><>::res://Button.gd
+mainMenu.tscn::PackedScene::6785315168112736801::1699989006::0::1::::<><>::res://Button.gd
