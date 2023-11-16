@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://owuc60d45juq"]
+
+[ext_resource type="Script" path="res://lettergen.gd" id="1_dukhw"]
+
+[sub_resource type="SystemFont" id="SystemFont_yv25n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8l7om"]
+font = SubResource("SystemFont_yv25n")
+font_size = 100
+
+[node name="game" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 285.0
+offset_top = 52.0
+offset_right = 816.0
+offset_bottom = 78.0
+text = "Score: 0"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 510.0
+offset_top = 135.0
+offset_right = 609.0
+offset_bottom = 275.0
+label_settings = SubResource("LabelSettings_8l7om")
+script = ExtResource("1_dukhw")

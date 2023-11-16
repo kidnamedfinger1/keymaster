@@ -1,0 +1,19 @@
+body { 
+
+font-family: Arial, sans-serif; 
+
+text-align: center; 
+}
+
+.keymaster {
+ font-size: 24px;
+ color: blue; 
+text-align: center; }
+
+.genletter {
+font-size: 48px;
+}
+
+.genword {
+font-size: 24px;
+}
