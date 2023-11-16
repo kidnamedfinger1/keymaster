@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 [gd_scene load_steps=2 format=3 uid="uid://owuc60d45juq"]
 
 [ext_resource type="Script" path="res://gameButton.gd" id="1_omkan"]
+=======
+[gd_scene format=3 uid="uid://d1bea2exxv1qr"]
+>>>>>>> f9fa479b06928ca926eaad6977846b98a5ed314d
 
 [node name="game" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
+<<<<<<< HEAD
 offset_right = 40.0
 offset_bottom = 23.0
 text = "This is a different screen. If you're seeing this, the play button works."
@@ -17,3 +22,10 @@ text = "return to main menu"
 script = ExtResource("1_omkan")
 
 [connection signal="pressed" from="menuButton" to="menuButton" method="_on_menuButton_pressed"]
+=======
+offset_left = 285.0
+offset_top = 52.0
+offset_right = 816.0
+offset_bottom = 78.0
+text = "Score: 0"
+>>>>>>> f9fa479b06928ca926eaad6977846b98a5ed314d
