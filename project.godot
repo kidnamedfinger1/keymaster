@@ -11,7 +11,10 @@ config_version=5
 [application]
 
 config/name="Keymaster"
+<<<<<<< HEAD
 run/main_scene="res://mainMenu.tscn"
+=======
+>>>>>>> main
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
