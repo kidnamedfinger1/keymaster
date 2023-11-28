@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtdkmeyuh275y"]
+
+[ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
+[ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
+[ext_resource type="Script" path="res://game/keyDisplay.gd" id="3_qnjyc"]
+
+[node name="type" type="Node2D"]
+
+[node name="textInput" type="TextEdit" parent="."]
+offset_left = 5.0
+offset_top = 569.0
+offset_right = 1145.0
+offset_bottom = 644.0
+placeholder_text = "ENTER YOUR KEYS, MASTER"
+script = ExtResource("1_o5euh")
+
+[node name="typeCount" type="Label" parent="."]
+offset_left = 169.0
+offset_top = 37.0
+offset_right = 318.0
+offset_bottom = 70.0
+script = ExtResource("2_ocad6")
+
+[node name="keyDisplay" type="RichTextLabel" parent="."]
+offset_left = 296.0
+offset_top = 81.0
+offset_right = 696.0
+offset_bottom = 502.0
+bbcode_enabled = true
+text = "[font_size=300]K"
+script = ExtResource("3_qnjyc")

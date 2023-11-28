@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3w4fc13vrtwr"]
 
-[ext_resource type="Script" path="res://Button.gd" id="1_k6kuv"]
+[ext_resource type="Script" path="res://menuButtons.gd" id="1_7llpt"]
 
 [node name="mainMenu" type="Node2D"]
 
@@ -10,7 +10,7 @@ offset_top = 458.0
 offset_right = 819.0
 offset_bottom = 617.0
 text = "QUIT"
-script = ExtResource("1_k6kuv")
+script = ExtResource("1_7llpt")
 
 [node name="start" type="Button" parent="."]
 offset_left = 284.0
@@ -18,25 +18,6 @@ offset_top = 152.0
 offset_right = 820.0
 offset_bottom = 311.0
 text = "START 3"
-script = ExtResource("1_k6kuv")
-<<<<<<< HEAD
 
-[connection signal="pressed" from="quit" to="start" method="_on_quit_pressed"]
-[connection signal="pressed" from="start" to="quit" method="_on_start_pressed"]
-=======
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-[connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
-[connection signal="pressed" from="quit" to="quit" method="_on_quit_pressed"]
-[connection signal="pressed" from="quit" to="quit" method="_on_quit_pressed"]
->>>>>>> f9fa479b06928ca926eaad6977846b98a5ed314d
-[connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
 [connection signal="pressed" from="quit" to="quit" method="_on_quit_pressed"]
 [connection signal="pressed" from="start" to="quit" method="_on_start_pressed"]
-[connection signal="pressed" from="start" to="start" method="_on_pressed"]
-=======
->>>>>>> 77a9d7de39496683f893ea07c33e3b4af5a79c28
->>>>>>> 02a066f9d81026c3c9fe97e3d6ffe0a2135da2bf

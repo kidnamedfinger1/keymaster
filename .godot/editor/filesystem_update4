@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-res://game.tscn
 res://mainMenu.tscn
-res://Button.gd
-=======
-<<<<<<< HEAD
-res://lettergen.gd
-=======
-res://mainMenu.tscn
->>>>>>> 77a9d7de39496683f893ea07c33e3b4af5a79c28
->>>>>>> 02a066f9d81026c3c9fe97e3d6ffe0a2135da2bf
+res://game/clicker.tscn
+res://menuButtons.gd

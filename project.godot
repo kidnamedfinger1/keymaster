@@ -13,7 +13,6 @@ config_version=5
 config/name="Keymaster Test"
 run/main_scene="res://mainMenu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://icon.svg"
 
 [rendering]
 
