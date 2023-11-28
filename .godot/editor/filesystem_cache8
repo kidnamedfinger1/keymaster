@@ -1,5 +1,20 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< HEAD
 ::res://::1701195468
+=======
+<<<<<<< HEAD
+::res://::1700161231
+Button.gd::GDScript::-1::1699984631::0::1::::<>Button<>::
+export_presets.cfg::TextFile::-1::1700160993::0::1::::<><>::
+game.tscn::PackedScene::-1::1700160993::0::1::::<><>::
+gameButton.gd::GDScript::-1::1700160745::0::1::::<>Node<>::
+icon.svg::CompressedTexture2D::3640515217926950049::1699984790::1700160993::1::::<><>::
+lettergen.gd::GDScript::-1::1700161169::0::1::::<>Label<>::
+mainMenu.tscn::PackedScene::6785315168112736801::1700160993::0::1::::<><>::res://Button.gd
+New Piskel-1.png (1).png::CompressedTexture2D::5668183467989297849::1700160993::1700160993::1::::<><>::
+=======
+::res://::1700161210
+>>>>>>> 02a066f9d81026c3c9fe97e3d6ffe0a2135da2bf
 Button.gd::GDScript::-1::1699640214::0::1::::<>Button<>::
 export_presets.cfg::TextFile::-1::1700159699::0::1::::<><>::
 game.tscn::PackedScene::1029279699985122620::1700159972::0::1::::<><>::
@@ -7,3 +22,4 @@ icon.svg::CompressedTexture2D::3640515217926950049::1699638760::1700159699::1:::
 lettergen.gd::GDScript::-1::1700159699::0::1::::<>Label<>::
 mainMenu.tscn::PackedScene::6785315168112736801::1700161243::0::1::::<><>::res://Button.gd
 New Piskel-1.png (1).png::CompressedTexture2D::5668183467989297849::1700159699::1700159703::1::::<><>::
+>>>>>>> 77a9d7de39496683f893ea07c33e3b4af5a79c28
