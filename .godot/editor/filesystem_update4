@@ -1,3 +1,1 @@
-res://mainMenu.tscn
-res://game/clicker.tscn
-res://menuButtons.gd
+res://menu/mainMenu.tscn
