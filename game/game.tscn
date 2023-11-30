@@ -22,10 +22,10 @@ offset_bottom = 70.0
 script = ExtResource("2_ocad6")
 
 [node name="keyDisplay" type="RichTextLabel" parent="."]
-offset_left = 296.0
-offset_top = 81.0
-offset_right = 696.0
-offset_bottom = 502.0
+offset_left = 50.0
+offset_top = 71.0
+offset_right = 968.0
+offset_bottom = 492.0
 bbcode_enabled = true
 text = "[font_size=300]K"
 script = ExtResource("3_qnjyc")

@@ -1,1 +1,3 @@
 res://menu/mainMenu.tscn
+res://game/game.tscn
+res://game/keyDisplay.gd
