@@ -1,3 +1,7 @@
 res://menu/mainMenu.tscn
 res://game/game.tscn
 res://game/keyDisplay.gd
+res://game/typeCount.gd
+res://game/incorrectIndicator.gd
+res://game/upgrade1.gd
+res://game/textInput.gd

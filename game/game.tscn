@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=8 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
 [ext_resource type="Script" path="res://game/keyDisplay.gd" id="3_qnjyc"]
+[ext_resource type="Script" path="res://game/incorrectIndicator.gd" id="4_2rxth"]
+[ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="4_3tm58"]
+[ext_resource type="Script" path="res://game/upgrade1.gd" id="6_p0qbj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
+font = ExtResource("4_3tm58")
+font_size = 28
+font_color = Color(1, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="type" type="Node2D"]
 
@@ -29,3 +39,24 @@ offset_bottom = 492.0
 bbcode_enabled = true
 text = "[font_size=300]K"
 script = ExtResource("3_qnjyc")
+
+[node name="incorrectIndicator" type="Label" parent="."]
+visible = false
+offset_left = 24.0
+offset_top = 529.0
+offset_right = 440.0
+offset_bottom = 558.0
+text = "INCORRECT INPUT, PAYOUT DEDUCTED"
+label_settings = SubResource("LabelSettings_cw05m")
+script = ExtResource("4_2rxth")
+
+[node name="upgrade1" type="Button" parent="."]
+offset_left = 798.0
+offset_top = 16.0
+offset_right = 1145.0
+offset_bottom = 92.0
+text = "REMOVE $10 (DEBUG)"
+script = ExtResource("6_p0qbj")
+
+[connection signal="pressed" from="upgrade1" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="upgrade1" to="upgrade1" method="_on_pressed"]
