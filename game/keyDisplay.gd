@@ -6,7 +6,7 @@ var goalText = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	goalText = _generateString(get_node("../typeCount").dollars)
-	self.text = "[font_size=200]" + goalText
+	self.text = "[font_size=50]" + goalText
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,10 +18,12 @@ func _process(_delta):
 		get_node("../typeCount").dollars += money
 		get_node("../typeCount").deduction = 0
 		goalText = _generateString(get_node("../typeCount").dollars)
-		self.text = "[font_size=200]" + goalText
+		self.text = "[font_size=50]" + goalText
 		get_node("../textInput").text = ""
+		get_node("../quickGoodNoise").play()
 	elif (get_node("../textInput").text != "" && len(get_node("../textInput").text) >= len(goalText)) :
-		get_node("../incorrectIndicator").incorrect = 60
+		get_node("../mehNoise").play()
+		get_node("../incorrectIndicator").incorrect = true
 		get_node("../typeCount").deduction += 1
 		get_node("../textInput").text = ""
 	

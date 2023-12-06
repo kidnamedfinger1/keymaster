@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="Keymaster Test"
-run/main_scene="res://menu/mainMenu.tscn"
+run/main_scene="res://mainMenu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
+config/icon="res://icon.svg"
+<<<<<<<HEADrun/main_scene="res://mainMenu.tscn"
 
 [rendering]
 
