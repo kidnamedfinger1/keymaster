@@ -21,6 +21,7 @@ func _process(_delta):
 		self.text = "[font_size=50]" + goalText
 		get_node("../textInput").text = ""
 		get_node("../quickGoodNoise").play()
+		get_node("../enemyDisplay").enemyChange = true
 	elif (get_node("../textInput").text != "" && len(get_node("../textInput").text) >= len(goalText)) :
 		get_node("../mehNoise").play()
 		get_node("../incorrectIndicator").incorrect = true
