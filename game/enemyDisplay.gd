@@ -26,4 +26,6 @@ func _process(delta):
 			self.position = Vector2(152, 336)
 		elif enemy == "greenSlime":
 			self.scale = Vector2(4, 4)
+		elif enemy == "alienWizard":
+			self.scale = Vector2(4, 4)
 		self.play(enemy)
