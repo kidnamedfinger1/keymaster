@@ -9,23 +9,26 @@ func selectEnemy(cashLevel) -> String:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var enemy = selectEnemy(get_node("../typeCount").dollars)
+	var enemy = selectEnemy(get_node("../typeCount").score)
 	if enemy == "normalSkeleton":
-		self.scale = Vector2(0.7, 0.7)
+		self.scale = Vector2(1, 1)
 		self.position = Vector2(152, 336)
 	elif enemy == "greenSlime":
-		self.scale = Vector2(4, 4)
+		self.scale = Vector2(6, 6)
+		self.position = Vector2(173, 423)
 	self.play(enemy)
 	
 func _process(delta):
 	if enemyChange == true:
-		var enemy = selectEnemy(get_node("../typeCount").dollars)
+		var enemy = selectEnemy(get_node("../typeCount").score)
 		enemyChange = false
 		if enemy == "normalSkeleton":
-			self.scale = Vector2(0.7, 0.7)
+			self.scale = Vector2(1, 1)
 			self.position = Vector2(152, 336)
 		elif enemy == "greenSlime":
-			self.scale = Vector2(4, 4)
+			self.scale = Vector2(6, 6)
+			self.position = Vector2(173, 423)
 		elif enemy == "alienWizard":
 			self.scale = Vector2(4, 4)
+			self.position = Vector2(203, 307)
 		self.play(enemy)

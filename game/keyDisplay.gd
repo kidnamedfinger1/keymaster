@@ -5,7 +5,7 @@ var rng = RandomNumberGenerator.new()
 var goalText = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	goalText = _generateString(get_node("../typeCount").dollars)
+	goalText = _generateString(get_node("../typeCount").score)
 	self.text = "[font_size=50]" + goalText
 
 
@@ -16,8 +16,9 @@ func _process(_delta):
 		if money <= 0 :
 			money = 1
 		get_node("../typeCount").dollars += money
+		get_node("../typeCount").score += money
 		get_node("../typeCount").deduction = 0
-		goalText = _generateString(get_node("../typeCount").dollars)
+		goalText = _generateString(get_node("../typeCount").score)
 		self.text = "[font_size=50]" + goalText
 		get_node("../textInput").text = ""
 		get_node("../soundEffectPlayer")._soundEffectPlay("correctSound")
@@ -33,7 +34,13 @@ func _generateString(correct: int) -> String:
 	var stringLength = 0
 	var lengthOdds = 50 + correct
 	var randomLength = randi_range(0, lengthOdds)
-	if randomLength > 500:
+	if randomLength > 4500:
+		stringLength += 6
+	elif randomLength > 2000:
+		stringLength += 5
+	elif randomLength > 1000:
+		stringLength += 4
+	elif randomLength > 500:
 		stringLength += 3
 	elif randomLength > 200:
 		stringLength += 2

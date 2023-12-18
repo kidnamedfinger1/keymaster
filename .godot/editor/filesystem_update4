@@ -1,5 +1,6 @@
 res://menu/mainMenu.tscn
-res://game/soundEffectPlayer.gd
 res://game/game.tscn
+res://game/soundEffectPlayer.gd
+res://game/enemyDisplay.gd
 res://game/keyDisplay.gd
-res://game/upgrade1.gd
+res://game/typeCount.gd
