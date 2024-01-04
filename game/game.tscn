@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://game/incorrectIndicator.gd" id="4_2rxth"]
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="4_3tm58"]
 [ext_resource type="Script" path="res://game/upgrade1.gd" id="6_p0qbj"]
-[ext_resource type="Texture2D" uid="uid://dtkpawt0jwngj" path="res://game/textures/slime (3).png" id="12_gjg0i"]
+[ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
 [ext_resource type="Texture2D" uid="uid://dmonym1vh7liu" path="res://game/textures/alienWizard.png" id="12_pfy1k"]
 [ext_resource type="AudioStream" uid="uid://dwj6jlixbd14e" path="res://game/audio/buttonSelectPositive.wav" id="13_3xv0c"]
 [ext_resource type="Script" path="res://game/soundEffectPlayer.gd" id="13_n1tmx"]
@@ -70,36 +70,36 @@ region = Rect2(120, 360, 120, 120)
 atlas = ExtResource("12_pfy1k")
 region = Rect2(240, 360, 120, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_34pmi"]
-atlas = ExtResource("12_gjg0i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_48bpp"]
+atlas = ExtResource("8_npd3x")
 region = Rect2(0, 0, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mfwdl"]
-atlas = ExtResource("12_gjg0i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r7iu"]
+atlas = ExtResource("8_npd3x")
 region = Rect2(48, 0, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ectt"]
-atlas = ExtResource("12_gjg0i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkavd"]
+atlas = ExtResource("8_npd3x")
 region = Rect2(0, 32, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ilrd"]
-atlas = ExtResource("12_gjg0i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdvgv"]
+atlas = ExtResource("8_npd3x")
 region = Rect2(48, 32, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_17mdl"]
-atlas = ExtResource("12_gjg0i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdwj7"]
+atlas = ExtResource("8_npd3x")
 region = Rect2(0, 64, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6ujr"]
-atlas = ExtResource("12_gjg0i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_iood4"]
+atlas = ExtResource("8_npd3x")
 region = Rect2(48, 64, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bnqnj"]
-atlas = ExtResource("12_gjg0i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkqrb"]
+atlas = ExtResource("8_npd3x")
 region = Rect2(0, 96, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o2ali"]
-atlas = ExtResource("12_gjg0i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yabbu"]
+atlas = ExtResource("8_npd3x")
 region = Rect2(48, 96, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egd27"]
@@ -179,28 +179,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_34pmi")
+"texture": SubResource("AtlasTexture_48bpp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mfwdl")
+"texture": SubResource("AtlasTexture_0r7iu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ectt")
+"texture": SubResource("AtlasTexture_wkavd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ilrd")
+"texture": SubResource("AtlasTexture_jdvgv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_17mdl")
+"texture": SubResource("AtlasTexture_sdwj7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g6ujr")
+"texture": SubResource("AtlasTexture_iood4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bnqnj")
+"texture": SubResource("AtlasTexture_pkqrb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o2ali")
+"texture": SubResource("AtlasTexture_yabbu")
 }],
 "loop": true,
 "name": &"greenSlime",
@@ -284,7 +284,7 @@ script = ExtResource("6_p0qbj")
 position = Vector2(203, 307)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_vrqvd")
-animation = &"alienWizard"
+animation = &"greenSlime"
 script = ExtResource("14_vii53")
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="."]
@@ -294,7 +294,7 @@ script = ExtResource("17_552yc")
 
 [node name="soundEffectPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_3xv0c")
-volume_db = -0.937
+volume_db = -8.432
 script = ExtResource("13_n1tmx")
 
 [connection signal="pressed" from="upgrade1" to="textInput" method="_on_upgrade_1_pressed"]

@@ -1,6 +1,2 @@
 res://menu/mainMenu.tscn
 res://game/game.tscn
-res://game/soundEffectPlayer.gd
-res://game/enemyDisplay.gd
-res://game/keyDisplay.gd
-res://game/typeCount.gd
