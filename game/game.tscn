@@ -1,11 +1,11 @@
-[gd_scene load_steps=51 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=54 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
 [ext_resource type="Script" path="res://game/keyDisplay.gd" id="3_qnjyc"]
 [ext_resource type="Script" path="res://game/incorrectIndicator.gd" id="4_2rxth"]
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="4_3tm58"]
-[ext_resource type="Script" path="res://game/upgrade1.gd" id="6_p0qbj"]
+[ext_resource type="Script" path="res://game/keymonkeyGrunt.gd" id="6_p0qbj"]
 [ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
 [ext_resource type="Texture2D" uid="uid://dmonym1vh7liu" path="res://game/textures/alienWizard.png" id="12_pfy1k"]
 [ext_resource type="AudioStream" uid="uid://dwj6jlixbd14e" path="res://game/audio/buttonSelectPositive.wav" id="13_3xv0c"]
@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://buvly6g80vog7" path="res://game/textures/settingsMenu2.png" id="17_3s8ux"]
 [ext_resource type="Script" path="res://game/musicPlayer.gd" id="17_552yc"]
 [ext_resource type="Texture2D" uid="uid://j1ar72d74o3o" path="res://game/textures/keymonkeyMenu2.png" id="17_lki21"]
+[ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
+[ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
+[ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -278,13 +281,16 @@ text = "INCORRECT INPUT, PAYOUT DEDUCTED"
 label_settings = SubResource("LabelSettings_cw05m")
 script = ExtResource("4_2rxth")
 
-[node name="upgrade1" type="Button" parent="."]
-offset_left = 794.0
-offset_top = 106.0
-offset_right = 1141.0
-offset_bottom = 182.0
+[node name="keymonkeyGrunt" type="Button" parent="."]
+visible = false
+offset_left = 924.0
+offset_top = 137.0
+offset_right = 1124.0
+offset_bottom = 193.0
 text = "Keymonkey Grunt
 "
+icon = ExtResource("15_n0lvg")
+alignment = 2
 script = ExtResource("6_p0qbj")
 
 [node name="enemyDisplay" type="AnimatedSprite2D" parent="."]
@@ -326,7 +332,35 @@ texture_pressed = ExtResource("16_yjond")
 texture_hover = ExtResource("17_lki21")
 stretch_mode = 5
 
-[connection signal="pressed" from="upgrade1" to="textInput" method="_on_upgrade_1_pressed"]
-[connection signal="pressed" from="upgrade1" to="upgrade1" method="_on_pressed"]
+[node name="menuIndicator" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.419608)
+z_index = -2
+offset_left = 892.0
+offset_top = 104.0
+offset_right = 1154.0
+offset_bottom = 483.0
+texture = ExtResource("21_n7rpq")
+script = ExtResource("22_vxg88")
+
+[node name="templateSettingsButton" type="Button" parent="."]
+visible = false
+offset_left = 924.0
+offset_top = 137.0
+offset_right = 1124.0
+offset_bottom = 193.0
+text = "Template Settings"
+icon = ExtResource("15_48w6y")
+alignment = 2
+script = ExtResource("23_wd4hm")
+
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="templateSettingsButton" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="keymonkeyMenu" to="templateSettingsButton" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="templateSettingsButton" to="textInput" method="_on_template_settings_button_pressed"]

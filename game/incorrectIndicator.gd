@@ -9,8 +9,8 @@ func _process(delta):
 		await get_tree().create_timer(1).timeout
 		self.visible = false
 	
-	if get_node("../upgrade1").cash == false :
-		get_node("../upgrade1").cash = true
+	if get_node("../keymonkeyGrunt").cash == false :
+		get_node("../keymonkeyGrunt").cash = true
 		self.text = "LACK OF FUNDS"
 		self.visible = true
 		await get_tree().create_timer(1).timeout
