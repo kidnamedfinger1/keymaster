@@ -1,2 +1,9 @@
 res://mainMenu.tscn
 res://game/game.tscn
+res://game/enemyDisplay.gd
+res://game/incorrectIndicator.gd
+res://game/keyDisplay.gd
+res://game/textInput.gd
+res://game/typeCount.gd
+res://game/upgrade1.gd
+res://mainMenu.gd
