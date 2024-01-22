@@ -24,5 +24,6 @@ func _on_keymonkey_grunt_pressed():
 	grab_focus()
 
 
-func _on_template_settings_button_pressed():
-	grab_focus()
+
+
+

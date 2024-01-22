@@ -310,6 +310,25 @@ stream = ExtResource("13_3xv0c")
 volume_db = -8.432
 script = ExtResource("13_n1tmx")
 
+[node name="quitToMenu" type="Button" parent="."]
+offset_left = 924.0
+offset_top = 137.0
+offset_right = 1124.0
+offset_bottom = 193.0
+text = "Quit to Menu"
+icon = ExtResource("15_48w6y")
+alignment = 2
+script = ExtResource("23_wd4hm")
+
+[node name="quitToDesktop" type="Button" parent="."]
+offset_left = 924.0
+offset_top = 202.0
+offset_right = 1124.0
+offset_bottom = 258.0
+text = "Quit to Desktop"
+icon = ExtResource("17_3s8ux")
+script = ExtResource("23_wd4hm")
+
 [node name="settingsMenu" type="TextureButton" parent="."]
 offset_left = 1032.0
 offset_top = 10.0
@@ -333,7 +352,6 @@ texture_hover = ExtResource("17_lki21")
 stretch_mode = 5
 
 [node name="menuIndicator" type="TextureRect" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.419608)
 z_index = -2
 offset_left = 892.0
@@ -343,24 +361,14 @@ offset_bottom = 483.0
 texture = ExtResource("21_n7rpq")
 script = ExtResource("22_vxg88")
 
-[node name="templateSettingsButton" type="Button" parent="."]
-visible = false
-offset_left = 924.0
-offset_top = 137.0
-offset_right = 1124.0
-offset_bottom = 193.0
-text = "Template Settings"
-icon = ExtResource("15_48w6y")
-alignment = 2
-script = ExtResource("23_wd4hm")
-
-[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
+[connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
+[connection signal="pressed" from="quitToDesktop" to="quitToMenu" method="_on_quitToDesktop_pressed"]
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="templateSettingsButton" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="quitToMenu" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu" to="templateSettingsButton" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="templateSettingsButton" to="textInput" method="_on_template_settings_button_pressed"]
+[connection signal="pressed" from="keymonkeyMenu" to="quitToMenu" method="_on_keymonkey_menu_pressed"]
