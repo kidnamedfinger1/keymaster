@@ -281,18 +281,6 @@ text = "INCORRECT INPUT, PAYOUT DEDUCTED"
 label_settings = SubResource("LabelSettings_cw05m")
 script = ExtResource("4_2rxth")
 
-[node name="keymonkeyGrunt" type="Button" parent="."]
-visible = false
-offset_left = 924.0
-offset_top = 137.0
-offset_right = 1124.0
-offset_bottom = 193.0
-text = "Keymonkey Grunt
-"
-icon = ExtResource("15_n0lvg")
-alignment = 2
-script = ExtResource("6_p0qbj")
-
 [node name="enemyDisplay" type="AnimatedSprite2D" parent="."]
 position = Vector2(203, 307)
 scale = Vector2(4, 4)
@@ -310,7 +298,31 @@ stream = ExtResource("13_3xv0c")
 volume_db = -8.432
 script = ExtResource("13_n1tmx")
 
+[node name="menuIndicator" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.419608)
+z_index = -2
+offset_left = 892.0
+offset_top = 104.0
+offset_right = 1154.0
+offset_bottom = 483.0
+texture = ExtResource("21_n7rpq")
+script = ExtResource("22_vxg88")
+
+[node name="keymonkeyGrunt" type="Button" parent="."]
+visible = false
+offset_left = 924.0
+offset_top = 137.0
+offset_right = 1124.0
+offset_bottom = 193.0
+text = "Keymonkey Grunt
+"
+icon = ExtResource("15_n0lvg")
+alignment = 2
+script = ExtResource("6_p0qbj")
+
 [node name="quitToMenu" type="Button" parent="."]
+visible = false
 offset_left = 924.0
 offset_top = 137.0
 offset_right = 1124.0
@@ -321,6 +333,7 @@ alignment = 2
 script = ExtResource("23_wd4hm")
 
 [node name="quitToDesktop" type="Button" parent="."]
+visible = false
 offset_left = 924.0
 offset_top = 202.0
 offset_right = 1124.0
@@ -328,17 +341,6 @@ offset_bottom = 258.0
 text = "Quit to Desktop"
 icon = ExtResource("17_3s8ux")
 script = ExtResource("23_wd4hm")
-
-[node name="settingsMenu" type="TextureButton" parent="."]
-offset_left = 1032.0
-offset_top = 10.0
-offset_right = 1129.0
-offset_bottom = 107.0
-size_flags_horizontal = 4
-texture_normal = ExtResource("15_48w6y")
-texture_pressed = ExtResource("16_oceue")
-texture_hover = ExtResource("17_3s8ux")
-stretch_mode = 5
 
 [node name="keymonkeyMenu" type="TextureButton" parent="."]
 offset_left = 945.0
@@ -351,24 +353,26 @@ texture_pressed = ExtResource("16_yjond")
 texture_hover = ExtResource("17_lki21")
 stretch_mode = 5
 
-[node name="menuIndicator" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.419608)
-z_index = -2
-offset_left = 892.0
-offset_top = 104.0
-offset_right = 1154.0
-offset_bottom = 483.0
-texture = ExtResource("21_n7rpq")
-script = ExtResource("22_vxg88")
+[node name="settingsMenu" type="TextureButton" parent="."]
+offset_left = 1032.0
+offset_top = 10.0
+offset_right = 1129.0
+offset_bottom = 107.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("15_48w6y")
+texture_pressed = ExtResource("16_oceue")
+texture_hover = ExtResource("17_3s8ux")
+stretch_mode = 5
 
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
-[connection signal="pressed" from="quitToDesktop" to="quitToMenu" method="_on_quitToDesktop_pressed"]
-[connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="quitToMenu" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="quitToDesktop" to="quitToDesktop" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="quitToMenu" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="quitToMenu" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="quitToDesktop" method="_on_settings_menu_pressed"]
