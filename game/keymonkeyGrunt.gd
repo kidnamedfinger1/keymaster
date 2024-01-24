@@ -15,6 +15,7 @@ func _on_pressed():
 	if get_node("../typeCount").dollars >= 10:
 		get_node("../typeCount").dollars -= 10
 		get_node("../soundEffectPlayer")._soundEffectPlay("upgradeSound")
+		get_node("../keymonkeyTextInput").totalKeymonkeys += 1
 	else:
 		cash = false
 		get_node("../soundEffectPlayer")._soundEffectPlay("mehSound")

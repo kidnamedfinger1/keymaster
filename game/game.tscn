@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=55 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
+[ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -281,18 +282,6 @@ text = "INCORRECT INPUT, PAYOUT DEDUCTED"
 label_settings = SubResource("LabelSettings_cw05m")
 script = ExtResource("4_2rxth")
 
-[node name="keymonkeyGrunt" type="Button" parent="."]
-visible = false
-offset_left = 924.0
-offset_top = 137.0
-offset_right = 1124.0
-offset_bottom = 193.0
-text = "Keymonkey Grunt
-"
-icon = ExtResource("15_n0lvg")
-alignment = 2
-script = ExtResource("6_p0qbj")
-
 [node name="enemyDisplay" type="AnimatedSprite2D" parent="."]
 position = Vector2(203, 307)
 scale = Vector2(4, 4)
@@ -343,6 +332,18 @@ offset_bottom = 483.0
 texture = ExtResource("21_n7rpq")
 script = ExtResource("22_vxg88")
 
+[node name="keymonkeyGrunt" type="Button" parent="."]
+visible = false
+offset_left = 924.0
+offset_top = 137.0
+offset_right = 1124.0
+offset_bottom = 193.0
+text = "Keymonkey Grunt
+"
+icon = ExtResource("15_n0lvg")
+alignment = 2
+script = ExtResource("6_p0qbj")
+
 [node name="templateSettingsButton" type="Button" parent="."]
 visible = false
 offset_left = 924.0
@@ -354,13 +355,29 @@ icon = ExtResource("15_48w6y")
 alignment = 2
 script = ExtResource("23_wd4hm")
 
-[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
-[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
-[connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
+[node name="keymonkeyTextInput" type="TextEdit" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = -1.813
+anchor_right = 0.181
+anchor_bottom = -1.813
+offset_left = 681.0
+offset_top = 18.0
+offset_right = 914.0
+offset_bottom = 97.0
+editable = false
+selecting_enabled = false
+script = ExtResource("24_bnfok")
+
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="templateSettingsButton" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="templateSettingsButton" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="templateSettingsButton" to="textInput" method="_on_template_settings_button_pressed"]
+[connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
