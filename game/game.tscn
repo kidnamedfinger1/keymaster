@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=55 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
+[ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -299,7 +300,6 @@ volume_db = -8.432
 script = ExtResource("13_n1tmx")
 
 [node name="menuIndicator" type="TextureRect" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.419608)
 z_index = -2
 offset_left = 892.0
@@ -322,7 +322,6 @@ alignment = 2
 script = ExtResource("6_p0qbj")
 
 [node name="quitToMenu" type="Button" parent="."]
-visible = false
 offset_left = 924.0
 offset_top = 137.0
 offset_right = 1124.0
@@ -333,7 +332,6 @@ alignment = 2
 script = ExtResource("23_wd4hm")
 
 [node name="quitToDesktop" type="Button" parent="."]
-visible = false
 offset_left = 924.0
 offset_top = 202.0
 offset_right = 1124.0
@@ -364,6 +362,45 @@ texture_pressed = ExtResource("16_oceue")
 texture_hover = ExtResource("17_3s8ux")
 stretch_mode = 5
 
+[node name="sfxLabel" type="RichTextLabel" parent="."]
+offset_left = 938.0
+offset_top = 414.0
+offset_right = 996.0
+offset_bottom = 454.0
+text = "SFX"
+
+[node name="musicLabel" type="RichTextLabel" parent="."]
+offset_left = 929.0
+offset_top = 376.0
+offset_right = 987.0
+offset_bottom = 416.0
+text = "Music"
+
+[node name="sfxSlider" type="HSlider" parent="."]
+anchors_preset = -1
+anchor_right = 0.153
+anchor_bottom = 0.5
+offset_left = 984.0
+offset_top = 380.0
+offset_right = 1123.0
+offset_bottom = 473.0
+script = ExtResource("24_me2kb")
+
+[node name="musicSlider" type="HSlider" parent="."]
+offset_left = 984.0
+offset_top = 371.0
+offset_right = 1123.0
+offset_bottom = 407.0
+script = ExtResource("24_me2kb")
+
+[node name="fullscreenToggle" type="CheckButton" parent="."]
+offset_left = 922.0
+offset_top = 263.0
+offset_right = 1125.0
+offset_bottom = 294.0
+text = "Fullscreen"
+script = ExtResource("23_wd4hm")
+
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
@@ -376,3 +413,9 @@ stretch_mode = 5
 [connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="quitToMenu" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="quitToDesktop" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="musicLabel" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="sfxLabel" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="sfxSlider" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
+[connection signal="toggled" from="fullscreenToggle" to="textInput" method="_on_fullscreenToggle_toggled"]
