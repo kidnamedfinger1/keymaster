@@ -23,6 +23,16 @@ func _process(_delta):
 		get_node("../textInput").text = ""
 		get_node("../soundEffectPlayer")._soundEffectPlay("correctSound")
 		get_node("../enemyDisplay").enemyChange = true
+	elif (get_node("../keymonkeyTextInput").text.contains(goalText)):
+		get_node("../typeCount").dollars += 2
+		get_node("../typeCount").score += 2
+		get_node("../typeCount").deduction = 0
+		goalText = _generateString(get_node("../typeCount").score)
+		self.text = "[font_size=50]" + goalText
+		get_node("../textInput").text = ""
+		get_node("../keymonkeyTextInput").text = ""
+		get_node("../soundEffectPlayer")._soundEffectPlay("correctSound")
+		get_node("../enemyDisplay").enemyChange = true
 	elif (get_node("../textInput").text != "" && len(get_node("../textInput").text) >= len(goalText)) :
 		get_node("../soundEffectPlayer")._soundEffectPlay("mehSound")
 		get_node("../incorrectIndicator").incorrect = true

@@ -16,10 +16,6 @@ func _on_settings_menu_pressed():
 	elif visibleMenu == true:
 		visibleMenu = false
 
-
-func _on_keymonkey_menu_pressed():
-	visibleMenu = false
-
 func _on_quitToMenu_pressed():
 	get_tree().change_scene_to_file("res://menu/mainMenu.tscn")
 

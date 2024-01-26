@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=56 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://game/enemyDisplay.gd" id="14_vii53"]
 [ext_resource type="Texture2D" uid="uid://c3uti70cnhyhk" path="res://game/textures/settingsMenu0.png" id="15_48w6y"]
 [ext_resource type="Texture2D" uid="uid://ds4kosxfvx6po" path="res://game/textures/keymonkeyMenu0.png" id="15_n0lvg"]
+[ext_resource type="Script" path="res://game/keymonkeyMenuIndicator.gd" id="16_3s2vi"]
 [ext_resource type="AudioStream" uid="uid://c0277spps20sm" path="res://game/audio/Keysmash.wav" id="16_mk2pn"]
 [ext_resource type="Texture2D" uid="uid://b05ghak67p637" path="res://game/textures/settingsMenu1.png" id="16_oceue"]
 [ext_resource type="Texture2D" uid="uid://cbkq16dobbqfr" path="res://game/textures/keymonkeyMenu1.png" id="16_yjond"]
@@ -23,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
+[ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -298,10 +300,9 @@ stream = ExtResource("13_3xv0c")
 volume_db = -8.432
 script = ExtResource("13_n1tmx")
 
-[node name="menuIndicator" type="TextureRect" parent="."]
+[node name="settingsMenuIndicator" type="TextureRect" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.419608)
-z_index = -2
 offset_left = 892.0
 offset_top = 104.0
 offset_right = 1154.0
@@ -309,17 +310,43 @@ offset_bottom = 483.0
 texture = ExtResource("21_n7rpq")
 script = ExtResource("22_vxg88")
 
+[node name="keymonkeyMenuIndicator" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.419608)
+offset_left = 526.0
+offset_top = 104.0
+offset_right = 886.0
+offset_bottom = 483.0
+texture = ExtResource("21_n7rpq")
+script = ExtResource("16_3s2vi")
+
 [node name="keymonkeyGrunt" type="Button" parent="."]
 visible = false
-offset_left = 924.0
-offset_top = 137.0
-offset_right = 1124.0
-offset_bottom = 193.0
+offset_left = 643.0
+offset_top = 138.0
+offset_right = 843.0
+offset_bottom = 194.0
 text = "Keymonkey Grunt
 "
 icon = ExtResource("15_n0lvg")
 alignment = 2
 script = ExtResource("6_p0qbj")
+
+[node name="gruntLabel" type="Label" parent="."]
+offset_left = 643.0
+offset_top = 138.0
+offset_right = 683.0
+offset_bottom = 161.0
+
+[node name="quitToDesktop" type="Button" parent="."]
+visible = false
+offset_left = 924.0
+offset_top = 202.0
+offset_right = 1124.0
+offset_bottom = 258.0
+text = "Quit to Desktop"
+icon = ExtResource("17_3s8ux")
+script = ExtResource("23_wd4hm")
 
 [node name="quitToMenu" type="Button" parent="."]
 visible = false
@@ -330,16 +357,6 @@ offset_bottom = 193.0
 text = "Quit to Menu"
 icon = ExtResource("15_48w6y")
 alignment = 2
-script = ExtResource("23_wd4hm")
-
-[node name="quitToDesktop" type="Button" parent="."]
-visible = false
-offset_left = 924.0
-offset_top = 202.0
-offset_right = 1124.0
-offset_bottom = 258.0
-text = "Quit to Desktop"
-icon = ExtResource("17_3s8ux")
 script = ExtResource("23_wd4hm")
 
 [node name="keymonkeyMenu" type="TextureButton" parent="."]
@@ -364,11 +381,26 @@ texture_pressed = ExtResource("16_oceue")
 texture_hover = ExtResource("17_3s8ux")
 stretch_mode = 5
 
+[node name="keymonkeyTextInput" type="TextEdit" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = -1.813
+anchor_right = 0.181
+anchor_bottom = -1.813
+offset_left = 681.0
+offset_top = 18.0
+offset_right = 914.0
+offset_bottom = 97.0
+editable = false
+selecting_enabled = false
+script = ExtResource("24_bnfok")
+
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
-[connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
 [connection signal="pressed" from="quitToDesktop" to="quitToDesktop" method="_on_pressed"]
+[connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="quitToMenu" method="_on_keymonkey_menu_pressed"]
@@ -376,3 +408,4 @@ stretch_mode = 5
 [connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="quitToMenu" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="quitToDesktop" method="_on_settings_menu_pressed"]
+[connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
