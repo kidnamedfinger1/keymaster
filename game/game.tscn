@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=54 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
-[ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -299,28 +298,6 @@ stream = ExtResource("13_3xv0c")
 volume_db = -8.432
 script = ExtResource("13_n1tmx")
 
-[node name="settingsMenu" type="TextureButton" parent="."]
-offset_left = 1032.0
-offset_top = 10.0
-offset_right = 1129.0
-offset_bottom = 107.0
-size_flags_horizontal = 4
-texture_normal = ExtResource("15_48w6y")
-texture_pressed = ExtResource("16_oceue")
-texture_hover = ExtResource("17_3s8ux")
-stretch_mode = 5
-
-[node name="keymonkeyMenu" type="TextureButton" parent="."]
-offset_left = 945.0
-offset_top = 10.0
-offset_right = 1042.0
-offset_bottom = 107.0
-size_flags_horizontal = 4
-texture_normal = ExtResource("15_n0lvg")
-texture_pressed = ExtResource("16_yjond")
-texture_hover = ExtResource("17_lki21")
-stretch_mode = 5
-
 [node name="menuIndicator" type="TextureRect" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.419608)
@@ -344,40 +321,58 @@ icon = ExtResource("15_n0lvg")
 alignment = 2
 script = ExtResource("6_p0qbj")
 
-[node name="templateSettingsButton" type="Button" parent="."]
+[node name="quitToMenu" type="Button" parent="."]
 visible = false
 offset_left = 924.0
 offset_top = 137.0
 offset_right = 1124.0
 offset_bottom = 193.0
-text = "Template Settings"
+text = "Quit to Menu"
 icon = ExtResource("15_48w6y")
 alignment = 2
 script = ExtResource("23_wd4hm")
 
-[node name="keymonkeyTextInput" type="TextEdit" parent="."]
+[node name="quitToDesktop" type="Button" parent="."]
 visible = false
-anchors_preset = -1
-anchor_left = 0.181
-anchor_top = -1.813
-anchor_right = 0.181
-anchor_bottom = -1.813
-offset_left = 681.0
-offset_top = 18.0
-offset_right = 914.0
-offset_bottom = 97.0
-editable = false
-selecting_enabled = false
-script = ExtResource("24_bnfok")
+offset_left = 924.0
+offset_top = 202.0
+offset_right = 1124.0
+offset_bottom = 258.0
+text = "Quit to Desktop"
+icon = ExtResource("17_3s8ux")
+script = ExtResource("23_wd4hm")
 
-[connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="templateSettingsButton" method="_on_settings_menu_pressed"]
+[node name="keymonkeyMenu" type="TextureButton" parent="."]
+offset_left = 945.0
+offset_top = 10.0
+offset_right = 1042.0
+offset_bottom = 107.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("15_n0lvg")
+texture_pressed = ExtResource("16_yjond")
+texture_hover = ExtResource("17_lki21")
+stretch_mode = 5
+
+[node name="settingsMenu" type="TextureButton" parent="."]
+offset_left = 1032.0
+offset_top = 10.0
+offset_right = 1129.0
+offset_bottom = 107.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("15_48w6y")
+texture_pressed = ExtResource("16_oceue")
+texture_hover = ExtResource("17_3s8ux")
+stretch_mode = 5
+
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
+[connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
+[connection signal="pressed" from="quitToDesktop" to="quitToDesktop" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu" to="templateSettingsButton" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
-[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
-[connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
-[connection signal="pressed" from="templateSettingsButton" to="textInput" method="_on_template_settings_button_pressed"]
-[connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
+[connection signal="pressed" from="keymonkeyMenu" to="quitToMenu" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="quitToMenu" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="quitToDesktop" method="_on_settings_menu_pressed"]

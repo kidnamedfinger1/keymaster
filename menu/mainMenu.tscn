@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3w4fc13vrtwr"]
+[gd_scene load_steps=3 format=3 uid="uid://c3w4fc13vrtwr"]
 
 [ext_resource type="Script" path="res://menu/menuButtons.gd" id="1_8amqh"]
+[ext_resource type="Texture2D" uid="uid://bcacwf745petj" path="res://icon.svg" id="2_hcec2"]
 
 [node name="mainMenu" type="Node2D"]
 
@@ -9,15 +10,19 @@ offset_left = 283.0
 offset_top = 458.0
 offset_right = 819.0
 offset_bottom = 617.0
-text = "QUIT"
+text = "QUIT TO DESKTOP"
 script = ExtResource("1_8amqh")
 
 [node name="start" type="Button" parent="."]
 offset_left = 284.0
-offset_top = 152.0
+offset_top = 250.0
 offset_right = 820.0
-offset_bottom = 311.0
-text = "STARMPT"
+offset_bottom = 409.0
+text = "START"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(552, 117)
+texture = ExtResource("2_hcec2")
 
 [connection signal="pressed" from="quit" to="quit" method="_on_quit_pressed"]
 [connection signal="pressed" from="start" to="quit" method="_on_start_pressed"]
