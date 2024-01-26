@@ -387,21 +387,6 @@ offset_bottom = 294.0
 text = "Fullscreen"
 script = ExtResource("23_wd4hm")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 930.0
-offset_top = 415.0
-offset_right = 970.0
-offset_bottom = 438.0
-text = "sfx"
-
-[node name="Label" type="Label" parent="Label"]
-layout_mode = 0
-offset_left = -8.0
-offset_top = -41.0
-offset_right = 32.0
-offset_bottom = -18.0
-text = "music"
-
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
@@ -418,3 +403,4 @@ text = "music"
 [connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
 [connection signal="toggled" from="fullscreenToggle" to="textInput" method="_on_fullscreenToggle_toggled"]
+[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreen_toggle_toggled"]

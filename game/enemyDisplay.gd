@@ -32,3 +32,15 @@ func _process(delta):
 			self.scale = Vector2(4, 4)
 			self.position = Vector2(203, 307)
 		self.play(enemy)
+
+
+func _on_fullscreen_toggle_toggled(toggled_on):
+	var enemy = selectEnemy(get_node("../typeCount").score)
+	if enemy == "greenSlime":
+		if toggled_on == true:
+			self.scale = 2 * Vector2(6,6)
+			self.position = 2 * Vector2(173, 423)
+		elif toggled_on == false:
+			self.scale = Vector2(6,6)
+			self.position = Vector2(173, 423)
+
