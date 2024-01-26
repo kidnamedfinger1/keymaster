@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=72 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="4_3tm58"]
 [ext_resource type="Script" path="res://game/keymonkeyGrunt.gd" id="6_p0qbj"]
 [ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
+[ext_resource type="Texture2D" uid="uid://cimiyhln4bcau" path="res://game/textures/normalSpider.png" id="11_8wogh"]
 [ext_resource type="Texture2D" uid="uid://bqarkw8tdq4gn" path="res://game/textures/normalZombie.png" id="11_qy6sj"]
 [ext_resource type="Texture2D" uid="uid://dmonym1vh7liu" path="res://game/textures/alienWizard.png" id="12_pfy1k"]
 [ext_resource type="AudioStream" uid="uid://dwj6jlixbd14e" path="res://game/audio/buttonSelectPositive.wav" id="13_3xv0c"]
@@ -144,6 +145,38 @@ region = Rect2(0, 720, 240, 240)
 atlas = ExtResource("14_32bt8")
 region = Rect2(240, 720, 240, 240)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdol2"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4letx"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up36w"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f28jt"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmoq0"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(0, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o6sd"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(40, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlcar"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(80, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tity0"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(120, 40, 40, 40)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_sf8qc"]
 atlas = ExtResource("11_qy6sj")
 region = Rect2(0, 0, 40, 40)
@@ -279,6 +312,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kdol2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4letx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up36w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f28jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmoq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o6sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlcar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tity0")
+}],
+"loop": true,
+"name": &"normalSpider",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sf8qc")
 }, {
 "duration": 1.0,
@@ -356,12 +418,11 @@ alignment = 2
 script = ExtResource("6_p0qbj")
 
 [node name="enemyDisplay" type="AnimatedSprite2D" parent="."]
-position = Vector2(152, 356)
+position = Vector2(169, 408)
 scale = Vector2(5.449, 5.5)
 sprite_frames = SubResource("SpriteFrames_vrqvd")
-animation = &"normalZombie"
-frame = 4
-frame_progress = 0.319576
+animation = &"normalSpider"
+frame_progress = 0.976364
 script = ExtResource("14_vii53")
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="."]
@@ -418,8 +479,8 @@ icon = ExtResource("15_48w6y")
 alignment = 2
 script = ExtResource("23_wd4hm")
 
-[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
