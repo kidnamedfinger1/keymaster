@@ -387,8 +387,8 @@ offset_bottom = 294.0
 text = "Fullscreen"
 script = ExtResource("23_wd4hm")
 
-[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
 [connection signal="pressed" from="quitToDesktop" to="quitToDesktop" method="_on_pressed"]

@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
 var enemyOptions = ["greenSlime", "normalSkeleton", "alienWizard"]
 var enemyChange = false
+var fullScr = false
 func selectEnemy(cashLevel) -> String:
 	var enemyRange = 1
 	if cashLevel >= 500:
@@ -17,7 +18,7 @@ func _ready():
 		self.scale = Vector2(6, 6)
 		self.position = Vector2(173, 423)
 	self.play(enemy)
-	
+
 func _process(delta):
 	if enemyChange == true:
 		var enemy = selectEnemy(get_node("../typeCount").score)
@@ -33,14 +34,12 @@ func _process(delta):
 			self.position = Vector2(203, 307)
 		self.play(enemy)
 
-
 func _on_fullscreen_toggle_toggled(toggled_on):
 	var enemy = selectEnemy(get_node("../typeCount").score)
-	if enemy == "greenSlime":
-		if toggled_on == true:
-			self.scale = 2 * Vector2(6,6)
-			self.position = 2 * Vector2(173, 423)
-		elif toggled_on == false:
+	if toggled_on == true && enemy == "greenSlime":
+		self.scale = 2 * Vector2(6,6)
+		self.position = 2 * Vector2(173, 423)
+	elif toggled_on == false && enemy == "greenSlime":
 			self.scale = Vector2(6,6)
 			self.position = Vector2(173, 423)
 
