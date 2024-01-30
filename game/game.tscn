@@ -402,5 +402,5 @@ script = ExtResource("23_wd4hm")
 [connection signal="pressed" from="settingsMenu" to="sfxSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
-[connection signal="toggled" from="fullscreenToggle" to="textInput" method="_on_fullscreenToggle_toggled"]
-[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreen_toggle_toggled"]
+[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
+[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]

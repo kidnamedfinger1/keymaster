@@ -19,27 +19,41 @@ func _ready():
 		self.position = Vector2(173, 423)
 	self.play(enemy)
 
-func _process(delta):
-	if enemyChange == true:
-		var enemy = selectEnemy(get_node("../typeCount").score)
-		enemyChange = false
-		if enemy == "normalSkeleton":
-			self.scale = Vector2(1, 1)
-			self.position = Vector2(152, 336)
-		elif enemy == "greenSlime":
-			self.scale = Vector2(6, 6)
-			self.position = Vector2(173, 423)
-		elif enemy == "alienWizard":
-			self.scale = Vector2(4, 4)
-			self.position = Vector2(203, 307)
-		self.play(enemy)
+func _on_fullscreenToggle_toggled(toggled_on):
+	if toggled_on:
+		return true
+	else :
+		return false
 
-func _on_fullscreen_toggle_toggled(toggled_on):
-	var enemy = selectEnemy(get_node("../typeCount").score)
-	if toggled_on == true && enemy == "greenSlime":
-		self.scale = 2 * Vector2(6,6)
-		self.position = 2 * Vector2(173, 423)
-	elif toggled_on == false && enemy == "greenSlime":
-			self.scale = Vector2(6,6)
-			self.position = Vector2(173, 423)
+func _process(toggled_on):
+	if _on_fullscreenToggle_toggled(toggled_on):
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		if enemyChange == true:
+			var enemy = selectEnemy(get_node("../typeCount").score)
+			enemyChange = false
+			if enemy == "normalSkeleton":
+				self.scale = Vector2(1, 1) * 2
+				self.position = Vector2(152, 336) * 2
+			elif enemy == "greenSlime":
+				self.scale = Vector2(6, 6) * 2
+				self.position = Vector2(173, 423) * 2
+			elif enemy == "alienWizard":
+				self.scale = Vector2(4, 4) * 2
+				self.position = Vector2(203, 307) * 2
+			self.play(enemy)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		if enemyChange == true:
+			var enemy = selectEnemy(get_node("../typeCount").score)
+			enemyChange = false
+			if enemy == "normalSkeleton":
+				self.scale = Vector2(1, 1)
+				self.position = Vector2(152, 336)
+			elif enemy == "greenSlime":
+				self.scale = Vector2(6, 6)
+				self.position = Vector2(173, 423)
+			elif enemy == "alienWizard":
+				self.scale = Vector2(4, 4)
+				self.position = Vector2(203, 307)
+			self.play(enemy)
 
