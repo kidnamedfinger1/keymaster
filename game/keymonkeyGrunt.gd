@@ -12,9 +12,11 @@ func _process(delta):
 		self.visible = true
 
 func _on_pressed():
-	if get_node("../typeCount").dollars >= 10:
-		get_node("../typeCount").dollars -= 10
+	if get_node("../typeCount").dollars >= 100:
+		get_node("../typeCount").dollars -= 100
 		get_node("../soundEffectPlayer")._soundEffectPlay("upgradeSound")
+		get_node("../keymonkeyTextInput").totalKeymonkeys += 1
+		get_node("../keymonkeyTextInput").keymonkeyGrunts += 1
 	else:
 		cash = false
 		get_node("../soundEffectPlayer")._soundEffectPlay("mehSound")
@@ -27,6 +29,3 @@ func _on_keymonkey_menu_pressed():
 	elif visibleMenu == true:
 		visibleMenu = false
 
-
-func _on_settings_menu_pressed():
-	visibleMenu = false

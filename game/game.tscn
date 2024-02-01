@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=56 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -7,8 +7,6 @@
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="4_3tm58"]
 [ext_resource type="Script" path="res://game/keymonkeyGrunt.gd" id="6_p0qbj"]
 [ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
-[ext_resource type="Texture2D" uid="uid://cimiyhln4bcau" path="res://game/textures/normalSpider.png" id="11_8wogh"]
-[ext_resource type="Texture2D" uid="uid://bqarkw8tdq4gn" path="res://game/textures/normalZombie.png" id="11_qy6sj"]
 [ext_resource type="Texture2D" uid="uid://dmonym1vh7liu" path="res://game/textures/alienWizard.png" id="12_pfy1k"]
 [ext_resource type="AudioStream" uid="uid://dwj6jlixbd14e" path="res://game/audio/buttonSelectPositive.wav" id="13_3xv0c"]
 [ext_resource type="Script" path="res://game/soundEffectPlayer.gd" id="13_n1tmx"]
@@ -16,6 +14,7 @@
 [ext_resource type="Script" path="res://game/enemyDisplay.gd" id="14_vii53"]
 [ext_resource type="Texture2D" uid="uid://c3uti70cnhyhk" path="res://game/textures/settingsMenu0.png" id="15_48w6y"]
 [ext_resource type="Texture2D" uid="uid://ds4kosxfvx6po" path="res://game/textures/keymonkeyMenu0.png" id="15_n0lvg"]
+[ext_resource type="Script" path="res://game/keymonkeyMenuIndicator.gd" id="16_3s2vi"]
 [ext_resource type="AudioStream" uid="uid://c0277spps20sm" path="res://game/audio/Keysmash.wav" id="16_mk2pn"]
 [ext_resource type="Texture2D" uid="uid://b05ghak67p637" path="res://game/textures/settingsMenu1.png" id="16_oceue"]
 [ext_resource type="Texture2D" uid="uid://cbkq16dobbqfr" path="res://game/textures/keymonkeyMenu1.png" id="16_yjond"]
@@ -25,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
+[ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -145,70 +145,6 @@ region = Rect2(0, 720, 240, 240)
 atlas = ExtResource("14_32bt8")
 region = Rect2(240, 720, 240, 240)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kdol2"]
-atlas = ExtResource("11_8wogh")
-region = Rect2(0, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4letx"]
-atlas = ExtResource("11_8wogh")
-region = Rect2(40, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_up36w"]
-atlas = ExtResource("11_8wogh")
-region = Rect2(80, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f28jt"]
-atlas = ExtResource("11_8wogh")
-region = Rect2(120, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rmoq0"]
-atlas = ExtResource("11_8wogh")
-region = Rect2(0, 40, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5o6sd"]
-atlas = ExtResource("11_8wogh")
-region = Rect2(40, 40, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tlcar"]
-atlas = ExtResource("11_8wogh")
-region = Rect2(80, 40, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tity0"]
-atlas = ExtResource("11_8wogh")
-region = Rect2(120, 40, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sf8qc"]
-atlas = ExtResource("11_qy6sj")
-region = Rect2(0, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_83ltq"]
-atlas = ExtResource("11_qy6sj")
-region = Rect2(40, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ru18w"]
-atlas = ExtResource("11_qy6sj")
-region = Rect2(0, 40, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_imbr5"]
-atlas = ExtResource("11_qy6sj")
-region = Rect2(40, 40, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rc71c"]
-atlas = ExtResource("11_qy6sj")
-region = Rect2(0, 80, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fqvsk"]
-atlas = ExtResource("11_qy6sj")
-region = Rect2(40, 80, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r7eyr"]
-atlas = ExtResource("11_qy6sj")
-region = Rect2(0, 120, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0o8gy"]
-atlas = ExtResource("11_qy6sj")
-region = Rect2(40, 120, 40, 40)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_vrqvd"]
 animations = [{
 "frames": [{
@@ -309,64 +245,6 @@ animations = [{
 "loop": true,
 "name": &"normalSkeleton",
 "speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kdol2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4letx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_up36w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f28jt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rmoq0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5o6sd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tlcar")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tity0")
-}],
-"loop": true,
-"name": &"normalSpider",
-"speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sf8qc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_83ltq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ru18w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_imbr5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rc71c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fqvsk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r7eyr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0o8gy")
-}],
-"loop": true,
-"name": &"normalZombie",
-"speed": 5.0
 }]
 
 [node name="type" type="Node2D"]
@@ -405,29 +283,16 @@ text = "INCORRECT INPUT, PAYOUT DEDUCTED"
 label_settings = SubResource("LabelSettings_cw05m")
 script = ExtResource("4_2rxth")
 
-[node name="keymonkeyGrunt" type="Button" parent="."]
-visible = false
-offset_left = 924.0
-offset_top = 137.0
-offset_right = 1124.0
-offset_bottom = 193.0
-text = "Keymonkey Grunt
-"
-icon = ExtResource("15_n0lvg")
-alignment = 2
-script = ExtResource("6_p0qbj")
-
 [node name="enemyDisplay" type="AnimatedSprite2D" parent="."]
-position = Vector2(169, 408)
-scale = Vector2(5.449, 5.5)
+position = Vector2(203, 307)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_vrqvd")
-animation = &"normalSpider"
-frame_progress = 0.976364
+animation = &"greenSlime"
 script = ExtResource("14_vii53")
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_mk2pn")
-volume_db = -19.174
+volume_db = -28.543
 script = ExtResource("17_552yc")
 
 [node name="soundEffectPlayer" type="AudioStreamPlayer" parent="."]
@@ -435,16 +300,64 @@ stream = ExtResource("13_3xv0c")
 volume_db = -8.432
 script = ExtResource("13_n1tmx")
 
-[node name="settingsMenu" type="TextureButton" parent="."]
-offset_left = 1032.0
-offset_top = 10.0
-offset_right = 1129.0
-offset_bottom = 107.0
-size_flags_horizontal = 4
-texture_normal = ExtResource("15_48w6y")
-texture_pressed = ExtResource("16_oceue")
-texture_hover = ExtResource("17_3s8ux")
-stretch_mode = 5
+[node name="settingsMenuIndicator" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.419608)
+offset_left = 892.0
+offset_top = 104.0
+offset_right = 1154.0
+offset_bottom = 483.0
+texture = ExtResource("21_n7rpq")
+script = ExtResource("22_vxg88")
+
+[node name="keymonkeyMenuIndicator" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.419608)
+offset_left = 526.0
+offset_top = 104.0
+offset_right = 886.0
+offset_bottom = 483.0
+texture = ExtResource("21_n7rpq")
+script = ExtResource("16_3s2vi")
+
+[node name="keymonkeyGrunt" type="Button" parent="."]
+visible = false
+offset_left = 643.0
+offset_top = 138.0
+offset_right = 843.0
+offset_bottom = 194.0
+text = "Keymonkey Grunt
+"
+icon = ExtResource("15_n0lvg")
+alignment = 2
+script = ExtResource("6_p0qbj")
+
+[node name="gruntLabel" type="Label" parent="."]
+offset_left = 643.0
+offset_top = 138.0
+offset_right = 683.0
+offset_bottom = 161.0
+
+[node name="quitToDesktop" type="Button" parent="."]
+visible = false
+offset_left = 924.0
+offset_top = 202.0
+offset_right = 1124.0
+offset_bottom = 258.0
+text = "Quit to Desktop"
+icon = ExtResource("17_3s8ux")
+script = ExtResource("23_wd4hm")
+
+[node name="quitToMenu" type="Button" parent="."]
+visible = false
+offset_left = 924.0
+offset_top = 137.0
+offset_right = 1124.0
+offset_bottom = 193.0
+text = "Quit to Menu"
+icon = ExtResource("15_48w6y")
+alignment = 2
+script = ExtResource("23_wd4hm")
 
 [node name="keymonkeyMenu" type="TextureButton" parent="."]
 offset_left = 945.0
@@ -457,35 +370,42 @@ texture_pressed = ExtResource("16_yjond")
 texture_hover = ExtResource("17_lki21")
 stretch_mode = 5
 
-[node name="menuIndicator" type="TextureRect" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.419608)
-z_index = -2
-offset_left = 892.0
-offset_top = 104.0
-offset_right = 1154.0
-offset_bottom = 483.0
-texture = ExtResource("21_n7rpq")
-script = ExtResource("22_vxg88")
+[node name="settingsMenu" type="TextureButton" parent="."]
+offset_left = 1032.0
+offset_top = 10.0
+offset_right = 1129.0
+offset_bottom = 107.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("15_48w6y")
+texture_pressed = ExtResource("16_oceue")
+texture_hover = ExtResource("17_3s8ux")
+stretch_mode = 5
 
-[node name="templateSettingsButton" type="Button" parent="."]
+[node name="keymonkeyTextInput" type="TextEdit" parent="."]
 visible = false
-offset_left = 924.0
-offset_top = 137.0
-offset_right = 1124.0
-offset_bottom = 193.0
-text = "Template Settings"
-icon = ExtResource("15_48w6y")
-alignment = 2
-script = ExtResource("23_wd4hm")
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = -1.813
+anchor_right = 0.181
+anchor_bottom = -1.813
+offset_left = 681.0
+offset_top = 18.0
+offset_right = 914.0
+offset_bottom = 97.0
+editable = false
+selecting_enabled = false
+script = ExtResource("24_bnfok")
 
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
-[connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="templateSettingsButton" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="quitToDesktop" to="quitToDesktop" method="_on_pressed"]
+[connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu" to="templateSettingsButton" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="templateSettingsButton" to="textInput" method="_on_template_settings_button_pressed"]
+[connection signal="pressed" from="keymonkeyMenu" to="quitToMenu" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="quitToDesktop" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="quitToMenu" method="_on_settings_menu_pressed"]
+[connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
