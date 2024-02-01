@@ -12,7 +12,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if (get_node("../textInput").text == goalText) :
-		var money = (len(goalText) - get_node("../typeCount").deduction)
+		var money = ((2 * len(goalText)) - get_node("../typeCount").deduction)
 		if money <= 0 :
 			money = 1
 		get_node("../typeCount").dollars += money
