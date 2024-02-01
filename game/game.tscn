@@ -292,7 +292,7 @@ script = ExtResource("14_vii53")
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_mk2pn")
-volume_db = -19.174
+volume_db = -28.543
 script = ExtResource("17_552yc")
 
 [node name="soundEffectPlayer" type="AudioStreamPlayer" parent="."]
