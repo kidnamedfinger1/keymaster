@@ -2,13 +2,22 @@ extends AnimatedSprite2D
 var enemyOptions = ["greenSlime", "normalSkeleton", "alienWizard"]
 var enemyChange = false
 var fullScr = false
+var fullScrSwitch = false
 func selectEnemy(cashLevel) -> String:
 	var enemyRange = 1
 	if cashLevel >= 500:
 		enemyRange += 1
 	return enemyOptions[randi_range(0, enemyRange)]
 	
-# Called when the node enters the scene tree for the first time.
+
+func _on_fullscreenToggle_pressed():
+	if fullScr == false :
+		fullScr = true
+		fullScrSwitch = true
+	elif  fullScr == true :
+		fullScr = false
+		fullScrSwitch = true
+
 func _ready():
 	var enemy = selectEnemy(get_node("../typeCount").score)
 	if enemy == "normalSkeleton":
@@ -19,15 +28,14 @@ func _ready():
 		self.position = Vector2(173, 423)
 	self.play(enemy)
 
-func _on_fullscreenToggle_toggled(toggled_on):
-	if toggled_on:
-		return true
-	else :
-		return false
 
-func _process(toggled_on):
-	if _on_fullscreenToggle_toggled(toggled_on):
+
+func _process(_delta):
+	if fullScr == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		if fullScrSwitch == true:
+			enemyChange = true
+			fullScrSwitch = false
 		if enemyChange == true:
 			var enemy = selectEnemy(get_node("../typeCount").score)
 			enemyChange = false
@@ -41,8 +49,11 @@ func _process(toggled_on):
 				self.scale = Vector2(4, 4) * 2
 				self.position = Vector2(203, 307) * 2
 			self.play(enemy)
-	else:
+	elif fullScr == false:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		if fullScrSwitch == true:
+			enemyChange = true
+			fullScrSwitch = false
 		if enemyChange == true:
 			var enemy = selectEnemy(get_node("../typeCount").score)
 			enemyChange = false
@@ -56,4 +67,3 @@ func _process(toggled_on):
 				self.scale = Vector2(4, 4)
 				self.position = Vector2(203, 307)
 			self.play(enemy)
-
