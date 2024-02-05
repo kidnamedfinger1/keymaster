@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=74 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -7,6 +7,8 @@
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="4_3tm58"]
 [ext_resource type="Script" path="res://game/keymonkeyGrunt.gd" id="6_p0qbj"]
 [ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
+[ext_resource type="Texture2D" path="res://game/textures/normalSpider.png" id="11_8wogh"]
+[ext_resource type="Texture2D" path="res://game/textures/normalZombie.png" id="11_qy6sj"]
 [ext_resource type="Texture2D" uid="uid://dmonym1vh7liu" path="res://game/textures/alienWizard.png" id="12_pfy1k"]
 [ext_resource type="AudioStream" uid="uid://dwj6jlixbd14e" path="res://game/audio/buttonSelectPositive.wav" id="13_3xv0c"]
 [ext_resource type="Script" path="res://game/soundEffectPlayer.gd" id="13_n1tmx"]
@@ -145,6 +147,70 @@ region = Rect2(0, 720, 240, 240)
 atlas = ExtResource("14_32bt8")
 region = Rect2(240, 720, 240, 240)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbug1"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y27h"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7diay"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42t0v"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03vu5"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(0, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1nhe"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(40, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcybi"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(80, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg4ah"]
+atlas = ExtResource("11_8wogh")
+region = Rect2(120, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5tmg"]
+atlas = ExtResource("11_qy6sj")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ficnr"]
+atlas = ExtResource("11_qy6sj")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2euxc"]
+atlas = ExtResource("11_qy6sj")
+region = Rect2(0, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrh0b"]
+atlas = ExtResource("11_qy6sj")
+region = Rect2(40, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnujt"]
+atlas = ExtResource("11_qy6sj")
+region = Rect2(0, 80, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfyxr"]
+atlas = ExtResource("11_qy6sj")
+region = Rect2(40, 80, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d1g0"]
+atlas = ExtResource("11_qy6sj")
+region = Rect2(0, 120, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyevj"]
+atlas = ExtResource("11_qy6sj")
+region = Rect2(40, 120, 40, 40)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_vrqvd"]
 animations = [{
 "frames": [{
@@ -245,6 +311,64 @@ animations = [{
 "loop": true,
 "name": &"normalSkeleton",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbug1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y27h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7diay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42t0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03vu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1nhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcybi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg4ah")
+}],
+"loop": true,
+"name": &"normalSpider",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5tmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ficnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2euxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrh0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnujt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfyxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d1g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyevj")
+}],
+"loop": true,
+"name": &"normalZombie",
+"speed": 5.0
 }]
 
 [node name="type" type="Node2D"]
@@ -284,10 +408,10 @@ label_settings = SubResource("LabelSettings_cw05m")
 script = ExtResource("4_2rxth")
 
 [node name="enemyDisplay" type="AnimatedSprite2D" parent="."]
-position = Vector2(203, 307)
-scale = Vector2(4, 4)
+position = Vector2(165, 345)
+scale = Vector2(5.9, 5.9)
 sprite_frames = SubResource("SpriteFrames_vrqvd")
-animation = &"greenSlime"
+animation = &"normalZombie"
 script = ExtResource("14_vii53")
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="."]
