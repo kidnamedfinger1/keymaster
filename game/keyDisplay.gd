@@ -24,7 +24,7 @@ func _process(_delta):
 		get_node("../soundEffectPlayer")._soundEffectPlay("correctSound")
 		get_node("../enemyDisplay").enemyChange = true
 	elif (get_node("../keymonkeyTextInput").text.contains(goalText)):
-		var money = 5 + (5*len(goalText))
+		var money = 5 + (5^len(goalText))
 		get_node("../typeCount").dollars += money
 		get_node("../typeCount").score += money
 		get_node("../typeCount").deduction = 0

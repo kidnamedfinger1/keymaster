@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=76 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -7,8 +7,8 @@
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="4_3tm58"]
 [ext_resource type="Script" path="res://game/keymonkeyGrunt.gd" id="6_p0qbj"]
 [ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
-[ext_resource type="Texture2D" path="res://game/textures/normalSpider.png" id="11_8wogh"]
-[ext_resource type="Texture2D" path="res://game/textures/normalZombie.png" id="11_qy6sj"]
+[ext_resource type="Texture2D" uid="uid://cimiyhln4bcau" path="res://game/textures/normalSpider.png" id="11_8wogh"]
+[ext_resource type="Texture2D" uid="uid://bqarkw8tdq4gn" path="res://game/textures/normalZombie.png" id="11_qy6sj"]
 [ext_resource type="Texture2D" uid="uid://dmonym1vh7liu" path="res://game/textures/alienWizard.png" id="12_pfy1k"]
 [ext_resource type="AudioStream" uid="uid://dwj6jlixbd14e" path="res://game/audio/buttonSelectPositive.wav" id="13_3xv0c"]
 [ext_resource type="Script" path="res://game/soundEffectPlayer.gd" id="13_n1tmx"]
@@ -23,10 +23,15 @@
 [ext_resource type="Texture2D" uid="uid://buvly6g80vog7" path="res://game/textures/settingsMenu2.png" id="17_3s8ux"]
 [ext_resource type="Script" path="res://game/musicPlayer.gd" id="17_552yc"]
 [ext_resource type="Texture2D" uid="uid://j1ar72d74o3o" path="res://game/textures/keymonkeyMenu2.png" id="17_lki21"]
+[ext_resource type="Script" path="res://game/keymonkeyLabels.gd" id="21_a3bil"]
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
 [ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nhskn"]
+font = ExtResource("4_3tm58")
+font_size = 21
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -378,26 +383,30 @@ offset_left = 5.0
 offset_top = 569.0
 offset_right = 1145.0
 offset_bottom = 644.0
+theme_override_fonts/font = ExtResource("4_3tm58")
 placeholder_text = "ENTER YOUR KEYS, MASTER"
 script = ExtResource("1_o5euh")
 
-[node name="typeCount" type="Label" parent="."]
+[node name="typeCount" type="Label" parent="." groups=["Persist"]]
 offset_left = 169.0
 offset_top = 37.0
 offset_right = 318.0
 offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+label_settings = SubResource("LabelSettings_nhskn")
 script = ExtResource("2_ocad6")
 
-[node name="keyDisplay" type="RichTextLabel" parent="."]
+[node name="keyDisplay" type="RichTextLabel" parent="." groups=["Persist"]]
 offset_left = 33.0
 offset_top = 462.0
 offset_right = 426.0
 offset_bottom = 539.0
+theme_override_fonts/normal_font = ExtResource("4_3tm58")
 bbcode_enabled = true
-text = "[font_size=50]K"
+text = "[font_size=60]K"
 script = ExtResource("3_qnjyc")
 
-[node name="incorrectIndicator" type="Label" parent="."]
+[node name="incorrectIndicator" type="Label" parent="." groups=["Persist"]]
 visible = false
 offset_left = 24.0
 offset_top = 529.0
@@ -407,7 +416,7 @@ text = "INCORRECT INPUT, PAYOUT DEDUCTED"
 label_settings = SubResource("LabelSettings_cw05m")
 script = ExtResource("4_2rxth")
 
-[node name="enemyDisplay" type="AnimatedSprite2D" parent="."]
+[node name="enemyDisplay" type="AnimatedSprite2D" parent="." groups=["Persist"]]
 position = Vector2(165, 345)
 scale = Vector2(5.9, 5.9)
 sprite_frames = SubResource("SpriteFrames_vrqvd")
@@ -450,6 +459,7 @@ offset_left = 643.0
 offset_top = 138.0
 offset_right = 843.0
 offset_bottom = 194.0
+theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Keymonkey Grunt
 "
 icon = ExtResource("15_n0lvg")
@@ -457,10 +467,13 @@ alignment = 2
 script = ExtResource("6_p0qbj")
 
 [node name="gruntLabel" type="Label" parent="."]
-offset_left = 643.0
-offset_top = 138.0
-offset_right = 683.0
-offset_bottom = 161.0
+visible = false
+offset_left = 601.0
+offset_top = 139.0
+offset_right = 641.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+script = ExtResource("21_a3bil")
 
 [node name="quitToDesktop" type="Button" parent="."]
 visible = false
@@ -468,6 +481,7 @@ offset_left = 924.0
 offset_top = 202.0
 offset_right = 1124.0
 offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Quit to Desktop"
 icon = ExtResource("17_3s8ux")
 script = ExtResource("23_wd4hm")
@@ -478,6 +492,7 @@ offset_left = 924.0
 offset_top = 137.0
 offset_right = 1124.0
 offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Quit to Menu"
 icon = ExtResource("15_48w6y")
 alignment = 2
@@ -516,12 +531,13 @@ offset_left = 681.0
 offset_top = 18.0
 offset_right = 914.0
 offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("4_3tm58")
 editable = false
 selecting_enabled = false
 script = ExtResource("24_bnfok")
 
-[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="quitToDesktop" to="quitToDesktop" method="_on_pressed"]
 [connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
