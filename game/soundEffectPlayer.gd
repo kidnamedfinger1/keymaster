@@ -14,4 +14,6 @@ func _soundEffectPlay(effect: String):
 		self.stream = load("res://game/audio/buttonSelectMedium.wav")
 	elif effect == "upgradeSound":
 		self.stream = load("res://game/audio/quickGoodNoise.wav")
+	elif effect == "keymonkeySound":
+		self.stream = load("res://game/audio/keymonkeyNoise.wav")
 	self.play()

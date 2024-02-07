@@ -257,7 +257,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"alienWizard",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -286,7 +286,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"greenSlime",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -344,7 +344,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"normalSpider",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -373,7 +373,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"normalZombie",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="type" type="Node2D"]
