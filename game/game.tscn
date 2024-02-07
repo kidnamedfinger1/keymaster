@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=85 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://game/incorrectIndicator.gd" id="4_2rxth"]
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="4_3tm58"]
 [ext_resource type="Script" path="res://game/keymonkeyGrunt.gd" id="6_p0qbj"]
+[ext_resource type="Texture2D" uid="uid://cexlb0pv017h1" path="res://game/textures/normalGoblin.png" id="8_j327l"]
 [ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
 [ext_resource type="Texture2D" uid="uid://cimiyhln4bcau" path="res://game/textures/normalSpider.png" id="11_8wogh"]
 [ext_resource type="Texture2D" uid="uid://bqarkw8tdq4gn" path="res://game/textures/normalZombie.png" id="11_qy6sj"]
@@ -119,6 +120,38 @@ region = Rect2(0, 96, 48, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_yabbu"]
 atlas = ExtResource("8_npd3x")
 region = Rect2(48, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pddpo"]
+atlas = ExtResource("8_j327l")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxjfk"]
+atlas = ExtResource("8_j327l")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taox6"]
+atlas = ExtResource("8_j327l")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsply"]
+atlas = ExtResource("8_j327l")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e81u"]
+atlas = ExtResource("8_j327l")
+region = Rect2(0, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cofak"]
+atlas = ExtResource("8_j327l")
+region = Rect2(40, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbc55"]
+atlas = ExtResource("8_j327l")
+region = Rect2(80, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p48op"]
+atlas = ExtResource("8_j327l")
+region = Rect2(120, 40, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egd27"]
 atlas = ExtResource("14_32bt8")
@@ -290,6 +323,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pddpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxjfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taox6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsply")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e81u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cofak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbc55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p48op")
+}],
+"loop": true,
+"name": &"normalGoblin",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_egd27")
 }, {
 "duration": 1.0,
@@ -420,7 +482,7 @@ script = ExtResource("4_2rxth")
 position = Vector2(165, 345)
 scale = Vector2(5.9, 5.9)
 sprite_frames = SubResource("SpriteFrames_vrqvd")
-animation = &"normalZombie"
+animation = &"normalGoblin"
 script = ExtResource("14_vii53")
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="."]

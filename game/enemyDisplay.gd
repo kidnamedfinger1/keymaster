@@ -1,8 +1,8 @@
 extends AnimatedSprite2D
-var enemyOptions = ["greenSlime", "normalSpider", "normalSkeleton", "normalZombie", "alienWizard"]
+var enemyOptions = ["greenSlime", "normalSpider", "normalSkeleton", "normalZombie", "normalGoblin", "alienWizard"]
 var enemyChange = false
 func selectEnemy(cashLevel) -> String:
-	var enemyRange = 3
+	var enemyRange = 4
 	if cashLevel >= 500:
 		enemyRange += 1
 	return enemyOptions[randi_range(0, enemyRange)]
@@ -22,6 +22,9 @@ func _ready():
 	elif enemy == "normalZombie":
 		self.scale = Vector2(5,5)
 		self.position = Vector2(150,330)
+	elif enemy == "normalGoblin":
+		self.scale = Vector2(5.9,5.9)
+		self.position = Vector2(165,345)
 	self.play(enemy)
 	
 func _process(delta):
@@ -38,6 +41,9 @@ func _process(delta):
 			self.scale = Vector2(6,6)
 			self.position = Vector2(180,430)
 		elif enemy == "normalZombie":
+			self.scale = Vector2(5.9,5.9)
+			self.position = Vector2(165,345)
+		elif enemy == "normalGoblin":
 			self.scale = Vector2(5.9,5.9)
 			self.position = Vector2(165,345)
 		elif enemy == "alienWizard":
