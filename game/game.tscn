@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=86 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://game/keymonkeyGrunt.gd" id="6_p0qbj"]
 [ext_resource type="Texture2D" uid="uid://cexlb0pv017h1" path="res://game/textures/normalGoblin.png" id="8_j327l"]
 [ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
+[ext_resource type="Texture2D" uid="uid://cimiyhln4bcau" path="res://game/textures/normalSpider.png" id="11_8wogh"]
+[ext_resource type="Texture2D" uid="uid://bqarkw8tdq4gn" path="res://game/textures/normalZombie.png" id="11_qy6sj"]
 [ext_resource type="Texture2D" uid="uid://dmonym1vh7liu" path="res://game/textures/alienWizard.png" id="12_pfy1k"]
 [ext_resource type="AudioStream" uid="uid://dwj6jlixbd14e" path="res://game/audio/buttonSelectPositive.wav" id="13_3xv0c"]
 [ext_resource type="Script" path="res://game/soundEffectPlayer.gd" id="13_n1tmx"]
@@ -26,8 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
-[ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
 [ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
+[ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nhskn"]
 font = ExtResource("4_3tm58")
@@ -604,6 +606,7 @@ offset_right = 1125.0
 offset_bottom = 294.0
 text = "Fullscreen"
 script = ExtResource("23_wd4hm")
+
 [node name="keymonkeyTextInput" type="TextEdit" parent="."]
 visible = false
 anchors_preset = -1
@@ -631,11 +634,11 @@ script = ExtResource("24_bnfok")
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="quitToDesktop" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="quitToMenu" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="sfxSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_pressed"]
 [connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]
 [connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
-[connection signal="pressed" from="settingsMenu" to="quitToMenu" method="_on_settings_menu_pressed"]
 [connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
