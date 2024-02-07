@@ -286,7 +286,7 @@ script = ExtResource("4_2rxth")
 position = Vector2(203, 307)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_vrqvd")
-animation = &"greenSlime"
+animation = &"normalSkeleton"
 script = ExtResource("14_vii53")
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="."]
@@ -403,5 +403,5 @@ script = ExtResource("23_wd4hm")
 [connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_pressed"]
-[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]
 [connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
+[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]
