@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://game/keymonkeyGrunt.gd" id="6_p0qbj"]
 [ext_resource type="Texture2D" uid="uid://cexlb0pv017h1" path="res://game/textures/normalGoblin.png" id="8_j327l"]
 [ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
+[ext_resource type="Texture2D" uid="uid://cimiyhln4bcau" path="res://game/textures/normalSpider.png" id="11_8wogh"]
+[ext_resource type="Texture2D" uid="uid://bqarkw8tdq4gn" path="res://game/textures/normalZombie.png" id="11_qy6sj"]
 [ext_resource type="Texture2D" uid="uid://dmonym1vh7liu" path="res://game/textures/alienWizard.png" id="12_pfy1k"]
 [ext_resource type="AudioStream" uid="uid://dwj6jlixbd14e" path="res://game/audio/buttonSelectPositive.wav" id="13_3xv0c"]
 [ext_resource type="Script" path="res://game/soundEffectPlayer.gd" id="13_n1tmx"]
