@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3w4fc13vrtwr"]
+[gd_scene load_steps=4 format=3 uid="uid://c3w4fc13vrtwr"]
 
 [ext_resource type="Script" path="res://menu/menuButtons.gd" id="1_8amqh"]
+[ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="1_h80ff"]
 [ext_resource type="Texture2D" uid="uid://bcacwf745petj" path="res://icon.svg" id="2_hcec2"]
 
 [node name="mainMenu" type="Node2D"]
@@ -10,6 +11,7 @@ offset_left = 283.0
 offset_top = 458.0
 offset_right = 819.0
 offset_bottom = 617.0
+theme_override_fonts/font = ExtResource("1_h80ff")
 text = "QUIT TO DESKTOP"
 script = ExtResource("1_8amqh")
 
@@ -18,6 +20,7 @@ offset_left = 284.0
 offset_top = 250.0
 offset_right = 820.0
 offset_bottom = 409.0
+theme_override_fonts/font = ExtResource("1_h80ff")
 text = "START"
 
 [node name="Icon" type="Sprite2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=87 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://game/incorrectIndicator.gd" id="4_2rxth"]
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="4_3tm58"]
 [ext_resource type="Script" path="res://game/keymonkeyGrunt.gd" id="6_p0qbj"]
+[ext_resource type="Texture2D" uid="uid://cexlb0pv017h1" path="res://game/textures/normalGoblin.png" id="8_j327l"]
 [ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
 [ext_resource type="Texture2D" path="res://game/textures/normalSpider.png" id="11_8wogh"]
 [ext_resource type="Texture2D" path="res://game/textures/normalZombie.png" id="11_qy6sj"]
@@ -23,10 +24,19 @@
 [ext_resource type="Texture2D" uid="uid://buvly6g80vog7" path="res://game/textures/settingsMenu2.png" id="17_3s8ux"]
 [ext_resource type="Script" path="res://game/musicPlayer.gd" id="17_552yc"]
 [ext_resource type="Texture2D" uid="uid://j1ar72d74o3o" path="res://game/textures/keymonkeyMenu2.png" id="17_lki21"]
+[ext_resource type="Texture2D" uid="uid://bccyxeufovfc1" path="res://game/textures/keymonkeyGrunt.png.png" id="20_4oq6a"]
+[ext_resource type="Script" path="res://game/keymonkeyLabels.gd" id="21_a3bil"]
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
 [ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
+[ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nhskn"]
+font = ExtResource("4_3tm58")
+font_size = 100
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -114,6 +124,38 @@ region = Rect2(0, 96, 48, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_yabbu"]
 atlas = ExtResource("8_npd3x")
 region = Rect2(48, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pddpo"]
+atlas = ExtResource("8_j327l")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxjfk"]
+atlas = ExtResource("8_j327l")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taox6"]
+atlas = ExtResource("8_j327l")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsply"]
+atlas = ExtResource("8_j327l")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e81u"]
+atlas = ExtResource("8_j327l")
+region = Rect2(0, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cofak"]
+atlas = ExtResource("8_j327l")
+region = Rect2(40, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbc55"]
+atlas = ExtResource("8_j327l")
+region = Rect2(80, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p48op"]
+atlas = ExtResource("8_j327l")
+region = Rect2(120, 40, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egd27"]
 atlas = ExtResource("14_32bt8")
@@ -252,7 +294,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"alienWizard",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -281,7 +323,36 @@ animations = [{
 }],
 "loop": true,
 "name": &"greenSlime",
-"speed": 5.0
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pddpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxjfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taox6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsply")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e81u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cofak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbc55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p48op")
+}],
+"loop": true,
+"name": &"normalGoblin",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -339,7 +410,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"normalSpider",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -368,7 +439,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"normalZombie",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="type" type="Node2D"]
@@ -378,26 +449,31 @@ offset_left = 5.0
 offset_top = 569.0
 offset_right = 1145.0
 offset_bottom = 644.0
+theme_override_fonts/font = ExtResource("4_3tm58")
 placeholder_text = "ENTER YOUR KEYS, MASTER"
 script = ExtResource("1_o5euh")
 
-[node name="typeCount" type="Label" parent="."]
-offset_left = 169.0
-offset_top = 37.0
-offset_right = 318.0
-offset_bottom = 70.0
+[node name="typeCount" type="Label" parent="." groups=["Persist"]]
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 174.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$0"
+label_settings = SubResource("LabelSettings_nhskn")
 script = ExtResource("2_ocad6")
 
-[node name="keyDisplay" type="RichTextLabel" parent="."]
+[node name="keyDisplay" type="RichTextLabel" parent="." groups=["Persist"]]
 offset_left = 33.0
 offset_top = 462.0
 offset_right = 426.0
 offset_bottom = 539.0
+theme_override_fonts/normal_font = ExtResource("4_3tm58")
 bbcode_enabled = true
-text = "[font_size=50]K"
+text = "[font_size=60]K"
 script = ExtResource("3_qnjyc")
 
-[node name="incorrectIndicator" type="Label" parent="."]
+[node name="incorrectIndicator" type="Label" parent="." groups=["Persist"]]
 visible = false
 offset_left = 24.0
 offset_top = 529.0
@@ -407,11 +483,11 @@ text = "INCORRECT INPUT, PAYOUT DEDUCTED"
 label_settings = SubResource("LabelSettings_cw05m")
 script = ExtResource("4_2rxth")
 
-[node name="enemyDisplay" type="AnimatedSprite2D" parent="."]
+[node name="enemyDisplay" type="AnimatedSprite2D" parent="." groups=["Persist"]]
 position = Vector2(165, 345)
 scale = Vector2(5.9, 5.9)
 sprite_frames = SubResource("SpriteFrames_vrqvd")
-animation = &"normalZombie"
+animation = &"normalGoblin"
 script = ExtResource("14_vii53")
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="."]
@@ -422,6 +498,7 @@ script = ExtResource("17_552yc")
 [node name="soundEffectPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_3xv0c")
 volume_db = -8.432
+max_polyphony = 5
 script = ExtResource("13_n1tmx")
 
 [node name="settingsMenuIndicator" type="TextureRect" parent="."]
@@ -450,17 +527,21 @@ offset_left = 643.0
 offset_top = 138.0
 offset_right = 843.0
 offset_bottom = 194.0
+theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Keymonkey Grunt
 "
-icon = ExtResource("15_n0lvg")
+icon = ExtResource("20_4oq6a")
 alignment = 2
 script = ExtResource("6_p0qbj")
 
 [node name="gruntLabel" type="Label" parent="."]
-offset_left = 643.0
-offset_top = 138.0
-offset_right = 683.0
-offset_bottom = 161.0
+visible = false
+offset_left = 601.0
+offset_top = 139.0
+offset_right = 641.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+script = ExtResource("21_a3bil")
 
 [node name="quitToDesktop" type="Button" parent="."]
 visible = false
@@ -468,6 +549,7 @@ offset_left = 924.0
 offset_top = 202.0
 offset_right = 1124.0
 offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Quit to Desktop"
 icon = ExtResource("17_3s8ux")
 script = ExtResource("23_wd4hm")
@@ -478,6 +560,7 @@ offset_left = 924.0
 offset_top = 137.0
 offset_right = 1124.0
 offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Quit to Menu"
 icon = ExtResource("15_48w6y")
 alignment = 2
@@ -505,6 +588,36 @@ texture_pressed = ExtResource("16_oceue")
 texture_hover = ExtResource("17_3s8ux")
 stretch_mode = 5
 
+[node name="sfxSlider" type="HSlider" parent="."]
+visible = false
+anchors_preset = -1
+anchor_right = 0.153
+anchor_bottom = 0.5
+offset_left = 984.0
+offset_top = 380.0
+offset_right = 1123.0
+offset_bottom = 473.0
+value = 50.0
+script = ExtResource("24_me2kb")
+
+[node name="musicSlider" type="HSlider" parent="."]
+visible = false
+offset_left = 984.0
+offset_top = 371.0
+offset_right = 1123.0
+offset_bottom = 407.0
+value = 50.0
+script = ExtResource("24_me2kb")
+
+[node name="fullscreenToggle" type="CheckButton" parent="."]
+visible = false
+offset_left = 922.0
+offset_top = 263.0
+offset_right = 1125.0
+offset_bottom = 294.0
+text = "Fullscreen"
+script = ExtResource("23_wd4hm")
+
 [node name="keymonkeyTextInput" type="TextEdit" parent="."]
 visible = false
 anchors_preset = -1
@@ -516,6 +629,7 @@ offset_left = 681.0
 offset_top = 18.0
 offset_right = 914.0
 offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("4_3tm58")
 editable = false
 selecting_enabled = false
 script = ExtResource("24_bnfok")
@@ -527,9 +641,16 @@ script = ExtResource("24_bnfok")
 [connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="keymonkeyMenu" to="gruntLabel" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="quitToMenu" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="quitToDesktop" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="quitToMenu" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="sfxSlider" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_pressed"]
+[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]
+[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
 [connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
