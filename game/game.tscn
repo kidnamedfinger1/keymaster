@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=92 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -33,6 +33,9 @@
 [ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
 [ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
 [ext_resource type="Texture2D" uid="uid://bipgvn4qqhesj" path="res://game/textures/quitToMenu.png" id="25_txocy"]
+[ext_resource type="Texture2D" uid="uid://bsaenaow17kl8" path="res://game/textures/upgradeMenu0.png" id="26_hsift"]
+[ext_resource type="Texture2D" uid="uid://bnxbv44km31vm" path="res://game/textures/upgradeMenu1.png" id="27_nihsr"]
+[ext_resource type="Texture2D" uid="uid://ureioc847qe6" path="res://game/textures/upgradeMenu2.png" id="28_3gqtu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nhskn"]
 font = ExtResource("4_3tm58")
@@ -452,6 +455,7 @@ offset_top = 569.0
 offset_right = 1145.0
 offset_bottom = 644.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 51
 placeholder_text = "ENTER YOUR KEYS, MASTER"
 script = ExtResource("1_o5euh")
 
@@ -530,6 +534,7 @@ offset_top = 138.0
 offset_right = 843.0
 offset_bottom = 194.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 15
 text = "Keymonkey Grunt
 "
 icon = ExtResource("20_q0vvn")
@@ -552,6 +557,7 @@ offset_top = 202.0
 offset_right = 1124.0
 offset_bottom = 258.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 15
 text = "Quit to Desktop"
 icon = ExtResource("23_1wxbc")
 script = ExtResource("23_wd4hm")
@@ -563,10 +569,22 @@ offset_top = 137.0
 offset_right = 1124.0
 offset_bottom = 193.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 15
 text = "Quit to Menu"
 icon = ExtResource("25_txocy")
 alignment = 2
 script = ExtResource("23_wd4hm")
+
+[node name="upgradeMenu" type="TextureButton" parent="."]
+offset_left = 858.0
+offset_top = 10.0
+offset_right = 955.0
+offset_bottom = 107.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("26_hsift")
+texture_pressed = ExtResource("27_nihsr")
+texture_hover = ExtResource("28_3gqtu")
+stretch_mode = 5
 
 [node name="keymonkeyMenu" type="TextureButton" parent="."]
 offset_left = 945.0
@@ -621,15 +639,14 @@ text = "Fullscreen"
 script = ExtResource("23_wd4hm")
 
 [node name="keymonkeyTextInput" type="TextEdit" parent="."]
-visible = false
 anchors_preset = -1
 anchor_left = 0.181
 anchor_top = -1.813
 anchor_right = 0.181
 anchor_bottom = -1.813
-offset_left = 681.0
+offset_left = 603.0
 offset_top = 18.0
-offset_right = 914.0
+offset_right = 858.0
 offset_bottom = 97.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 editable = false
@@ -641,6 +658,7 @@ script = ExtResource("24_bnfok")
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="quitToDesktop" to="quitToDesktop" method="_on_pressed"]
 [connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
+[connection signal="pressed" from="upgradeMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="gruntLabel" method="_on_keymonkey_menu_pressed"]
