@@ -634,8 +634,8 @@ editable = false
 selecting_enabled = false
 script = ExtResource("24_bnfok")
 
-[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="quitToDesktop" to="quitToDesktop" method="_on_pressed"]
 [connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
@@ -651,5 +651,6 @@ script = ExtResource("24_bnfok")
 [connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_pressed"]
+[connection signal="pressed" from="fullscreenToggle" to="settingsMenuIndicator" method="_on_fullscreenToggle_pressed"]
 [connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
 [connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
