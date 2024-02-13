@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=90 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -31,6 +31,9 @@
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
 [ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
 [ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
+[ext_resource type="Texture2D" uid="uid://40uspiv325ax" path="res://game/textures/musicTexture.png" id="32_nf6u7"]
+[ext_resource type="Script" path="res://game/settingsMenuTextures.gd" id="33_4gmxa"]
+[ext_resource type="Texture2D" uid="uid://cjqa7tqy8vugc" path="res://game/textures/sfxTexture.png" id="33_bwtu4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nhskn"]
 font = ExtResource("4_3tm58")
@@ -594,18 +597,18 @@ anchors_preset = -1
 anchor_right = 0.153
 anchor_bottom = 0.5
 offset_left = 984.0
-offset_top = 380.0
+offset_top = 316.0
 offset_right = 1123.0
-offset_bottom = 473.0
+offset_bottom = 409.0
 value = 50.0
 script = ExtResource("24_me2kb")
 
 [node name="musicSlider" type="HSlider" parent="."]
 visible = false
 offset_left = 984.0
-offset_top = 371.0
+offset_top = 299.0
 offset_right = 1123.0
-offset_bottom = 407.0
+offset_bottom = 335.0
 value = 50.0
 script = ExtResource("24_me2kb")
 
@@ -634,6 +637,18 @@ editable = false
 selecting_enabled = false
 script = ExtResource("24_bnfok")
 
+[node name="MusicTexture" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(952, 317)
+texture = ExtResource("32_nf6u7")
+script = ExtResource("33_4gmxa")
+
+[node name="SfxTexture" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(952, 363)
+texture = ExtResource("33_bwtu4")
+script = ExtResource("33_4gmxa")
+
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
@@ -650,6 +665,8 @@ script = ExtResource("24_bnfok")
 [connection signal="pressed" from="settingsMenu" to="sfxSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="MusicTexture" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="SfxTexture" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_pressed"]
 [connection signal="pressed" from="fullscreenToggle" to="settingsMenuIndicator" method="_on_fullscreenToggle_pressed"]
 [connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
