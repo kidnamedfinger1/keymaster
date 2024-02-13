@@ -639,12 +639,13 @@ text = "Fullscreen"
 script = ExtResource("23_wd4hm")
 
 [node name="keymonkeyTextInput" type="TextEdit" parent="."]
+visible = false
 anchors_preset = -1
 anchor_left = 0.181
 anchor_top = -1.813
 anchor_right = 0.181
 anchor_bottom = -1.813
-offset_left = 603.0
+offset_left = 645.0
 offset_top = 18.0
 offset_right = 858.0
 offset_bottom = 97.0
@@ -653,8 +654,8 @@ editable = false
 selecting_enabled = false
 script = ExtResource("24_bnfok")
 
-[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="quitToDesktop" to="quitToDesktop" method="_on_pressed"]
 [connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
