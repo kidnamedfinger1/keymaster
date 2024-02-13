@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy0ykbvubd6y6"
-path="res://.godot/imported/keymonkeySniper.png.png-4a51aa6dedaeec341d1ef812191f9548.ctex"
+uid="uid://jnkcdkvxi68m"
+path="res://.godot/imported/keymonkeyGrunt.png-5341301913d38695adc246a6d76ca67e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/textures/keymonkeySniper.png.png"
-dest_files=["res://.godot/imported/keymonkeySniper.png.png-4a51aa6dedaeec341d1ef812191f9548.ctex"]
+source_file="res://game/textures/keymonkeyGrunt.png"
+dest_files=["res://.godot/imported/keymonkeyGrunt.png-5341301913d38695adc246a6d76ca67e.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=89 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -24,13 +24,15 @@
 [ext_resource type="Texture2D" uid="uid://buvly6g80vog7" path="res://game/textures/settingsMenu2.png" id="17_3s8ux"]
 [ext_resource type="Script" path="res://game/musicPlayer.gd" id="17_552yc"]
 [ext_resource type="Texture2D" uid="uid://j1ar72d74o3o" path="res://game/textures/keymonkeyMenu2.png" id="17_lki21"]
-[ext_resource type="Texture2D" uid="uid://bccyxeufovfc1" path="res://game/textures/keymonkeyGrunt.png.png" id="20_4oq6a"]
+[ext_resource type="Texture2D" uid="uid://jnkcdkvxi68m" path="res://game/textures/keymonkeyGrunt.png" id="20_q0vvn"]
 [ext_resource type="Script" path="res://game/keymonkeyLabels.gd" id="21_a3bil"]
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
+[ext_resource type="Texture2D" uid="uid://ol5of4k61v1u" path="res://game/textures/quitToDesktop.png" id="23_1wxbc"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
 [ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
 [ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
+[ext_resource type="Texture2D" uid="uid://bipgvn4qqhesj" path="res://game/textures/quitToMenu.png" id="25_txocy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nhskn"]
 font = ExtResource("4_3tm58")
@@ -530,7 +532,7 @@ offset_bottom = 194.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Keymonkey Grunt
 "
-icon = ExtResource("20_4oq6a")
+icon = ExtResource("20_q0vvn")
 alignment = 2
 script = ExtResource("6_p0qbj")
 
@@ -551,7 +553,7 @@ offset_right = 1124.0
 offset_bottom = 258.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Quit to Desktop"
-icon = ExtResource("17_3s8ux")
+icon = ExtResource("23_1wxbc")
 script = ExtResource("23_wd4hm")
 
 [node name="quitToMenu" type="Button" parent="."]
@@ -562,7 +564,7 @@ offset_right = 1124.0
 offset_bottom = 193.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Quit to Menu"
-icon = ExtResource("15_48w6y")
+icon = ExtResource("25_txocy")
 alignment = 2
 script = ExtResource("23_wd4hm")
 
@@ -651,6 +653,6 @@ script = ExtResource("24_bnfok")
 [connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_pressed"]
-[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]
 [connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
+[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]
 [connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]

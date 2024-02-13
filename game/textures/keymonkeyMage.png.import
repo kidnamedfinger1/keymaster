@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bccyxeufovfc1"
-path="res://.godot/imported/keymonkeyGrunt.png.png-32b701269a04b376e568c1c137e5a48b.ctex"
+uid="uid://cme62o7216njt"
+path="res://.godot/imported/keymonkeyMage.png-3e4fc7fcb42d40f5d48a980fa8ef6fb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/textures/keymonkeyGrunt.png.png"
-dest_files=["res://.godot/imported/keymonkeyGrunt.png.png-32b701269a04b376e568c1c137e5a48b.ctex"]
+source_file="res://game/textures/keymonkeyMage.png"
+dest_files=["res://.godot/imported/keymonkeyMage.png-3e4fc7fcb42d40f5d48a980fa8ef6fb3.ctex"]
 
 [params]
 
