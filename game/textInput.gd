@@ -24,6 +24,8 @@ func _on_keymonkey_grunt_pressed():
 
 
 
+func _on_keymonkey_sniper_pressed():
+	grab_focus()
 
 
 

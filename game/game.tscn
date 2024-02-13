@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=88 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bccyxeufovfc1" path="res://game/textures/keymonkeyGrunt.png.png" id="20_4oq6a"]
 [ext_resource type="Script" path="res://game/keymonkeyLabels.gd" id="21_a3bil"]
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
+[ext_resource type="Texture2D" uid="uid://difrd6cj3oc67" path="res://game/textures/testMonkey.png" id="21_u4ucf"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
 [ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
@@ -534,6 +535,16 @@ icon = ExtResource("20_4oq6a")
 alignment = 2
 script = ExtResource("6_p0qbj")
 
+[node name="keymonkeySniper" type="Button" parent="."]
+visible = false
+offset_left = 644.0
+offset_top = 204.0
+offset_right = 843.0
+offset_bottom = 259.0
+text = "Keymonkey Sniper"
+icon = ExtResource("21_u4ucf")
+script = ExtResource("6_p0qbj")
+
 [node name="gruntLabel" type="Label" parent="."]
 visible = false
 offset_left = 601.0
@@ -634,13 +645,23 @@ editable = false
 selecting_enabled = false
 script = ExtResource("24_bnfok")
 
+[node name="debug" type="Button" parent="."]
+offset_left = 1027.0
+offset_top = 517.0
+offset_right = 1139.0
+offset_bottom = 552.0
+text = "debug ($100)"
+
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
+[connection signal="pressed" from="keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
+[connection signal="pressed" from="keymonkeySniper" to="keymonkeySniper" method="_on_keymonkey_sniper_pressed"]
 [connection signal="pressed" from="quitToDesktop" to="quitToDesktop" method="_on_pressed"]
 [connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="keymonkeyMenu" to="keymonkeySniper" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="gruntLabel" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="quitToMenu" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
@@ -651,6 +672,7 @@ script = ExtResource("24_bnfok")
 [connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_pressed"]
-[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]
 [connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
+[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]
 [connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
+[connection signal="pressed" from="debug" to="typeCount" method="_on_button_pressed"]

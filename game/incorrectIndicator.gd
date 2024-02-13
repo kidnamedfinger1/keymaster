@@ -15,4 +15,11 @@ func _process(delta):
 		self.visible = true
 		await get_tree().create_timer(1).timeout
 		self.visible = false
+	
+	if get_node("../keymonkeySniper").cash == false :
+		get_node("../keymonkeySniper").cash = true
+		self.text = "LACK OF FUNDS"
+		self.visible = true
+		await get_tree().create_timer(1).timeout
+		self.visible = false
 
