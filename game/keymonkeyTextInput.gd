@@ -6,7 +6,6 @@ var lastType = -1
 
 
 
-
 func _process(delta):
 	if totalKeymonkeys > 0:
 		self.visible = true
@@ -14,7 +13,7 @@ func _process(delta):
 	if keymonkeySnipers > 0:
 		if lastType > (50/keymonkeySnipers) || lastType == -1:
 			lastType = 0
-			self.text += get_node("../keyDisplay")._generateString(get_node("../typeCount").score)
+			self.text += get_node("../keyDisplay").goalText
 		else:
 			lastType += 1
 		if (self.text).length() > 10:
