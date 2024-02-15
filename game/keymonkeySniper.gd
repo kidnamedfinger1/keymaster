@@ -1,5 +1,5 @@
 extends Button
-var upgradePrice = 100
+var upgradePrice = 10
 var cash = true
 var visibleMenu = false
 
@@ -14,17 +14,14 @@ func _on_pressed():
 		get_node("../typeCount").dollars -= upgradePrice
 		get_node("../soundEffectPlayer")._soundEffectPlay("upgradeSound")
 		get_node("../keymonkeyTextInput").totalKeymonkeys += 1
-		get_node("../keymonkeyTextInput").keymonkeyGrunts += 1
+		get_node("../keymonkeyTextInput").keymonkeySnipers += 1
 		upgradePrice = upgradePrice * 1.1
 	else:
 		cash = false
 		get_node("../soundEffectPlayer")._soundEffectPlay("mehSound")
-
-
 
 func _on_keymonkey_menu_pressed():
 	if visibleMenu == false:
 		visibleMenu = true
 	elif visibleMenu == true:
 		visibleMenu = false
-
