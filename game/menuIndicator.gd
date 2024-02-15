@@ -6,4 +6,3 @@ func _process(delta):
 	else:
 		self.visible = false
 
-

@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=98 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -694,6 +694,14 @@ position = Vector2(952, 363)
 texture = ExtResource("33_bwtu4")
 script = ExtResource("33_4gmxa")
 
+[node name="debug" type="Button" parent="."]
+offset_left = 1027.0
+offset_top = 517.0
+offset_right = 1139.0
+offset_bottom = 552.0
+text = "debug ($100)"
+
+[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
@@ -719,4 +727,6 @@ script = ExtResource("33_4gmxa")
 [connection signal="pressed" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_pressed"]
 [connection signal="pressed" from="fullscreenToggle" to="settingsMenuIndicator" method="_on_fullscreenToggle_pressed"]
 [connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
+[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]
 [connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
+[connection signal="pressed" from="debug" to="typeCount" method="_on_button_pressed"]
