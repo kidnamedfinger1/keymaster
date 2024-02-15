@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=94 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -27,8 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://jnkcdkvxi68m" path="res://game/textures/keymonkeyGrunt.png" id="20_q0vvn"]
 [ext_resource type="Script" path="res://game/keymonkeyLabels.gd" id="21_a3bil"]
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
+[ext_resource type="Texture2D" uid="uid://61c4jborkdhn" path="res://game/textures/keymonkeySniper.png" id="22_pprcd"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Texture2D" uid="uid://ol5of4k61v1u" path="res://game/textures/quitToDesktop.png" id="23_1wxbc"]
+[ext_resource type="Script" path="res://game/keymonkeySniper.gd" id="23_ennwf"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
 [ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
 [ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
@@ -534,19 +536,42 @@ offset_top = 138.0
 offset_right = 843.0
 offset_bottom = 194.0
 theme_override_fonts/font = ExtResource("4_3tm58")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 14
 text = "Keymonkey Grunt
 "
 icon = ExtResource("20_q0vvn")
 alignment = 2
 script = ExtResource("6_p0qbj")
 
-[node name="gruntLabel" type="Label" parent="."]
+[node name="keymonkeySniper" type="Button" parent="."]
+visible = false
+offset_left = 643.0
+offset_top = 198.0
+offset_right = 843.0
+offset_bottom = 254.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 14
+text = "Keymonkey Sniper
+"
+icon = ExtResource("22_pprcd")
+alignment = 2
+script = ExtResource("23_ennwf")
+
+[node name="gruntCountLabel" type="Label" parent="."]
 visible = false
 offset_left = 601.0
 offset_top = 139.0
 offset_right = 641.0
 offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+script = ExtResource("21_a3bil")
+
+[node name="sniperCountLabel" type="Label" parent="."]
+visible = false
+offset_left = 601.0
+offset_top = 199.0
+offset_right = 641.0
+offset_bottom = 222.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 script = ExtResource("21_a3bil")
 
@@ -654,16 +679,18 @@ editable = false
 selecting_enabled = false
 script = ExtResource("24_bnfok")
 
-[connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
+[connection signal="pressed" from="keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
+[connection signal="pressed" from="keymonkeySniper" to="keymonkeySniper" method="_on_pressed"]
 [connection signal="pressed" from="quitToDesktop" to="quitToDesktop" method="_on_pressed"]
 [connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
 [connection signal="pressed" from="upgradeMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu" to="gruntLabel" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="keymonkeyMenu" to="gruntCountLabel" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="quitToMenu" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="keymonkeyMenu" to="keymonkeySniper" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="quitToDesktop" method="_on_settings_menu_pressed"]
@@ -672,6 +699,6 @@ script = ExtResource("24_bnfok")
 [connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_pressed"]
-[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
 [connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]
+[connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
 [connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
