@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=90 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -24,16 +24,22 @@
 [ext_resource type="Texture2D" uid="uid://buvly6g80vog7" path="res://game/textures/settingsMenu2.png" id="17_3s8ux"]
 [ext_resource type="Script" path="res://game/musicPlayer.gd" id="17_552yc"]
 [ext_resource type="Texture2D" uid="uid://j1ar72d74o3o" path="res://game/textures/keymonkeyMenu2.png" id="17_lki21"]
+[ext_resource type="Texture2D" uid="uid://bccyxeufovfc1" path="res://game/textures/keymonkeyGrunt.png.png" id="20_4oq6a"]
 [ext_resource type="Script" path="res://game/keymonkeyLabels.gd" id="21_a3bil"]
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
 [ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
 [ext_resource type="Script" path="res://game/keymonkeyTextInput.gd" id="24_bnfok"]
 [ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
+[ext_resource type="Texture2D" uid="uid://40uspiv325ax" path="res://game/textures/musicTexture.png" id="32_nf6u7"]
+[ext_resource type="Script" path="res://game/settingsMenuTextures.gd" id="33_4gmxa"]
+[ext_resource type="Texture2D" uid="uid://cjqa7tqy8vugc" path="res://game/textures/sfxTexture.png" id="33_bwtu4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nhskn"]
 font = ExtResource("4_3tm58")
-font_size = 21
+font_size = 100
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -451,11 +457,12 @@ placeholder_text = "ENTER YOUR KEYS, MASTER"
 script = ExtResource("1_o5euh")
 
 [node name="typeCount" type="Label" parent="." groups=["Persist"]]
-offset_left = 169.0
-offset_top = 37.0
-offset_right = 318.0
-offset_bottom = 70.0
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 174.0
+offset_bottom = 53.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$0"
 label_settings = SubResource("LabelSettings_nhskn")
 script = ExtResource("2_ocad6")
 
@@ -494,6 +501,7 @@ script = ExtResource("17_552yc")
 [node name="soundEffectPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_3xv0c")
 volume_db = -8.432
+max_polyphony = 5
 script = ExtResource("13_n1tmx")
 
 [node name="settingsMenuIndicator" type="TextureRect" parent="."]
@@ -525,7 +533,7 @@ offset_bottom = 194.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Keymonkey Grunt
 "
-icon = ExtResource("15_n0lvg")
+icon = ExtResource("20_4oq6a")
 alignment = 2
 script = ExtResource("6_p0qbj")
 
@@ -539,6 +547,7 @@ theme_override_fonts/font = ExtResource("4_3tm58")
 script = ExtResource("21_a3bil")
 
 [node name="quitToDesktop" type="Button" parent="."]
+visible = false
 offset_left = 924.0
 offset_top = 202.0
 offset_right = 1124.0
@@ -583,23 +592,28 @@ texture_hover = ExtResource("17_3s8ux")
 stretch_mode = 5
 
 [node name="sfxSlider" type="HSlider" parent="."]
+visible = false
 anchors_preset = -1
 anchor_right = 0.153
 anchor_bottom = 0.5
 offset_left = 984.0
-offset_top = 380.0
+offset_top = 316.0
 offset_right = 1123.0
-offset_bottom = 473.0
+offset_bottom = 409.0
+value = 50.0
 script = ExtResource("24_me2kb")
 
 [node name="musicSlider" type="HSlider" parent="."]
+visible = false
 offset_left = 984.0
-offset_top = 371.0
+offset_top = 299.0
 offset_right = 1123.0
-offset_bottom = 407.0
+offset_bottom = 335.0
+value = 50.0
 script = ExtResource("24_me2kb")
 
 [node name="fullscreenToggle" type="CheckButton" parent="."]
+visible = false
 offset_left = 922.0
 offset_top = 263.0
 offset_right = 1125.0
@@ -623,6 +637,18 @@ editable = false
 selecting_enabled = false
 script = ExtResource("24_bnfok")
 
+[node name="MusicTexture" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(952, 317)
+texture = ExtResource("32_nf6u7")
+script = ExtResource("33_4gmxa")
+
+[node name="SfxTexture" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(952, 363)
+texture = ExtResource("33_bwtu4")
+script = ExtResource("33_4gmxa")
+
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyGrunt" to="keymonkeyGrunt" method="_on_pressed"]
@@ -630,6 +656,7 @@ script = ExtResource("24_bnfok")
 [connection signal="pressed" from="quitToMenu" to="quitToMenu" method="_on_quitToMenu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="keymonkeyMenu" to="gruntLabel" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="quitToMenu" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="keymonkeyGrunt" method="_on_settings_menu_pressed"]
@@ -638,6 +665,9 @@ script = ExtResource("24_bnfok")
 [connection signal="pressed" from="settingsMenu" to="sfxSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="musicSlider" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="fullscreenToggle" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="MusicTexture" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="SfxTexture" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_pressed"]
+[connection signal="pressed" from="fullscreenToggle" to="settingsMenuIndicator" method="_on_fullscreenToggle_pressed"]
 [connection signal="toggled" from="fullscreenToggle" to="enemyDisplay" method="_process"]
 [connection signal="focus_entered" from="keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
