@@ -21,9 +21,9 @@ func _process(_delta):
 		goalText = _generateString(get_node("../typeCount").score)
 		self.text = "[font_size=50]" + goalText
 		get_node("../textInput").text = ""
-		get_node("../soundEffectPlayer")._soundEffectPlay("correctSound")
+		get_node("../settingsMenu/soundEffectPlayer")._soundEffectPlay("correctSound")
 		get_node("../enemyDisplay").enemyChange = true
-	elif (get_node("../keymonkeyTextInput").text.contains(goalText)):
+	elif (get_node("../keymonkeyMenu/keymonkeyTextInput").text.contains(goalText)):
 		var money = 5 + pow(5, len(goalText))
 		get_node("../typeCount").dollars += money
 		get_node("../typeCount").score += money
@@ -31,12 +31,12 @@ func _process(_delta):
 		goalText = _generateString(get_node("../typeCount").score)
 		self.text = "[font_size=50]" + goalText
 		get_node("../textInput").text = ""
-		get_node("../keymonkeyTextInput").text = ""
-		get_node("../soundEffectPlayer")._soundEffectPlay("keymonkeySound")
+		get_node("../keymonkeyMenukeymonkeyTextInput").text = ""
+		get_node("../settingsMenu/soundEffectPlayer")._soundEffectPlay("keymonkeySound")
 		get_node("../enemyDisplay").enemyChange = true
 	elif (get_node("../textInput").text != "" && len(get_node("../textInput").text) >= len(goalText)) :
-		get_node("../soundEffectPlayer")._soundEffectPlay("mehSound")
-		get_node("../incorrectIndicator").incorrect = true
+		get_node("../settingsMenu/soundEffectPlayer")._soundEffectPlay("mehSound")
+		get_node("../textInput/incorrectIndicator").incorrect = true
 		get_node("../typeCount").deduction += 1
 		get_node("../textInput").text = ""
 	

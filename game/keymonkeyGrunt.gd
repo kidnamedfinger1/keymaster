@@ -15,7 +15,7 @@ func _on_pressed():
 		get_node("../soundEffectPlayer")._soundEffectPlay("upgradeSound")
 		get_node("../keymonkeyTextInput").totalKeymonkeys += 1
 		get_node("../keymonkeyTextInput").keymonkeyGrunts += 1
-		upgradePrice = upgradePrice * 1.1
+		upgradePrice = upgradePrice + (10 * (get_node("../keymonkeyTextInput").keymonkeyGrunts * 2))
 	else:
 		cash = false
 		get_node("../soundEffectPlayer")._soundEffectPlay("mehSound")
