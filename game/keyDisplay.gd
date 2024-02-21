@@ -29,10 +29,10 @@ func _process(_delta):
 		get_node("../typeCount").dollars += money
 		get_node("../typeCount").score += money
 		get_node("../typeCount").deduction = 0
+		get_node("../textInput").text = ""
+		get_node("../keymonkeyMenu/keymonkeyTextInput").text = (get_node("../keymonkeyMenu/keymonkeyTextInput").text).rstrip(goalText)
 		goalText = _generateString(get_node("../typeCount").score)
 		self.text = "[font_size=50]" + goalText
-		get_node("../textInput").text = ""
-		get_node("../keymonkeyMenu/keymonkeyTextInput").text = ""
 		get_node("../settingsMenu/soundEffectPlayer")._soundEffectPlay("keymonkeySound")
 		get_node("../enemyDisplay").enemyChange = true
 	elif (get_node("../textInput").text != "" && len(get_node("../textInput").text) >= len(goalText)) :

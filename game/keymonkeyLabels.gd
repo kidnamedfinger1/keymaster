@@ -11,3 +11,13 @@ func _process(delta):
 		get_node("../../keymonkeySniper/sniperCountLabel").visible = false
 	elif get_node("../../../keymonkeyMenuIndicator").visible == true && get_node("../../../keymonkeyTextInput").keymonkeySnipers > 0:
 		get_node("../../keymonkeySniper/sniperCountLabel").visible = true
+	get_node("../../keymonkeyGrunt/gruntCostLabel").text = "$" + str(get_node("../../keymonkeyGrunt").upgradePrice)
+	if get_node("../../../keymonkeyMenuIndicator").visible == false:
+		get_node("../../keymonkeyGrunt/gruntCostLabel").visible = false
+	else:
+		get_node("../../keymonkeyGrunt/gruntCostLabel").visible = true
+	get_node("../../keymonkeySniper/sniperCostLabel").text = "$" + str(get_node("../../keymonkeySniper").upgradePrice)
+	if get_node("../../../keymonkeyMenuIndicator").visible == false:
+		get_node("../../keymonkeySniper/sniperCostLabel").visible = false
+	else:
+		get_node("../../keymonkeySniper/sniperCostLabel").visible = true
