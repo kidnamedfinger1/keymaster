@@ -1,19 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3w4fc13vrtwr"]
+[gd_scene load_steps=5 format=3 uid="uid://c3w4fc13vrtwr"]
 
 [ext_resource type="Script" path="res://menu/menuButtons.gd" id="1_8amqh"]
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="1_h80ff"]
 [ext_resource type="Texture2D" uid="uid://bcacwf745petj" path="res://icon.svg" id="2_hcec2"]
+[ext_resource type="Texture2D" uid="uid://dsbys6asenoi4" path="res://game/textures/bigRedExitButton.png" id="2_uo4ag"]
 
 [node name="mainMenu" type="Node2D"]
 
 [node name="quit" type="Button" parent="."]
-offset_left = 283.0
-offset_top = 458.0
-offset_right = 819.0
-offset_bottom = 617.0
+offset_left = 1085.0
+offset_top = 576.0
+offset_right = 1143.0
+offset_bottom = 634.0
 theme_override_fonts/font = ExtResource("1_h80ff")
 theme_override_font_sizes/font_size = 41
-text = "QUIT TO DESKTOP"
+icon = ExtResource("2_uo4ag")
+flat = true
 script = ExtResource("1_8amqh")
 
 [node name="start" type="Button" parent="."]
