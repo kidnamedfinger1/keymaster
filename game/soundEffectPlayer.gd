@@ -9,9 +9,11 @@ func _soundEffectPlay(effect: String):
 	if effect == "goodSound":
 		self.stream = load("res://game/audio/buttonSelectPositive.wav")
 	elif effect == "correctSound":
-		self.stream = load("res://game/audio/quickGoodNoise.wav")
+		self.stream = load("res://game/audio/upgradeNoise.wav")
 	elif effect == "mehSound":
 		self.stream = load("res://game/audio/buttonSelectMedium.wav")
 	elif effect == "upgradeSound":
-		self.stream = load("res://game/audio/upgradeNoise.wav")
+		self.stream = load("res://game/audio/quickGoodNoise.wav")
+	elif effect == "keymonkeySound":
+		self.stream = load("res://game/audio/keymonkeyNoise.wav")
 	self.play()

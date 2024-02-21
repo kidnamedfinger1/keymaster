@@ -19,10 +19,8 @@ func _on_keymonkey_menu_pressed():
 	grab_focus()
 
 
-
 func _on_keymonkey_grunt_pressed():
 	grab_focus()
 
-
-func _on_template_settings_button_pressed():
+func _on_keymonkey_sniper_pressed():
 	grab_focus()
