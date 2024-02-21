@@ -1,5 +1,4 @@
 extends Button
-var fullScr = false
 var visibleMenu = false
 
 func _process(delta):
@@ -25,3 +24,10 @@ func _on_pressed():
 
 
 
+
+
+func _on_toggled(toggled_on):
+	if toggled_on == true:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
