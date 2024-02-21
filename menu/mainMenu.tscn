@@ -12,6 +12,7 @@ offset_top = 458.0
 offset_right = 819.0
 offset_bottom = 617.0
 theme_override_fonts/font = ExtResource("1_h80ff")
+theme_override_font_sizes/font_size = 41
 text = "QUIT TO DESKTOP"
 script = ExtResource("1_8amqh")
 
@@ -21,10 +22,12 @@ offset_top = 250.0
 offset_right = 820.0
 offset_bottom = 409.0
 theme_override_fonts/font = ExtResource("1_h80ff")
+theme_override_font_sizes/font_size = 41
 text = "START"
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(552, 117)
+position = Vector2(29, 620)
+scale = Vector2(0.28125, 0.28125)
 texture = ExtResource("2_hcec2")
 
 [connection signal="pressed" from="quit" to="quit" method="_on_quit_pressed"]

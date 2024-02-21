@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy0ykbvubd6y6"
-path="res://.godot/imported/keymonkeySniper.png.png-4a51aa6dedaeec341d1ef812191f9548.ctex"
+uid="uid://bnxbv44km31vm"
+path="res://.godot/imported/upgradeMenu1.png-0bf46fdcf2d54b929e6b875dc3eb0ea0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/textures/keymonkeySniper.png.png"
-dest_files=["res://.godot/imported/keymonkeySniper.png.png-4a51aa6dedaeec341d1ef812191f9548.ctex"]
+source_file="res://game/textures/upgradeMenu1.png"
+dest_files=["res://.godot/imported/upgradeMenu1.png-0bf46fdcf2d54b929e6b875dc3eb0ea0.ctex"]
 
 [params]
 
