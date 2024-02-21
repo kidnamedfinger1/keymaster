@@ -12,13 +12,13 @@ func _process(delta):
 func _on_pressed():
 	if get_node("../../../typeCount").dollars >= upgradePrice:
 		get_node("../../../typeCount").dollars -= upgradePrice
-		get_node("../soundEffectPlayer")._soundEffectPlay("upgradeSound")
-		get_node("../keymonkeyTextInput").totalKeymonkeys += 1
-		get_node("../keymonkeyTextInput").keymonkeySnipers += 1
-		upgradePrice = upgradePrice + (10 * (get_node("../keymonkeyTextInput").keymonkeySnipers * 2))
+		get_node("../../../settingsMenu/soundEffectPlayer")._soundEffectPlay("upgradeSound")
+		get_node("../../keymonkeyTextInput").totalKeymonkeys += 1
+		get_node("../../keymonkeyTextInput").keymonkeySnipers += 1
+		upgradePrice = upgradePrice + (10 * (get_node("../../keymonkeyTextInput").keymonkeySnipers * 2))
 	else:
 		cash = false
-		get_node("../soundEffectPlayer")._soundEffectPlay("mehSound")
+		get_node("../../../settingsMenu/soundEffectPlayer")._soundEffectPlay("mehSound")
 
 func _on_keymonkey_menu_pressed():
 	if visibleMenu == false:
