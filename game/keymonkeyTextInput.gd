@@ -4,7 +4,7 @@ var keymonkeyGrunts = 0
 var keymonkeySnipers = 0
 var gruntLastType = -1
 var sniperLastType = 0
-var lastKey = 0
+var rng = RandomNumberGenerator.new()
 
 func _process(delta):
 	if totalKeymonkeys > 0:
@@ -18,8 +18,7 @@ func _process(delta):
 	if keymonkeySnipers > 0:
 		if sniperLastType > (360/keymonkeySnipers):
 			sniperLastType = 0
-			self.text += (get_node("../../keyDisplay").goalText)[lastKey]
-			lastKey += 1
+			self.text += get_node("../../keyDisplay").goalText[rng.randi_range(0,(len(get_node("../../keyDisplay").goalText)) - 1)]
 		else:
 			sniperLastType += 1
 	if (self.text).length() > 20:
