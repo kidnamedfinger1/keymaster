@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=100 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -37,8 +37,11 @@
 [ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
 [ext_resource type="Texture2D" uid="uid://bipgvn4qqhesj" path="res://game/textures/quitToMenu.png" id="25_txocy"]
 [ext_resource type="Texture2D" uid="uid://bsaenaow17kl8" path="res://game/textures/upgradeMenu0.png" id="26_hsift"]
+[ext_resource type="Texture2D" uid="uid://igjwibumon00" path="res://game/textures/keymonkeyBrute.png" id="27_kewrk"]
 [ext_resource type="Texture2D" uid="uid://bnxbv44km31vm" path="res://game/textures/upgradeMenu1.png" id="27_nihsr"]
 [ext_resource type="Texture2D" uid="uid://ureioc847qe6" path="res://game/textures/upgradeMenu2.png" id="28_3gqtu"]
+[ext_resource type="Script" path="res://game/keymonkeyBrute.gd" id="28_ahwyj"]
+[ext_resource type="Script" path="res://game/keymonkeyClear.gd" id="30_32ybe"]
 [ext_resource type="Texture2D" uid="uid://40uspiv325ax" path="res://game/textures/musicTexture.png" id="32_nf6u7"]
 [ext_resource type="Texture2D" uid="uid://cjqa7tqy8vugc" path="res://game/textures/sfxTexture.png" id="33_bwtu4"]
 
@@ -566,6 +569,7 @@ offset_top = 1.0
 offset_right = -2.0
 offset_bottom = 24.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+text = "x0"
 horizontal_alignment = 2
 script = ExtResource("21_a3bil")
 
@@ -576,6 +580,7 @@ offset_top = 32.0
 offset_right = -4.0
 offset_bottom = 55.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$100"
 horizontal_alignment = 2
 script = ExtResource("21_a3bil")
 
@@ -600,6 +605,7 @@ offset_top = 1.0
 offset_right = -2.0
 offset_bottom = 24.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+text = "x0"
 horizontal_alignment = 2
 script = ExtResource("21_a3bil")
 
@@ -610,11 +616,47 @@ offset_top = 32.0
 offset_right = -4.0
 offset_bottom = 55.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$1000"
+horizontal_alignment = 2
+script = ExtResource("21_a3bil")
+
+[node name="keymonkeyBrute" type="Button" parent="keymonkeyMenu/keymonkeyMenuIndicator"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 154.0
+offset_right = 282.0
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 14
+text = "Brute
+"
+icon = ExtResource("27_kewrk")
+alignment = 2
+script = ExtResource("28_ahwyj")
+
+[node name="bruteCountLabel" type="Label" parent="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute"]
+layout_mode = 0
+offset_left = -42.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "x0"
+horizontal_alignment = 2
+script = ExtResource("21_a3bil")
+
+[node name="bruteCostLabel" type="Label" parent="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 32.0
+offset_right = -4.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$5000"
 horizontal_alignment = 2
 script = ExtResource("21_a3bil")
 
 [node name="keymonkeyTextInput" type="TextEdit" parent="keymonkeyMenu"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.181
@@ -630,6 +672,19 @@ theme_override_font_sizes/font_size = 17
 editable = false
 selecting_enabled = false
 script = ExtResource("24_bnfok")
+
+[node name="keymonkeyClear" type="Button" parent="keymonkeyMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.257
+anchor_bottom = 0.97
+offset_left = -370.0
+offset_top = 8.0
+offset_right = -337.929
+offset_bottom = -53.09
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "CLEAR"
+script = ExtResource("30_32ybe")
 
 [node name="settingsMenu" type="TextureButton" parent="."]
 offset_left = 1032.0
@@ -732,19 +787,22 @@ offset_left = 1027.0
 offset_top = 517.0
 offset_right = 1139.0
 offset_bottom = 552.0
-text = "debug ($100)"
+text = "debug ($10000)"
 
 [connection signal="pressed" from="upgradeMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="upgradeMenu" to="upgradeMenu/upgradeMenuIndicator" method="_on_upgrade_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" method="_on_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" method="_on_pressed"]
 [connection signal="focus_entered" from="keymonkeyMenu/keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyClear" to="keymonkeyMenu/keymonkeyClear" method="_on_pressed"]
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="settingsMenu/settingsMenuIndicator" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu/settingsMenuIndicator/quitToDesktop" to="settingsMenu/settingsMenuIndicator/quitToDesktop" method="_on_pressed"]

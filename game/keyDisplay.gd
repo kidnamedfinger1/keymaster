@@ -41,7 +41,7 @@ func _process(_delta):
 		get_node("../textInput").text = ""
 	
 
-func _generateString(correct: int) -> String:
+func _generateString(correct: int, forceStringLength: int = -1) -> String:
 	var stringLength = 0
 	var lengthOdds = 50 + correct
 	var randomLength = randi_range(0, lengthOdds)
@@ -58,6 +58,8 @@ func _generateString(correct: int) -> String:
 	else:
 		stringLength += 1
 	var randomString = ""
+	if forceStringLength != -1:
+		stringLength = forceStringLength
 	for x in stringLength:
 		randomString += (letters[rng.randi_range(0,25)])
 	return randomString

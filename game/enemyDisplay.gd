@@ -17,11 +17,14 @@ func _ready():
 		self.scale = Vector2(6,6)
 		self.position = Vector2(180,430)
 	elif enemy == "normalZombie":
-		self.scale = Vector2(5,5)
-		self.position = Vector2(150,330)
+		self.scale = Vector2(5.9,5.9)
+		self.position = Vector2(165,345)
 	elif enemy == "normalGoblin":
 		self.scale = Vector2(5.9,5.9)
 		self.position = Vector2(165,345)
+	elif enemy == "alienWizard":
+		self.scale = Vector2(4, 4)
+		self.position = Vector2(203, 307)
 	self.play(enemy)
 
 
