@@ -13,24 +13,25 @@ offset_top = 576.0
 offset_right = 1143.0
 offset_bottom = 634.0
 theme_override_fonts/font = ExtResource("1_h80ff")
-theme_override_font_sizes/font_size = 41
+theme_override_font_sizes/font_size = 0
 icon = ExtResource("2_uo4ag")
 flat = true
+icon_alignment = 1
 script = ExtResource("1_8amqh")
-
-[node name="start" type="Button" parent="."]
-offset_left = 284.0
-offset_top = 250.0
-offset_right = 820.0
-offset_bottom = 409.0
-theme_override_fonts/font = ExtResource("1_h80ff")
-theme_override_font_sizes/font_size = 41
-text = "START"
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(29, 620)
 scale = Vector2(0.28125, 0.28125)
 texture = ExtResource("2_hcec2")
 
+[node name="Label" type="Label" parent="."]
+offset_left = 415.0
+offset_top = 285.0
+offset_right = 716.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 40
+text = "Press K to start!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="quit" to="quit" method="_on_quit_pressed"]
-[connection signal="pressed" from="start" to="quit" method="_on_start_pressed"]

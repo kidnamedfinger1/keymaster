@@ -710,7 +710,7 @@ offset_left = 1027.0
 offset_top = 517.0
 offset_right = 1139.0
 offset_bottom = 552.0
-text = "debug ($100)"
+text = "debug ($500)"
 
 [connection signal="pressed" from="upgradeMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
