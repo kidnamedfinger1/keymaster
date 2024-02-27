@@ -29,7 +29,7 @@ func _process(_delta):
 		get_node("../typeCount").score += money
 		get_node("../typeCount").deduction = 0
 		get_node("../textInput").text = ""
-		get_node("../keymonkeyMenu/keymonkeyTextInput").text.replace(goalText, "")
+		get_node("../keymonkeyMenu/keymonkeyTextInput").text = (get_node("../keymonkeyMenu/keymonkeyTextInput").text).replacen(goalText, "")
 		goalText = _generateString(get_node("../typeCount").score)
 		self.text = "[font_size=50]" + goalText
 		get_node("../settingsMenu/soundEffectPlayer")._soundEffectPlay("keymonkeySound")

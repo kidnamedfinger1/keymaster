@@ -465,9 +465,10 @@ placeholder_text = "ENTER YOUR KEYS, MASTER"
 script = ExtResource("1_o5euh")
 
 [node name="incorrectIndicator" type="Label" parent="." groups=["Persist"]]
-offset_left = 23.0
+visible = false
+offset_left = 12.0
 offset_top = 535.0
-offset_right = 567.0
+offset_right = 556.0
 offset_bottom = 568.0
 text = "INCORRECT INPUT, PAYOUT DEDUCTED"
 label_settings = SubResource("LabelSettings_cw05m")
@@ -485,12 +486,14 @@ script = ExtResource("2_ocad6")
 
 [node name="keyDisplay" type="RichTextLabel" parent="." groups=["Persist"]]
 offset_left = 35.0
-offset_top = 483.0
-offset_right = 332.0
-offset_bottom = 542.0
+offset_top = 482.0
+offset_right = 1005.0
+offset_bottom = 538.0
 theme_override_fonts/normal_font = ExtResource("4_3tm58")
 bbcode_enabled = true
-text = "[font_size=50]Keymaster"
+text = "[font_size=50]KEYMASTER"
+scroll_active = false
+autowrap_mode = 1
 script = ExtResource("3_qnjyc")
 
 [node name="enemyDisplay" type="AnimatedSprite2D" parent="." groups=["Persist"]]
@@ -735,8 +738,8 @@ text = "debug ($100)"
 [connection signal="pressed" from="upgradeMenu" to="upgradeMenu/upgradeMenuIndicator" method="_on_upgrade_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" method="_on_pressed"]
