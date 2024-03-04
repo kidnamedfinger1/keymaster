@@ -1,16 +1,9 @@
 extends AnimatedSprite2D
 var enemyOptions = ["greenSlime", "normalSpider", "normalSkeleton", "normalZombie", "normalGoblin", "alienWizard"]
 var enemyChange = false
-var fullScr = false
 func selectEnemy(cashLevel) -> String:
 	var enemyRange = 4
 	return enemyOptions[randi_range(0, enemyRange)]
-
-func _on_fullscreenToggle_pressed():
-	if fullScr == false :
-		fullScr = true
-	elif  fullScr == true :
-		fullScr = false
 
 func _ready():
 	var enemy = selectEnemy(get_node("../typeCount").score)
@@ -24,20 +17,19 @@ func _ready():
 		self.scale = Vector2(6,6)
 		self.position = Vector2(180,430)
 	elif enemy == "normalZombie":
-		self.scale = Vector2(5,5)
-		self.position = Vector2(150,330)
+		self.scale = Vector2(5.9,5.9)
+		self.position = Vector2(165,345)
 	elif enemy == "normalGoblin":
 		self.scale = Vector2(5.9,5.9)
 		self.position = Vector2(165,345)
+	elif enemy == "alienWizard":
+		self.scale = Vector2(4, 4)
+		self.position = Vector2(203, 307)
 	self.play(enemy)
 
 
 
 func _process(_delta):
-	if fullScr == true:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	elif fullScr == false:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	if enemyChange == true:
 		var enemy = selectEnemy(get_node("../typeCount").score)
 		enemyChange = false

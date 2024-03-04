@@ -11,4 +11,4 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	dollars += 500
+	dollars += 10000

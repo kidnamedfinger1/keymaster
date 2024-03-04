@@ -25,14 +25,13 @@ func _process(_delta):
 		get_node("../enemyDisplay").enemyChange = true
 	elif (get_node("../keymonkeyMenu/keymonkeyTextInput").text.contains(goalText)):
 		var money = 5 + pow(5, len(goalText))
-		get_node("../keymonkeyMenu/keymonkeyTextInput").lastKey = 0
 		get_node("../typeCount").dollars += money
 		get_node("../typeCount").score += money
 		get_node("../typeCount").deduction = 0
+		get_node("../textInput").text = ""
+		get_node("../keymonkeyMenu/keymonkeyTextInput").text = (get_node("../keymonkeyMenu/keymonkeyTextInput").text).replacen(goalText, "")
 		goalText = _generateString(get_node("../typeCount").score)
 		self.text = "[font_size=50]" + goalText
-		get_node("../textInput").text = ""
-		get_node("../keymonkeyMenu/keymonkeyTextInput").text = ""
 		get_node("../settingsMenu/soundEffectPlayer")._soundEffectPlay("keymonkeySound")
 		get_node("../enemyDisplay").enemyChange = true
 	elif (get_node("../textInput").text != "" && len(get_node("../textInput").text) >= len(goalText)) :
@@ -42,7 +41,7 @@ func _process(_delta):
 		get_node("../textInput").text = ""
 	
 
-func _generateString(correct: int) -> String:
+func _generateString(correct: int, forceStringLength: int = -1) -> String:
 	var stringLength = 0
 	var lengthOdds = 50 + correct
 	var randomLength = randi_range(0, lengthOdds)
@@ -59,6 +58,8 @@ func _generateString(correct: int) -> String:
 	else:
 		stringLength += 1
 	var randomString = ""
+	if forceStringLength != -1:
+		stringLength = forceStringLength
 	for x in stringLength:
 		randomString += (letters[rng.randi_range(0,25)])
 	return randomString

@@ -1,8 +1,7 @@
 extends TextureRect
 
-func _process(delta):
-	if get_node("keymonkeyGrunt").visibleMenu == true:
-		self.visible = true
-	else:
+func _on_keymonkey_menu_pressed():
+	if self.visible == true:
 		self.visible = false
-
+	else:
+		self.visible = true

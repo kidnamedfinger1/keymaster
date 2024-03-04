@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=100 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://buvly6g80vog7" path="res://game/textures/settingsMenu2.png" id="17_3s8ux"]
 [ext_resource type="Script" path="res://game/musicPlayer.gd" id="17_552yc"]
 [ext_resource type="Texture2D" uid="uid://j1ar72d74o3o" path="res://game/textures/keymonkeyMenu2.png" id="17_lki21"]
+[ext_resource type="Script" path="res://game/upgradeMenuIndicator.gd" id="17_q8mrk"]
 [ext_resource type="Texture2D" uid="uid://jnkcdkvxi68m" path="res://game/textures/keymonkeyGrunt.png" id="20_q0vvn"]
 [ext_resource type="Script" path="res://game/keymonkeyLabels.gd" id="21_a3bil"]
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
@@ -36,10 +37,12 @@
 [ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
 [ext_resource type="Texture2D" uid="uid://bipgvn4qqhesj" path="res://game/textures/quitToMenu.png" id="25_txocy"]
 [ext_resource type="Texture2D" uid="uid://bsaenaow17kl8" path="res://game/textures/upgradeMenu0.png" id="26_hsift"]
+[ext_resource type="Texture2D" uid="uid://igjwibumon00" path="res://game/textures/keymonkeyBrute.png" id="27_kewrk"]
 [ext_resource type="Texture2D" uid="uid://bnxbv44km31vm" path="res://game/textures/upgradeMenu1.png" id="27_nihsr"]
 [ext_resource type="Texture2D" uid="uid://ureioc847qe6" path="res://game/textures/upgradeMenu2.png" id="28_3gqtu"]
+[ext_resource type="Script" path="res://game/keymonkeyBrute.gd" id="28_ahwyj"]
+[ext_resource type="Script" path="res://game/keymonkeyClear.gd" id="30_32ybe"]
 [ext_resource type="Texture2D" uid="uid://40uspiv325ax" path="res://game/textures/musicTexture.png" id="32_nf6u7"]
-[ext_resource type="Script" path="res://game/settingsMenuTextures.gd" id="33_4gmxa"]
 [ext_resource type="Texture2D" uid="uid://cjqa7tqy8vugc" path="res://game/textures/sfxTexture.png" id="33_bwtu4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
@@ -466,10 +469,10 @@ script = ExtResource("1_o5euh")
 
 [node name="incorrectIndicator" type="Label" parent="." groups=["Persist"]]
 visible = false
-offset_left = 24.0
-offset_top = 529.0
-offset_right = 568.0
-offset_bottom = 562.0
+offset_left = 12.0
+offset_top = 535.0
+offset_right = 556.0
+offset_bottom = 568.0
 text = "INCORRECT INPUT, PAYOUT DEDUCTED"
 label_settings = SubResource("LabelSettings_cw05m")
 script = ExtResource("4_2rxth")
@@ -486,12 +489,14 @@ script = ExtResource("2_ocad6")
 
 [node name="keyDisplay" type="RichTextLabel" parent="." groups=["Persist"]]
 offset_left = 35.0
-offset_top = 463.0
-offset_right = 332.0
-offset_bottom = 522.0
+offset_top = 482.0
+offset_right = 1005.0
+offset_bottom = 538.0
 theme_override_fonts/normal_font = ExtResource("4_3tm58")
 bbcode_enabled = true
-text = "[font_size=50]K"
+text = "[font_size=50]KEYMASTER"
+scroll_active = false
+autowrap_mode = 1
 script = ExtResource("3_qnjyc")
 
 [node name="enemyDisplay" type="AnimatedSprite2D" parent="." groups=["Persist"]]
@@ -512,6 +517,16 @@ texture_pressed = ExtResource("27_nihsr")
 texture_hover = ExtResource("28_3gqtu")
 stretch_mode = 5
 
+[node name="upgradeMenuIndicator" type="TextureRect" parent="upgradeMenu"]
+visible = false
+layout_mode = 0
+offset_left = -555.0
+offset_top = 94.0
+offset_right = -293.0
+offset_bottom = 473.0
+texture = ExtResource("21_n7rpq")
+script = ExtResource("17_q8mrk")
+
 [node name="keymonkeyMenu" type="TextureButton" parent="."]
 offset_left = 945.0
 offset_top = 10.0
@@ -526,7 +541,7 @@ stretch_mode = 5
 [node name="keymonkeyMenuIndicator" type="TextureRect" parent="keymonkeyMenu"]
 visible = false
 layout_mode = 0
-offset_left = -419.0
+offset_left = -374.0
 offset_top = 94.0
 offset_right = -59.0
 offset_bottom = 473.0
@@ -534,71 +549,142 @@ texture = ExtResource("21_n7rpq")
 script = ExtResource("16_3s2vi")
 
 [node name="keymonkeyGrunt" type="Button" parent="keymonkeyMenu/keymonkeyMenuIndicator"]
-visible = false
 layout_mode = 0
-offset_left = 117.0
+offset_left = 161.0
 offset_top = 34.0
-offset_right = 317.0
+offset_right = 282.0
 offset_bottom = 90.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 theme_override_font_sizes/font_size = 14
-text = "Keymonkey Grunt
+text = "Grunt
 "
 icon = ExtResource("20_q0vvn")
 alignment = 2
 script = ExtResource("6_p0qbj")
 
 [node name="gruntCountLabel" type="Label" parent="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt"]
-visible = false
 layout_mode = 0
 offset_left = -42.0
 offset_top = 1.0
 offset_right = -2.0
 offset_bottom = 24.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+text = "x0"
+horizontal_alignment = 2
+script = ExtResource("21_a3bil")
+
+[node name="gruntCostLabel" type="Label" parent="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 32.0
+offset_right = -4.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$100"
+horizontal_alignment = 2
 script = ExtResource("21_a3bil")
 
 [node name="keymonkeySniper" type="Button" parent="keymonkeyMenu/keymonkeyMenuIndicator"]
-visible = false
 layout_mode = 0
-offset_left = 117.0
+offset_left = 161.0
 offset_top = 94.0
-offset_right = 317.0
+offset_right = 282.0
 offset_bottom = 150.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 theme_override_font_sizes/font_size = 14
-text = "Keymonkey Sniper
+text = "Sniper
 "
 icon = ExtResource("22_pprcd")
 alignment = 2
 script = ExtResource("23_ennwf")
 
 [node name="sniperCountLabel" type="Label" parent="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper"]
-visible = false
 layout_mode = 0
 offset_left = -42.0
 offset_top = 1.0
 offset_right = -2.0
 offset_bottom = 24.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+text = "x0"
+horizontal_alignment = 2
+script = ExtResource("21_a3bil")
+
+[node name="sniperCostLabel" type="Label" parent="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 32.0
+offset_right = -4.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$1000"
+horizontal_alignment = 2
+script = ExtResource("21_a3bil")
+
+[node name="keymonkeyBrute" type="Button" parent="keymonkeyMenu/keymonkeyMenuIndicator"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 154.0
+offset_right = 282.0
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 14
+text = "Brute
+"
+icon = ExtResource("27_kewrk")
+alignment = 2
+script = ExtResource("28_ahwyj")
+
+[node name="bruteCountLabel" type="Label" parent="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute"]
+layout_mode = 0
+offset_left = -42.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "x0"
+horizontal_alignment = 2
+script = ExtResource("21_a3bil")
+
+[node name="bruteCostLabel" type="Label" parent="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 32.0
+offset_right = -4.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$5000"
+horizontal_alignment = 2
 script = ExtResource("21_a3bil")
 
 [node name="keymonkeyTextInput" type="TextEdit" parent="keymonkeyMenu"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.181
 anchor_top = -1.813
 anchor_right = 0.181
 anchor_bottom = -1.813
-offset_left = -317.557
+offset_left = -326.557
 offset_top = 183.861
 offset_right = -104.557
-offset_bottom = 262.861
+offset_bottom = 216.861
 theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 17
 editable = false
 selecting_enabled = false
 script = ExtResource("24_bnfok")
+
+[node name="keymonkeyClear" type="Button" parent="keymonkeyMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.257
+anchor_bottom = 0.97
+offset_left = -370.0
+offset_top = 8.0
+offset_right = -337.929
+offset_bottom = -53.09
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "CLEAR"
+script = ExtResource("30_32ybe")
 
 [node name="settingsMenu" type="TextureButton" parent="."]
 offset_left = 1032.0
@@ -622,7 +708,6 @@ texture = ExtResource("21_n7rpq")
 script = ExtResource("22_vxg88")
 
 [node name="quitToDesktop" type="Button" parent="settingsMenu/settingsMenuIndicator"]
-visible = false
 layout_mode = 0
 offset_left = 32.0
 offset_top = 106.0
@@ -635,7 +720,6 @@ icon = ExtResource("23_1wxbc")
 script = ExtResource("23_wd4hm")
 
 [node name="quitToMenu" type="Button" parent="settingsMenu/settingsMenuIndicator"]
-visible = false
 layout_mode = 0
 offset_left = 32.0
 offset_top = 41.0
@@ -649,7 +733,6 @@ alignment = 2
 script = ExtResource("23_wd4hm")
 
 [node name="sfxSlider" type="HSlider" parent="settingsMenu/settingsMenuIndicator"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.153
@@ -662,13 +745,10 @@ value = 50.0
 script = ExtResource("24_me2kb")
 
 [node name="sfxSettingsIcon" type="Sprite2D" parent="settingsMenu/settingsMenuIndicator/sfxSlider"]
-visible = false
 position = Vector2(-32, 17)
 texture = ExtResource("33_bwtu4")
-script = ExtResource("33_4gmxa")
 
 [node name="musicSlider" type="HSlider" parent="settingsMenu/settingsMenuIndicator"]
-visible = false
 layout_mode = 0
 offset_left = 92.0
 offset_top = 203.0
@@ -678,13 +758,10 @@ value = 50.0
 script = ExtResource("24_me2kb")
 
 [node name="musicSettingsIcon" type="Sprite2D" parent="settingsMenu/settingsMenuIndicator/musicSlider"]
-visible = false
 position = Vector2(-32, 18)
 texture = ExtResource("32_nf6u7")
-script = ExtResource("33_4gmxa")
 
 [node name="fullscreenToggle" type="CheckButton" parent="settingsMenu/settingsMenuIndicator"]
-visible = false
 layout_mode = 0
 offset_left = 30.0
 offset_top = 167.0
@@ -710,33 +787,25 @@ offset_left = 1027.0
 offset_top = 517.0
 offset_right = 1139.0
 offset_bottom = 552.0
-text = "debug ($500)"
+text = "debug ($10000)"
 
 [connection signal="pressed" from="upgradeMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="upgradeMenu" to="upgradeMenu/upgradeMenuIndicator" method="_on_upgrade_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt/gruntCountLabel" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu" to="settingsMenu/settingsMenuIndicator/quitToMenu" method="_on_keymonkey_menu_pressed"]
+[connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" method="_on_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" method="_on_pressed"]
 [connection signal="focus_entered" from="keymonkeyMenu/keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyClear" to="keymonkeyMenu/keymonkeyClear" method="_on_pressed"]
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="settingsMenu/settingsMenuIndicator/quitToDesktop" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="settingsMenu/settingsMenuIndicator/quitToMenu" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="settingsMenu/settingsMenuIndicator/sfxSlider" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="settingsMenu/settingsMenuIndicator/sfxSlider/sfxSettingsIcon" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="settingsMenu/settingsMenuIndicator/musicSlider" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="settingsMenu/settingsMenuIndicator/musicSlider/musicSettingsIcon" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="settingsMenu/settingsMenuIndicator/fullscreenToggle" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="settingsMenu/settingsMenuIndicator" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu/settingsMenuIndicator/quitToDesktop" to="settingsMenu/settingsMenuIndicator/quitToDesktop" method="_on_pressed"]
 [connection signal="pressed" from="settingsMenu/settingsMenuIndicator/quitToMenu" to="settingsMenu/settingsMenuIndicator/quitToMenu" method="_on_quitToMenu_pressed"]
-[connection signal="pressed" from="settingsMenu/settingsMenuIndicator/fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_pressed"]
-[connection signal="pressed" from="settingsMenu/settingsMenuIndicator/fullscreenToggle" to="settingsMenu/settingsMenuIndicator" method="_on_fullscreenToggle_pressed"]
-[connection signal="toggled" from="settingsMenu/settingsMenuIndicator/fullscreenToggle" to="enemyDisplay" method="_on_fullscreenToggle_toggled"]
-[connection signal="toggled" from="settingsMenu/settingsMenuIndicator/fullscreenToggle" to="enemyDisplay" method="_process"]
+[connection signal="toggled" from="settingsMenu/settingsMenuIndicator/fullscreenToggle" to="settingsMenu/settingsMenuIndicator/fullscreenToggle" method="_on_toggled"]
 [connection signal="pressed" from="debug" to="typeCount" method="_on_button_pressed"]
