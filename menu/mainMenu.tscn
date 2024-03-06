@@ -175,7 +175,7 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_m62q8")
 animation = &"castle"
 autoplay = "castle"
-frame_progress = 0.0154418
+frame_progress = 0.340993
 
 [node name="quit" type="Button" parent="."]
 offset_left = 283.0
