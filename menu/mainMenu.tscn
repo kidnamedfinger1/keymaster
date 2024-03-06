@@ -1,5 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://c3w4fc13vrtwr"]
 
+[ext_resource type="Texture2D" uid="uid://jf318n120huv" path="res://game/textures/animatedCastle.png" id="1_3qg2k"]
 [ext_resource type="Script" path="res://menu/menuButtons.gd" id="1_8amqh"]
 [ext_resource type="Texture2D" uid="uid://dbmx68hklmjvg" path="res://game/textures/castle.png" id="1_efc5o"]
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="1_h80ff"]
@@ -195,13 +196,23 @@ position = Vector2(29, 620)
 scale = Vector2(0.28125, 0.28125)
 texture = ExtResource("2_hcec2")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 415.0
-offset_top = 285.0
-offset_right = 716.0
-offset_bottom = 340.0
+[node name="starmpt" type="Label" parent="."]
+offset_left = 432.0
+offset_top = 459.0
+offset_right = 733.0
+offset_bottom = 514.0
 theme_override_font_sizes/font_size = 40
 text = "Press K to start!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="credits" type="Label" parent="."]
+offset_left = 53.0
+offset_top = 595.0
+offset_right = 276.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 20
+text = "Created with Godot 4.0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
