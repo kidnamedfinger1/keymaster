@@ -836,6 +836,7 @@ text = "debug ($10000)"
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" method="_on_pressed"]
