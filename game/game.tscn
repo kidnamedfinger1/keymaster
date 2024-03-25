@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=105 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c3uti70cnhyhk" path="res://game/textures/settingsMenu0.png" id="15_48w6y"]
 [ext_resource type="Texture2D" uid="uid://ds4kosxfvx6po" path="res://game/textures/keymonkeyMenu0.png" id="15_n0lvg"]
 [ext_resource type="Script" path="res://game/keymonkeyMenuIndicator.gd" id="16_3s2vi"]
+[ext_resource type="Script" path="res://game/upgradeMenu.gd" id="16_h7huu"]
 [ext_resource type="AudioStream" uid="uid://c0277spps20sm" path="res://game/audio/Keysmash.wav" id="16_mk2pn"]
 [ext_resource type="Texture2D" uid="uid://b05ghak67p637" path="res://game/textures/settingsMenu1.png" id="16_oceue"]
 [ext_resource type="Texture2D" uid="uid://cbkq16dobbqfr" path="res://game/textures/keymonkeyMenu1.png" id="16_yjond"]
@@ -44,8 +45,10 @@
 [ext_resource type="Texture2D" uid="uid://cme62o7216njt" path="res://game/textures/keymonkeyMage.png" id="29_e2him"]
 [ext_resource type="Script" path="res://game/keymonkeyClear.gd" id="30_32ybe"]
 [ext_resource type="Script" path="res://game/keymonkeyMage.gd" id="30_esxf7"]
+[ext_resource type="Texture2D" uid="uid://biwuhynsltcp4" path="res://game/textures/keymonkeyKing.png" id="32_7wa4a"]
 [ext_resource type="Texture2D" uid="uid://40uspiv325ax" path="res://game/textures/musicTexture.png" id="32_nf6u7"]
 [ext_resource type="Texture2D" uid="uid://cjqa7tqy8vugc" path="res://game/textures/sfxTexture.png" id="33_bwtu4"]
+[ext_resource type="Script" path="res://game/keymonkeyKing.gd" id="33_dxq8k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -519,6 +522,7 @@ texture_normal = ExtResource("26_hsift")
 texture_pressed = ExtResource("27_nihsr")
 texture_hover = ExtResource("28_3gqtu")
 stretch_mode = 5
+script = ExtResource("16_h7huu")
 
 [node name="upgradeMenuIndicator" type="TextureRect" parent="upgradeMenu"]
 layout_mode = 0
@@ -541,6 +545,7 @@ texture_hover = ExtResource("17_lki21")
 stretch_mode = 5
 
 [node name="keymonkeyMenuIndicator" type="TextureRect" parent="keymonkeyMenu"]
+visible = false
 layout_mode = 0
 offset_left = -374.0
 offset_top = 94.0
@@ -689,9 +694,33 @@ offset_top = 32.0
 offset_right = -4.0
 offset_bottom = 55.0
 theme_override_fonts/font = ExtResource("4_3tm58")
-text = "$5000"
+text = "$10000"
 horizontal_alignment = 2
 script = ExtResource("21_a3bil")
+
+[node name="keymonkeyKing" type="Button" parent="keymonkeyMenu/keymonkeyMenuIndicator"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 274.0
+offset_right = 282.0
+offset_bottom = 330.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 16
+text = "King
+"
+icon = ExtResource("32_7wa4a")
+alignment = 2
+script = ExtResource("33_dxq8k")
+
+[node name="kingCostLabel" type="Label" parent="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 32.0
+offset_right = -4.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$100000"
+horizontal_alignment = 2
 
 [node name="keymonkeyTextInput" type="TextEdit" parent="keymonkeyMenu"]
 visible = false
@@ -809,6 +838,7 @@ offset_top = 167.0
 offset_right = 233.0
 offset_bottom = 198.0
 theme_override_fonts/font = ExtResource("4_3tm58")
+button_pressed = true
 text = "Fullscreen"
 script = ExtResource("23_wd4hm")
 
@@ -836,7 +866,6 @@ text = "debug ($10000)"
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" method="_on_pressed"]
@@ -846,6 +875,9 @@ text = "debug ($10000)"
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" method="_on_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" method="_on_pressed"]
 [connection signal="focus_entered" from="keymonkeyMenu/keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyClear" to="keymonkeyMenu/keymonkeyClear" method="_on_pressed"]
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]

@@ -4,10 +4,12 @@ var keymonkeyGrunts = 0
 var keymonkeySnipers = 0
 var keymonkeyBrutes = 0
 var keymonkeyMages = 0
+var keymonkeyKing = false
 var gruntLastType = -1
 var sniperLastType = 0
 var bruteLastType = -1
 var mageLastType = 0
+var kingLastType = 0
 var rng = RandomNumberGenerator.new()
 
 func _process(delta):
