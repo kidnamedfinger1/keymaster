@@ -484,9 +484,8 @@ script = ExtResource("4_2rxth")
 
 [node name="typeCount" type="Label" parent="." groups=["Persist"]]
 offset_left = 25.0
-offset_top = 20.0
 offset_right = 174.0
-offset_bottom = 53.0
+offset_bottom = 115.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "$0"
 label_settings = SubResource("LabelSettings_nhskn")
@@ -512,7 +511,6 @@ animation = &"normalGoblin"
 script = ExtResource("14_vii53")
 
 [node name="upgradeMenu" type="TextureButton" parent="."]
-visible = false
 offset_left = 858.0
 offset_top = 10.0
 offset_right = 955.0
