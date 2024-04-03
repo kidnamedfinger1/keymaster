@@ -1,6 +1,5 @@
 [gd_scene load_steps=29 format=3 uid="uid://c3w4fc13vrtwr"]
 
-[ext_resource type="Texture2D" uid="uid://jf318n120huv" path="res://game/textures/animatedCastle.png" id="1_3qg2k"]
 [ext_resource type="Script" path="res://menu/menuButtons.gd" id="1_8amqh"]
 [ext_resource type="Texture2D" uid="uid://dbmx68hklmjvg" path="res://game/textures/castle.png" id="1_efc5o"]
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="1_h80ff"]
