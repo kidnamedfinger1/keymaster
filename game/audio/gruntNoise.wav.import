@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dkccw54285iij"
-path="res://.godot/imported/keymonkeyNoise.wav-8596b7da6934a83b60b668ffdf80c805.sample"
+path="res://.godot/imported/gruntNoise.wav-3e8caa99983fe1ed88c837a55886b061.sample"
 
 [deps]
 
-source_file="res://game/audio/keymonkeyNoise.wav"
-dest_files=["res://.godot/imported/keymonkeyNoise.wav-8596b7da6934a83b60b668ffdf80c805.sample"]
+source_file="res://game/audio/gruntNoise.wav"
+dest_files=["res://.godot/imported/gruntNoise.wav-3e8caa99983fe1ed88c837a55886b061.sample"]
 
 [params]
 

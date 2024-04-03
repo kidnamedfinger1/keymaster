@@ -26,7 +26,7 @@ func _process(_delta):
 	elif (get_node("../keymonkeyMenu/keymonkeyTextInput").text.contains(goalText)):
 		var money = 5 + pow(5, len(goalText))
 		get_node("../typeCount").dollars += money
-		get_node("../typeCount").score += money
+		get_node("../typeCount").score += 2 * len(goalText)
 		get_node("../typeCount").deduction = 0
 		get_node("../textInput").text = ""
 		get_node("../keymonkeyMenu/keymonkeyTextInput").text = (get_node("../keymonkeyMenu/keymonkeyTextInput").text).replacen(goalText, "")

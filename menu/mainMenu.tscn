@@ -196,20 +196,21 @@ scale = Vector2(0.28125, 0.28125)
 texture = ExtResource("2_hcec2")
 
 [node name="starmpt" type="Label" parent="."]
-offset_left = 432.0
-offset_top = 459.0
-offset_right = 733.0
-offset_bottom = 514.0
-theme_override_font_sizes/font_size = 40
+offset_top = 475.0
+offset_right = 1152.0
+offset_bottom = 530.0
+theme_override_fonts/font = ExtResource("1_h80ff")
+theme_override_font_sizes/font_size = 48
 text = "Press K to start!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="credits" type="Label" parent="."]
-offset_left = 53.0
-offset_top = 595.0
-offset_right = 276.0
-offset_bottom = 639.0
+offset_left = 57.0
+offset_top = 602.0
+offset_right = 321.0
+offset_bottom = 646.0
+theme_override_fonts/font = ExtResource("1_h80ff")
 theme_override_font_sizes/font_size = 20
 text = "Created with Godot 4.0"
 horizontal_alignment = 1
