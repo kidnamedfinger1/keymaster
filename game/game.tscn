@@ -838,7 +838,6 @@ offset_top = 167.0
 offset_right = 233.0
 offset_bottom = 198.0
 theme_override_fonts/font = ExtResource("4_3tm58")
-button_pressed = true
 text = "Fullscreen"
 script = ExtResource("23_wd4hm")
 
