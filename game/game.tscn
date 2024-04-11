@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=126 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://game/incorrectIndicator.gd" id="4_2rxth"]
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="4_3tm58"]
 [ext_resource type="Script" path="res://game/keymonkeyGrunt.gd" id="6_p0qbj"]
+[ext_resource type="Texture2D" uid="uid://10o47qrv8dkw" path="res://game/textures/enhancedSkeleton.png" id="7_45i6k"]
 [ext_resource type="Texture2D" uid="uid://cexlb0pv017h1" path="res://game/textures/normalGoblin.png" id="8_j327l"]
 [ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
 [ext_resource type="Texture2D" uid="uid://cimiyhln4bcau" path="res://game/textures/normalSpider.png" id="11_8wogh"]
@@ -110,6 +111,86 @@ region = Rect2(120, 360, 120, 120)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1toqp"]
 atlas = ExtResource("12_pfy1k")
 region = Rect2(240, 360, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jt1hx"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(0, 0, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41s2i"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(45, 0, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ead2i"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(90, 0, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_berqv"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(135, 0, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7xqc"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(0, 40, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66r2f"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(45, 40, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q0f1"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(90, 40, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnngy"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(135, 40, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7ch1"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(0, 80, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvig3"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(45, 80, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myyhc"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(90, 80, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_patwa"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(135, 80, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1et7a"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(0, 120, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evj2s"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(45, 120, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paa2i"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(90, 120, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s48sx"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(135, 120, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yqvm"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(0, 160, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34epp"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(45, 160, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv4ya"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(90, 160, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5anor"]
+atlas = ExtResource("7_45i6k")
+region = Rect2(135, 160, 45, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_48bpp"]
 atlas = ExtResource("8_npd3x")
@@ -316,6 +397,71 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_jt1hx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41s2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ead2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_berqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7xqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66r2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q0f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnngy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7ch1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvig3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myyhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_patwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1et7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evj2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paa2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s48sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yqvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34epp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv4ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5anor")
+}],
+"loop": true,
+"name": &"enhancedSkeleton",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_48bpp")
 }, {
 "duration": 1.0,
@@ -508,7 +654,8 @@ script = ExtResource("3_qnjyc")
 position = Vector2(165, 345)
 scale = Vector2(5.9, 5.9)
 sprite_frames = SubResource("SpriteFrames_vrqvd")
-animation = &"normalGoblin"
+animation = &"normalSkeleton"
+frame_progress = 0.336215
 script = ExtResource("14_vii53")
 
 [node name="upgradeMenu" type="TextureButton" parent="."]
@@ -863,19 +1010,19 @@ text = "debug ($10000)"
 [connection signal="pressed" from="upgradeMenu" to="upgradeMenu/upgradeMenuIndicator" method="_on_upgrade_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" method="_on_pressed"]
 [connection signal="focus_entered" from="keymonkeyMenu/keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyClear" to="keymonkeyMenu/keymonkeyClear" method="_on_pressed"]
