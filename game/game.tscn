@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=106 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -25,7 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://buvly6g80vog7" path="res://game/textures/settingsMenu2.png" id="17_3s8ux"]
 [ext_resource type="Script" path="res://game/musicPlayer.gd" id="17_552yc"]
 [ext_resource type="Texture2D" uid="uid://j1ar72d74o3o" path="res://game/textures/keymonkeyMenu2.png" id="17_lki21"]
-[ext_resource type="Script" path="res://game/upgradeMenuIndicator.gd" id="17_q8mrk"]
+[ext_resource type="Script" path="res://game/kingButtons.gd" id="18_k878p"]
+[ext_resource type="Script" path="res://game/kingLabels.gd" id="19_i5mak"]
 [ext_resource type="Texture2D" uid="uid://jnkcdkvxi68m" path="res://game/textures/keymonkeyGrunt.png" id="20_q0vvn"]
 [ext_resource type="Script" path="res://game/keymonkeyLabels.gd" id="21_a3bil"]
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
@@ -523,13 +524,190 @@ stretch_mode = 5
 script = ExtResource("16_h7huu")
 
 [node name="upgradeMenuIndicator" type="TextureRect" parent="upgradeMenu"]
+visible = false
 layout_mode = 0
 offset_left = -555.0
 offset_top = 94.0
 offset_right = -293.0
 offset_bottom = 473.0
 texture = ExtResource("21_n7rpq")
-script = ExtResource("17_q8mrk")
+
+[node name="kingSpeed" type="Button" parent="upgradeMenu/upgradeMenuIndicator"]
+offset_left = 139.0
+offset_top = 130.0
+offset_right = 229.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 16
+text = "Speed
+"
+alignment = 2
+script = ExtResource("18_k878p")
+
+[node name="kingSpeedModifier" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingSpeed"]
+layout_mode = 0
+offset_left = -62.0
+offset_top = -3.0
+offset_right = -2.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "Lvl 1"
+horizontal_alignment = 2
+script = ExtResource("19_i5mak")
+
+[node name="kingSpeedCost" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingSpeed"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 17.0
+offset_right = -4.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$1000"
+horizontal_alignment = 2
+script = ExtResource("19_i5mak")
+
+[node name="kingSight" type="Button" parent="upgradeMenu/upgradeMenuIndicator"]
+offset_left = 139.0
+offset_top = 176.0
+offset_right = 229.0
+offset_bottom = 204.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 16
+text = "Sight"
+alignment = 2
+script = ExtResource("18_k878p")
+
+[node name="kingSightModifier" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingSight"]
+layout_mode = 0
+offset_left = -62.0
+offset_top = -3.0
+offset_right = -2.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "Lvl 1"
+horizontal_alignment = 2
+script = ExtResource("19_i5mak")
+
+[node name="kingSightCost" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingSight"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 17.0
+offset_right = -4.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$1000"
+horizontal_alignment = 2
+script = ExtResource("19_i5mak")
+
+[node name="kingStrength" type="Button" parent="upgradeMenu/upgradeMenuIndicator"]
+offset_left = 139.0
+offset_top = 222.0
+offset_right = 229.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 16
+text = "Strength
+"
+alignment = 2
+script = ExtResource("18_k878p")
+
+[node name="kingStrengthModifier" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingStrength"]
+layout_mode = 0
+offset_left = -62.0
+offset_top = -3.0
+offset_right = -2.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "Lvl 1"
+horizontal_alignment = 2
+script = ExtResource("19_i5mak")
+
+[node name="kingStrengthCost" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingStrength"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 17.0
+offset_right = -4.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$1000"
+horizontal_alignment = 2
+script = ExtResource("19_i5mak")
+
+[node name="kingStakes" type="Button" parent="upgradeMenu/upgradeMenuIndicator"]
+offset_left = 139.0
+offset_top = 268.0
+offset_right = 229.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 16
+text = "Stakes
+"
+alignment = 2
+script = ExtResource("18_k878p")
+
+[node name="kingStakesModifier" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingStakes"]
+layout_mode = 0
+offset_left = -62.0
+offset_top = -3.0
+offset_right = -2.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "Lvl 1"
+horizontal_alignment = 2
+script = ExtResource("19_i5mak")
+
+[node name="kingStakesCost" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingStakes"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 17.0
+offset_right = -4.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$10000"
+horizontal_alignment = 2
+script = ExtResource("19_i5mak")
+
+[node name="kingSwag" type="Button" parent="upgradeMenu/upgradeMenuIndicator"]
+offset_left = 139.0
+offset_top = 314.0
+offset_right = 229.0
+offset_bottom = 342.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 16
+text = "Swag
+"
+alignment = 2
+script = ExtResource("18_k878p")
+
+[node name="kingSwagModifier" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingSwag"]
+layout_mode = 0
+offset_left = -62.0
+offset_top = -3.0
+offset_right = -2.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "Lvl 1"
+horizontal_alignment = 2
+script = ExtResource("19_i5mak")
+
+[node name="kingSwagCost" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingSwag"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 17.0
+offset_right = -4.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("4_3tm58")
+text = "$100000"
+horizontal_alignment = 2
+script = ExtResource("19_i5mak")
+
+[node name="keymonkeyKingMenuIcon" type="TextureRect" parent="upgradeMenu/upgradeMenuIndicator"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 12.0
+offset_right = 164.0
+offset_bottom = 77.0
+texture = ExtResource("32_7wa4a")
 
 [node name="keymonkeyMenu" type="TextureButton" parent="."]
 offset_left = 945.0
@@ -858,8 +1036,7 @@ offset_right = 1139.0
 offset_bottom = 552.0
 text = "debug ($10000)"
 
-[connection signal="pressed" from="upgradeMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="upgradeMenu" to="upgradeMenu/upgradeMenuIndicator" method="_on_upgrade_menu_pressed"]
+[connection signal="pressed" from="upgradeMenu" to="upgradeMenu" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
