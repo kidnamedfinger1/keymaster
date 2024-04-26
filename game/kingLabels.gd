@@ -12,7 +12,7 @@ var strengthLevel = 1
 var stakesLevel = 1
 var swagLevel = 1
 
-func _process(delta):
+func _process(_delta):
 	get_node("../../kingSpeed/kingSpeedCost").text = "$" + str(speedUpgrade)
 	get_node("../../kingSight/kingSightCost").text = "$" + str(sightUpgrade)
 	get_node("../../kingStrength/kingStrengthCost").text = "$" + str(strengthUpgrade)

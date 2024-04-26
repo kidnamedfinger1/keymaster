@@ -1,6 +1,5 @@
 extends Button
 var upgradePrice = 100000
-var cash = true
 
 
 func _on_pressed():
@@ -8,7 +7,8 @@ func _on_pressed():
 		get_node("../../../typeCount").dollars -= upgradePrice
 		get_node("../../../settingsMenu/soundEffectPlayer")._soundEffectPlay("upgradeSound")
 		get_node("../../keymonkeyTextInput").keymonkeyKing = true
+		get_node("../../keymonkeyTextInput").totalKeymonkeys += 1
 		disabled = true
 	else:
-		cash = false
+		get_node("../../../incorrectIndicator").cash = false
 		get_node("../../../settingsMenu/soundEffectPlayer")._soundEffectPlay("mehSound")
