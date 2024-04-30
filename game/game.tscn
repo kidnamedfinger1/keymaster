@@ -565,7 +565,6 @@ offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "$1000"
 horizontal_alignment = 2
-script = ExtResource("19_i5mak")
 
 [node name="kingSight" type="Button" parent="upgradeMenu/upgradeMenuIndicator"]
 layout_mode = 0
@@ -588,7 +587,6 @@ offset_bottom = 20.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Lvl 1"
 horizontal_alignment = 2
-script = ExtResource("19_i5mak")
 
 [node name="kingSightCost" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingSight"]
 layout_mode = 0
@@ -599,7 +597,6 @@ offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "$1000"
 horizontal_alignment = 2
-script = ExtResource("19_i5mak")
 
 [node name="kingStrength" type="Button" parent="upgradeMenu/upgradeMenuIndicator"]
 layout_mode = 0
@@ -623,7 +620,6 @@ offset_bottom = 20.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Lvl 1"
 horizontal_alignment = 2
-script = ExtResource("19_i5mak")
 
 [node name="kingStrengthCost" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingStrength"]
 layout_mode = 0
@@ -634,7 +630,6 @@ offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "$1000"
 horizontal_alignment = 2
-script = ExtResource("19_i5mak")
 
 [node name="kingStakes" type="Button" parent="upgradeMenu/upgradeMenuIndicator"]
 layout_mode = 0
@@ -658,7 +653,6 @@ offset_bottom = 20.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Lvl 1"
 horizontal_alignment = 2
-script = ExtResource("19_i5mak")
 
 [node name="kingStakesCost" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingStakes"]
 layout_mode = 0
@@ -669,7 +663,6 @@ offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "$10000"
 horizontal_alignment = 2
-script = ExtResource("19_i5mak")
 
 [node name="kingSwag" type="Button" parent="upgradeMenu/upgradeMenuIndicator"]
 layout_mode = 0
@@ -693,7 +686,6 @@ offset_bottom = 20.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "Lvl 1"
 horizontal_alignment = 2
-script = ExtResource("19_i5mak")
 
 [node name="kingSwagCost" type="Label" parent="upgradeMenu/upgradeMenuIndicator/kingSwag"]
 layout_mode = 0
@@ -704,7 +696,6 @@ offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "$100000"
 horizontal_alignment = 2
-script = ExtResource("19_i5mak")
 
 [node name="keymonkeyKingMenuIcon" type="TextureRect" parent="upgradeMenu/upgradeMenuIndicator"]
 layout_mode = 0
@@ -1043,21 +1034,25 @@ text = "debug ($10000)"
 
 [connection signal="pressed" from="upgradeMenu" to="upgradeMenu" method="_on_pressed"]
 [connection signal="pressed" from="upgradeMenu/upgradeMenuIndicator/kingSpeed" to="upgradeMenu/upgradeMenuIndicator/kingSpeed" method="_on_king_speed_pressed"]
+[connection signal="pressed" from="upgradeMenu/upgradeMenuIndicator/kingSight" to="upgradeMenu/upgradeMenuIndicator/kingSight" method="_on_king_sight_pressed"]
+[connection signal="pressed" from="upgradeMenu/upgradeMenuIndicator/kingStrength" to="upgradeMenu/upgradeMenuIndicator/kingStrength" method="_on_king_strength_pressed"]
+[connection signal="pressed" from="upgradeMenu/upgradeMenuIndicator/kingStakes" to="upgradeMenu/upgradeMenuIndicator/kingStakes" method="_on_king_stakes_pressed"]
+[connection signal="pressed" from="upgradeMenu/upgradeMenuIndicator/kingSwag" to="upgradeMenu/upgradeMenuIndicator/kingSwag" method="_on_king_swag_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" method="_on_pressed"]
 [connection signal="focus_entered" from="keymonkeyMenu/keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyClear" to="keymonkeyMenu/keymonkeyClear" method="_on_pressed"]

@@ -45,7 +45,15 @@ func _generateString(correct: int, forceStringLength: int = -1) -> String:
 	var stringLength = 0
 	var lengthOdds = 50 + correct
 	var randomLength = randi_range(0, lengthOdds)
-	if randomLength > 4500:
+	if randomLength > 100000:
+		stringLength += 10
+	elif randomLength > 50000:
+		stringLength += 9
+	elif randomLength > 22500:
+		stringLength += 8
+	elif randomLength > 10000:
+		stringLength += 7
+	elif randomLength > 4500:
 		stringLength += 6
 	elif randomLength > 2000:
 		stringLength += 5
