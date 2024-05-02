@@ -34,6 +34,17 @@ func _process(_delta):
 		self.text = "[font_size=50]" + goalText
 		get_node("../settingsMenu/soundEffectPlayer")._soundEffectPlay("keymonkeySound")
 		get_node("../enemyDisplay").enemyChange = true
+	elif (get_node("../keymonkeyMenu/kingTextInput").text.contains(goalText)):
+		var money = 5 + (5 * get_node("../upgradeMenu/upgradeMenuIndicator/kingSpeed/kingSpeedModifier").stakesLevel)
+		get_node("../typeCount").dollars += money
+		get_node("../typeCount").score += 3 * len(goalText)
+		get_node("../typeCount").deduction = 0
+		get_node("../textInput").text = ""
+		get_node("../keymonkeyMenu/kingTextInput").text = ""
+		goalText = _generateString(get_node("../typeCount").score)
+		self.text = "[font_size=50]" + goalText
+		get_node("../settingsMenu/soundEffectPlayer")._soundEffectPlay("keymonkeySound")
+		get_node("../enemyDisplay").enemyChange = true
 	elif (get_node("../textInput").text != "" && len(get_node("../textInput").text) >= len(goalText)) :
 		get_node("../settingsMenu/soundEffectPlayer")._soundEffectPlay("mehSound")
 		get_node("../incorrectIndicator").incorrect = true

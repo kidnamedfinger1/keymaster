@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=107 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
 [ext_resource type="Script" path="res://game/typeCount.gd" id="2_ocad6"]
@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://40uspiv325ax" path="res://game/textures/musicTexture.png" id="32_nf6u7"]
 [ext_resource type="Texture2D" uid="uid://cjqa7tqy8vugc" path="res://game/textures/sfxTexture.png" id="33_bwtu4"]
 [ext_resource type="Script" path="res://game/keymonkeyKing.gd" id="33_dxq8k"]
+[ext_resource type="Script" path="res://game/kingTextInput.gd" id="36_rbjyh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -665,6 +666,7 @@ text = "$10000"
 horizontal_alignment = 2
 
 [node name="kingSwag" type="Button" parent="upgradeMenu/upgradeMenuIndicator"]
+visible = false
 layout_mode = 0
 offset_left = 139.0
 offset_top = 314.0
@@ -912,6 +914,24 @@ editable = false
 selecting_enabled = false
 script = ExtResource("24_bnfok")
 
+[node name="kingTextInput" type="TextEdit" parent="keymonkeyMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = -1.813
+anchor_right = 0.181
+anchor_bottom = -1.813
+offset_left = -326.557
+offset_top = 221.861
+offset_right = -104.557
+offset_bottom = 254.861
+theme_override_fonts/font = ExtResource("4_3tm58")
+theme_override_font_sizes/font_size = 17
+editable = false
+selecting_enabled = false
+script = ExtResource("36_rbjyh")
+
 [node name="keymonkeyClear" type="Button" parent="keymonkeyMenu"]
 visible = false
 layout_mode = 1
@@ -1055,6 +1075,7 @@ text = "debug ($10000)"
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" method="_on_pressed"]
 [connection signal="focus_entered" from="keymonkeyMenu/keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
+[connection signal="focus_entered" from="keymonkeyMenu/kingTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyClear" to="keymonkeyMenu/keymonkeyClear" method="_on_pressed"]
 [connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
 [connection signal="pressed" from="settingsMenu" to="settingsMenu/settingsMenuIndicator" method="_on_settings_menu_pressed"]

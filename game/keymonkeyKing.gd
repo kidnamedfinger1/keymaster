@@ -6,7 +6,7 @@ func _on_pressed():
 	if get_node("../../../typeCount").dollars >= upgradePrice:
 		get_node("../../../typeCount").dollars -= upgradePrice
 		get_node("../../../settingsMenu/soundEffectPlayer")._soundEffectPlay("upgradeSound")
-		get_node("../../keymonkeyTextInput").keymonkeyKing = true
+		get_node("../../kingTextInput").keymonkeyKing = true
 		get_node("../../keymonkeyTextInput").totalKeymonkeys += 1
 		disabled = true
 	else:
