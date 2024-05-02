@@ -32,7 +32,7 @@ func _process(_delta):
 		get_node("../keymonkeyMenu/keymonkeyTextInput").text = (get_node("../keymonkeyMenu/keymonkeyTextInput").text).replacen(goalText, "")
 		goalText = _generateString(get_node("../typeCount").score)
 		self.text = "[font_size=50]" + goalText
-		get_node("../settingsMenu/soundEffectPlayer")._soundEffectPlay("keymonkeySound")
+		get_node("../settingsMenu/soundEffectPlayer")._soundEffectPlay("gruntNoise")
 		get_node("../enemyDisplay").enemyChange = true
 	elif (get_node("../keymonkeyMenu/kingTextInput").text.contains(goalText)):
 		var money = 5 + (5 * get_node("../upgradeMenu/upgradeMenuIndicator/kingSpeed/kingSpeedModifier").stakesLevel)
