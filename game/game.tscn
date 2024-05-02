@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=158 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Texture2D" uid="uid://csnoln24sj185" path="res://game/textures/dungeon.png" id="1_eslp8"]
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
@@ -51,6 +51,224 @@
 [ext_resource type="Texture2D" uid="uid://40uspiv325ax" path="res://game/textures/musicTexture.png" id="32_nf6u7"]
 [ext_resource type="Texture2D" uid="uid://cjqa7tqy8vugc" path="res://game/textures/sfxTexture.png" id="33_bwtu4"]
 [ext_resource type="Script" path="res://game/keymonkeyKing.gd" id="33_dxq8k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvkkj"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(0, 0, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yukix"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(2016, 0, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i88qn"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(4032, 0, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjbkc"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(6048, 0, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0j8d"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(0, 1134, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef7rp"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(2016, 1134, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8ewd"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(4032, 1134, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18w1r"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(6048, 1134, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kso8c"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(0, 2268, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfitv"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(2016, 2268, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3tji"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(4032, 2268, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxsk7"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(6048, 2268, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txmdv"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(0, 3402, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4peav"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(2016, 3402, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcvue"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(4032, 3402, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwvp5"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(6048, 3402, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7fky"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(0, 4536, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmcxq"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(2016, 4536, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k2qe"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(4032, 4536, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlxxx"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(6048, 4536, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4otm"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(0, 5670, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8fgn"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(2016, 5670, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnmog"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(4032, 5670, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50t70"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(6048, 5670, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgkxf"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(0, 6804, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0vgb"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(2016, 6804, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tsxl"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(4032, 6804, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w144"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(6048, 6804, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdbbt"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(0, 7938, 2016, 1134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhdr5"]
+atlas = ExtResource("1_eslp8")
+region = Rect2(2016, 7938, 2016, 1134)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_27lyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvkkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yukix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i88qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjbkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0j8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef7rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8ewd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18w1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kso8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfitv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3tji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxsk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txmdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4peav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcvue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwvp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7fky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmcxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k2qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlxxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4otm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8fgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnmog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50t70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgkxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0vgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tsxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6w144")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdbbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhdr5")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 12.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -609,10 +827,12 @@ animations = [{
 
 [node name="type" type="Node2D"]
 
-[node name="Dungeon" type="Sprite2D" parent="."]
-position = Vector2(575.964, 323.964)
-scale = Vector2(0.80005, 0.800088)
-texture = ExtResource("1_eslp8")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.571429, 0.571429)
+sprite_frames = SubResource("SpriteFrames_27lyd")
+animation = &"new_animation"
+frame_progress = 0.19707
 
 [node name="textInput" type="TextEdit" parent="."]
 offset_left = 3.0
@@ -625,29 +845,30 @@ placeholder_text = "ENTER YOUR KEYS, MASTER"
 script = ExtResource("1_o5euh")
 
 [node name="incorrectIndicator" type="Label" parent="." groups=["Persist"]]
-offset_left = 318.0
-offset_top = 531.0
-offset_right = 862.0
-offset_bottom = 564.0
+visible = false
+offset_left = 11.0
+offset_top = 528.0
+offset_right = 555.0
+offset_bottom = 561.0
 text = "INCORRECT INPUT, PAYOUT DEDUCTED"
 label_settings = SubResource("LabelSettings_cw05m")
 script = ExtResource("4_2rxth")
 
 [node name="typeCount" type="Label" parent="." groups=["Persist"]]
-offset_left = 6.0
-offset_top = 420.0
-offset_right = 155.0
-offset_bottom = 535.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 148.0
+offset_bottom = 116.0
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "$0"
 label_settings = SubResource("LabelSettings_nhskn")
 script = ExtResource("2_ocad6")
 
 [node name="keyDisplay" type="RichTextLabel" parent="." groups=["Persist"]]
-offset_left = 8.0
-offset_top = 518.0
-offset_right = 978.0
-offset_bottom = 574.0
+offset_left = 9.0
+offset_top = 470.0
+offset_right = 979.0
+offset_bottom = 526.0
 theme_override_fonts/normal_font = ExtResource("4_3tm58")
 bbcode_enabled = true
 text = "[font_size=50]KEYMASTER"
@@ -656,13 +877,14 @@ autowrap_mode = 1
 script = ExtResource("3_qnjyc")
 
 [node name="enemyDisplay" type="AnimatedSprite2D" parent="." groups=["Persist"]]
-position = Vector2(165, 345)
+position = Vector2(336, 347)
 scale = Vector2(5.9, 5.9)
 sprite_frames = SubResource("SpriteFrames_vrqvd")
-animation = &"enhancedSkeleton"
+animation = &"normalGoblin"
 script = ExtResource("14_vii53")
 
 [node name="upgradeMenu" type="TextureButton" parent="."]
+visible = false
 offset_left = 861.0
 offset_top = 469.0
 offset_right = 958.0
@@ -675,6 +897,7 @@ stretch_mode = 5
 script = ExtResource("16_h7huu")
 
 [node name="upgradeMenuIndicator" type="TextureRect" parent="upgradeMenu"]
+visible = false
 layout_mode = 0
 offset_left = -585.0
 offset_top = -433.0
@@ -695,6 +918,7 @@ texture_hover = ExtResource("17_lki21")
 stretch_mode = 5
 
 [node name="keymonkeyMenuIndicator" type="TextureRect" parent="keymonkeyMenu"]
+self_modulate = Color(1, 1, 1, 0.486275)
 layout_mode = 0
 offset_left = -399.0
 offset_top = -434.0
@@ -878,10 +1102,10 @@ anchor_left = 0.181
 anchor_top = -1.813
 anchor_right = 0.181
 anchor_bottom = -1.813
-offset_left = -473.557
-offset_top = 188.861
-offset_right = -251.557
-offset_bottom = 221.861
+offset_left = -342.557
+offset_top = 227.861
+offset_right = -120.557
+offset_bottom = 260.861
 theme_override_fonts/font = ExtResource("4_3tm58")
 theme_override_font_sizes/font_size = 17
 editable = false
@@ -916,6 +1140,7 @@ texture_hover = ExtResource("17_3s8ux")
 stretch_mode = 5
 
 [node name="settingsMenuIndicator" type="TextureRect" parent="settingsMenu"]
+visible = false
 layout_mode = 0
 offset_left = -160.0
 offset_top = -433.0
@@ -1010,19 +1235,19 @@ text = "debug ($10000)"
 [connection signal="pressed" from="upgradeMenu" to="upgradeMenu/upgradeMenuIndicator" method="_on_upgrade_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" method="_on_pressed"]
 [connection signal="focus_entered" from="keymonkeyMenu/keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyClear" to="keymonkeyMenu/keymonkeyClear" method="_on_pressed"]
