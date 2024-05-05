@@ -15,12 +15,14 @@ func _soundEffectPlay(effect: String):
 	elif effect == "upgradeSound":
 		self.stream = load("res://game/audio/quickGoodNoise.wav")
 	elif effect == "keymonkeySound":
-		if get_node("../../../keymonkeyMenu/keymonkeyTextInput").gruntLastType == 0:
+		if get_node("../../keymonkeyMenu/keymonkeyTextInput").gruntLastType == 0:
 			self.stream = load("res://game/audio/gruntNoise.wav")
-		elif get_node("../../../keymonkeyMenu/keymonkeyTextInput").sniperLastType == 0:
+		elif get_node("../../keymonkeyMenu/keymonkeyTextInput").sniperLastType == 0:
 			self.stream = load("res://game/audio/gruntNoise.wav")
-		elif get_node("../../../keymonkeyMenu/keymonkeyTextInput").bruteLastType == 0:
+		elif get_node("../../keymonkeyMenu/keymonkeyTextInput").bruteLastType == 0:
 			self.stream = load("res://game/audio/gruntNoise.wav")
-		elif get_node("../../../keymonkeyMenu/keymonkeyTextInput").sniperLastType == 0:
+		elif get_node("../../keymonkeyMenu/keymonkeyTextInput").sniperLastType == 0:
+			self.stream = load("res://game/audio/gruntNoise.wav")
+		elif get_node("../../keymonkeyMenu/kingTextInput").kingLastType == 0:
 			self.stream = load("res://game/audio/gruntNoise.wav")
 	self.play()

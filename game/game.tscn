@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=160 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Texture2D" uid="uid://csnoln24sj185" path="res://game/textures/dungeon.png" id="1_eslp8"]
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
@@ -19,7 +19,6 @@
 [ext_resource type="Script" path="res://game/enemyDisplay.gd" id="14_vii53"]
 [ext_resource type="Texture2D" uid="uid://c3uti70cnhyhk" path="res://game/textures/settingsMenu0.png" id="15_48w6y"]
 [ext_resource type="Texture2D" uid="uid://ds4kosxfvx6po" path="res://game/textures/keymonkeyMenu0.png" id="15_n0lvg"]
-[ext_resource type="Script" path="res://game/keymonkeyMenuIndicator.gd" id="16_3s2vi"]
 [ext_resource type="Script" path="res://game/upgradeMenu.gd" id="16_h7huu"]
 [ext_resource type="AudioStream" uid="uid://c0277spps20sm" path="res://game/audio/Keysmash.wav" id="16_mk2pn"]
 [ext_resource type="Texture2D" uid="uid://b05ghak67p637" path="res://game/textures/settingsMenu1.png" id="16_oceue"]
@@ -33,7 +32,6 @@
 [ext_resource type="Script" path="res://game/keymonkeyLabels.gd" id="21_a3bil"]
 [ext_resource type="Texture2D" uid="uid://b30jjp12yu52y" path="res://game/textures/menuIndicator.png" id="21_n7rpq"]
 [ext_resource type="Texture2D" uid="uid://61c4jborkdhn" path="res://game/textures/keymonkeySniper.png" id="22_pprcd"]
-[ext_resource type="Script" path="res://game/menuIndicator.gd" id="22_vxg88"]
 [ext_resource type="Texture2D" uid="uid://ol5of4k61v1u" path="res://game/textures/quitToDesktop.png" id="23_1wxbc"]
 [ext_resource type="Script" path="res://game/keymonkeySniper.gd" id="23_ennwf"]
 [ext_resource type="Script" path="res://game/templateSettingsButton.gd" id="23_wd4hm"]
@@ -41,6 +39,7 @@
 [ext_resource type="Script" path="res://game/audioSliders.gd" id="24_me2kb"]
 [ext_resource type="Texture2D" uid="uid://bipgvn4qqhesj" path="res://game/textures/quitToMenu.png" id="25_txocy"]
 [ext_resource type="Texture2D" uid="uid://bsaenaow17kl8" path="res://game/textures/upgradeMenu0.png" id="26_hsift"]
+[ext_resource type="Script" path="res://game/keymonkeyMenu.gd" id="26_qo4w2"]
 [ext_resource type="Texture2D" uid="uid://igjwibumon00" path="res://game/textures/keymonkeyBrute.png" id="27_kewrk"]
 [ext_resource type="Texture2D" uid="uid://bnxbv44km31vm" path="res://game/textures/upgradeMenu1.png" id="27_nihsr"]
 [ext_resource type="Texture2D" uid="uid://ureioc847qe6" path="res://game/textures/upgradeMenu2.png" id="28_3gqtu"]
@@ -53,6 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://cjqa7tqy8vugc" path="res://game/textures/sfxTexture.png" id="33_bwtu4"]
 [ext_resource type="Script" path="res://game/keymonkeyKing.gd" id="33_dxq8k"]
 [ext_resource type="Script" path="res://game/kingTextInput.gd" id="36_rbjyh"]
+[ext_resource type="Script" path="res://game/settingsMenu.gd" id="43_sx7ma"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gvkkj"]
 atlas = ExtResource("1_eslp8")
@@ -886,7 +886,6 @@ animation = &"normalGoblin"
 script = ExtResource("14_vii53")
 
 [node name="upgradeMenu" type="TextureButton" parent="."]
-visible = false
 offset_left = 861.0
 offset_top = 469.0
 offset_right = 958.0
@@ -900,11 +899,12 @@ script = ExtResource("16_h7huu")
 
 [node name="upgradeMenuIndicator" type="TextureRect" parent="upgradeMenu"]
 visible = false
+self_modulate = Color(1, 1, 1, 0.466667)
 layout_mode = 0
-offset_left = -585.0
-offset_top = -433.0
-offset_right = -323.0
-offset_bottom = -54.0
+offset_left = 26.0
+offset_top = -432.0
+offset_right = 288.0
+offset_bottom = -53.0
 texture = ExtResource("21_n7rpq")
 
 [node name="kingSpeed" type="Button" parent="upgradeMenu/upgradeMenuIndicator"]
@@ -1091,16 +1091,17 @@ texture_normal = ExtResource("15_n0lvg")
 texture_pressed = ExtResource("16_yjond")
 texture_hover = ExtResource("17_lki21")
 stretch_mode = 5
+script = ExtResource("26_qo4w2")
 
 [node name="keymonkeyMenuIndicator" type="TextureRect" parent="keymonkeyMenu"]
-self_modulate = Color(1, 1, 1, 0.486275)
+visible = false
+self_modulate = Color(1, 1, 1, 0.466667)
 layout_mode = 0
-offset_left = -399.0
+offset_left = -122.0
 offset_top = -434.0
-offset_right = -84.0
+offset_right = 193.0
 offset_bottom = -55.0
 texture = ExtResource("21_n7rpq")
-script = ExtResource("16_3s2vi")
 
 [node name="keymonkeyGrunt" type="Button" parent="keymonkeyMenu/keymonkeyMenuIndicator"]
 layout_mode = 0
@@ -1271,6 +1272,7 @@ text = "$100000"
 horizontal_alignment = 2
 
 [node name="keymonkeyTextInput" type="TextEdit" parent="keymonkeyMenu"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.181
@@ -1295,10 +1297,10 @@ anchor_left = 0.181
 anchor_top = -1.813
 anchor_right = 0.181
 anchor_bottom = -1.813
-offset_left = -326.557
-offset_top = 221.861
-offset_right = -104.557
-offset_bottom = 254.861
+offset_left = -342.557
+offset_top = 191.861
+offset_right = -120.557
+offset_bottom = 224.861
 theme_override_fonts/font = ExtResource("4_3tm58")
 theme_override_font_sizes/font_size = 17
 editable = false
@@ -1313,10 +1315,10 @@ anchor_left = -3.814
 anchor_top = 0.082
 anchor_right = -3.227
 anchor_bottom = 0.423
-offset_left = -0.0419922
-offset_top = 0.046
-offset_right = 0.0190125
-offset_bottom = -0.031002
+offset_left = -19.042
+offset_top = 44.046
+offset_right = -18.981
+offset_bottom = 43.969
 theme_override_fonts/font = ExtResource("4_3tm58")
 text = "CLEAR"
 script = ExtResource("30_32ybe")
@@ -1331,16 +1333,17 @@ texture_normal = ExtResource("15_48w6y")
 texture_pressed = ExtResource("16_oceue")
 texture_hover = ExtResource("17_3s8ux")
 stretch_mode = 5
+script = ExtResource("43_sx7ma")
 
 [node name="settingsMenuIndicator" type="TextureRect" parent="settingsMenu"]
 visible = false
+self_modulate = Color(1, 1, 1, 0.466667)
 layout_mode = 0
 offset_left = -160.0
 offset_top = -433.0
 offset_right = 102.0
 offset_bottom = -54.0
 texture = ExtResource("21_n7rpq")
-script = ExtResource("22_vxg88")
 
 [node name="quitToDesktop" type="Button" parent="settingsMenu/settingsMenuIndicator"]
 layout_mode = 0
@@ -1418,11 +1421,11 @@ max_polyphony = 5
 script = ExtResource("13_n1tmx")
 
 [node name="debug" type="Button" parent="."]
-offset_left = 728.0
-offset_top = 483.0
-offset_right = 854.0
-offset_bottom = 518.0
-text = "debug ($10000)"
+offset_left = 585.0
+offset_top = 10.0
+offset_right = 711.0
+offset_bottom = 45.0
+text = "debug ($100000)"
 
 [connection signal="pressed" from="upgradeMenu" to="upgradeMenu" method="_on_pressed"]
 [connection signal="pressed" from="upgradeMenu/upgradeMenuIndicator/kingSpeed" to="upgradeMenu/upgradeMenuIndicator/kingSpeed" method="_on_king_speed_pressed"]
@@ -1430,27 +1433,25 @@ text = "debug ($10000)"
 [connection signal="pressed" from="upgradeMenu/upgradeMenuIndicator/kingStrength" to="upgradeMenu/upgradeMenuIndicator/kingStrength" method="_on_king_strength_pressed"]
 [connection signal="pressed" from="upgradeMenu/upgradeMenuIndicator/kingStakes" to="upgradeMenu/upgradeMenuIndicator/kingStakes" method="_on_king_stakes_pressed"]
 [connection signal="pressed" from="upgradeMenu/upgradeMenuIndicator/kingSwag" to="upgradeMenu/upgradeMenuIndicator/kingSwag" method="_on_king_swag_pressed"]
-[connection signal="pressed" from="keymonkeyMenu" to="textInput" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu/keymonkeyMenuIndicator" method="_on_keymonkey_menu_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" method="_on_pressed"]
 [connection signal="focus_entered" from="keymonkeyMenu/keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
 [connection signal="focus_entered" from="keymonkeyMenu/kingTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyClear" to="keymonkeyMenu/keymonkeyClear" method="_on_pressed"]
-[connection signal="pressed" from="settingsMenu" to="textInput" method="_on_settings_menu_pressed"]
-[connection signal="pressed" from="settingsMenu" to="settingsMenu/settingsMenuIndicator" method="_on_settings_menu_pressed"]
+[connection signal="pressed" from="settingsMenu" to="settingsMenu" method="_on_pressed"]
 [connection signal="pressed" from="settingsMenu/settingsMenuIndicator/quitToDesktop" to="settingsMenu/settingsMenuIndicator/quitToDesktop" method="_on_pressed"]
 [connection signal="pressed" from="settingsMenu/settingsMenuIndicator/quitToMenu" to="settingsMenu/settingsMenuIndicator/quitToMenu" method="_on_quitToMenu_pressed"]
 [connection signal="toggled" from="settingsMenu/settingsMenuIndicator/fullscreenToggle" to="settingsMenu/settingsMenuIndicator/fullscreenToggle" method="_on_toggled"]

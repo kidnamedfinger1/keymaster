@@ -10,5 +10,7 @@ func _process(delta):
 func _on_pressed():
 	if get_node("upgradeMenuIndicator").visible == false:
 		get_node("upgradeMenuIndicator").visible = true
+		get_node("../keymonkeyMenu/keymonkeyMenuIndicator").visible = false
+		get_node("../settingsMenu/settingsMenuIndicator").visible = false
 	else:
 		get_node("upgradeMenuIndicator").visible = false
