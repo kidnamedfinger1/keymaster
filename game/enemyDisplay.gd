@@ -2,7 +2,7 @@ extends AnimatedSprite2D
 var enemyOptions = ["greenSlime", "normalSpider", "normalSkeleton", "normalZombie", "normalGoblin", "normalAlien", "enhancedSkeleton", "alienWizard"]
 var enemyChange = false
 func selectEnemy(cashLevel) -> String:
-	var enemyRange = 7
+	var enemyRange = 5
 	return enemyOptions[randi_range(0, enemyRange)]
 
 func _ready():

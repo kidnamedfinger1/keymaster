@@ -1,4 +1,4 @@
-[gd_scene load_steps=161 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=173 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Texture2D" uid="uid://csnoln24sj185" path="res://game/textures/dungeon.png" id="1_eslp8"]
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
@@ -1540,7 +1540,6 @@ text = "debug ($100000)"
 [connection signal="pressed" from="upgradeMenu/upgradeMenuIndicator/kingStakes" to="upgradeMenu/upgradeMenuIndicator/kingStakes" method="_on_king_stakes_pressed"]
 [connection signal="pressed" from="upgradeMenu/upgradeMenuIndicator/kingSwag" to="upgradeMenu/upgradeMenuIndicator/kingSwag" method="_on_king_swag_pressed"]
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_pressed"]
