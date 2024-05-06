@@ -3,6 +3,8 @@ var enemyOptions = ["greenSlime", "normalSpider", "normalSkeleton", "normalZombi
 var enemyChange = false
 func selectEnemy(cashLevel) -> String:
 	var enemyRange = 5
+	if get_node("../typeCount").score >= 200:
+		enemyRange = 7
 	return enemyOptions[randi_range(0, enemyRange)]
 
 func _ready():

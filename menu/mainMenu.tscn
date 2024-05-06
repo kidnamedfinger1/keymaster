@@ -191,8 +191,8 @@ icon_alignment = 1
 script = ExtResource("1_8amqh")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(29, 620)
-scale = Vector2(0.28125, 0.28125)
+position = Vector2(31, 617)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_hcec2")
 
 [node name="starmpt" type="Label" parent="."]
@@ -206,14 +206,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="credits" type="Label" parent="."]
-offset_left = 57.0
-offset_top = 602.0
-offset_right = 321.0
-offset_bottom = 646.0
+offset_left = 58.0
+offset_top = 586.0
+offset_right = 322.0
+offset_bottom = 630.0
 theme_override_fonts/font = ExtResource("1_h80ff")
 theme_override_font_sizes/font_size = 20
 text = "Created with Godot 4.0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="credits2" type="Label" parent="."]
+offset_left = 58.0
+offset_top = 616.0
+offset_right = 862.0
+offset_bottom = 639.0
+theme_override_fonts/font = ExtResource("1_h80ff")
+theme_override_font_sizes/font_size = 20
+text = "By Franklin Hernandez, Joshua Dawson, Isaac Hooper, and Brendan Kee"
 
 [connection signal="pressed" from="quit" to="quit" method="_on_quit_pressed"]
