@@ -1,4 +1,4 @@
-[gd_scene load_steps=158 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=159 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Texture2D" uid="uid://csnoln24sj185" path="res://game/textures/dungeon.png" id="1_eslp8"]
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
@@ -269,6 +269,20 @@ animations = [{
 "name": &"new_animation",
 "speed": 12.0
 }]
+
+[sub_resource type="GDScript" id="GDScript_bn1x6"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_cw05m"]
 font = ExtResource("4_3tm58")
@@ -827,12 +841,15 @@ animations = [{
 
 [node name="type" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="dungeon" type="AnimatedSprite2D" parent="."]
 position = Vector2(576, 324)
 scale = Vector2(0.571429, 0.571429)
 sprite_frames = SubResource("SpriteFrames_27lyd")
 animation = &"new_animation"
-frame_progress = 0.19707
+autoplay = "new_animation"
+frame = 23
+frame_progress = 0.835543
+script = SubResource("GDScript_bn1x6")
 
 [node name="textInput" type="TextEdit" parent="."]
 offset_left = 3.0
