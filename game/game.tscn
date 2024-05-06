@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=3 uid="uid://d0fp4c05684qa"]
+[gd_scene load_steps=161 format=3 uid="uid://d0fp4c05684qa"]
 
 [ext_resource type="Texture2D" uid="uid://csnoln24sj185" path="res://game/textures/dungeon.png" id="1_eslp8"]
 [ext_resource type="Script" path="res://game/textInput.gd" id="1_o5euh"]
