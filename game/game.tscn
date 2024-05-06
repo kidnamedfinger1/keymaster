@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://b22bsi0m2k6eq" path="res://game/cour.ttf" id="4_3tm58"]
 [ext_resource type="Script" path="res://game/keymonkeyGrunt.gd" id="6_p0qbj"]
 [ext_resource type="Texture2D" uid="uid://10o47qrv8dkw" path="res://game/textures/enhancedSkeleton.png" id="7_45i6k"]
+[ext_resource type="Texture2D" uid="uid://nbbv1x0xy2qp" path="res://game/textures/normalAlien.png" id="8_3eiaw"]
 [ext_resource type="Texture2D" uid="uid://cexlb0pv017h1" path="res://game/textures/normalGoblin.png" id="8_j327l"]
 [ext_resource type="Texture2D" uid="uid://ihrsqd1cdnju" path="res://game/textures/greenSlime.png" id="8_npd3x"]
 [ext_resource type="Texture2D" uid="uid://cimiyhln4bcau" path="res://game/textures/normalSpider.png" id="11_8wogh"]
@@ -459,6 +460,50 @@ region = Rect2(0, 96, 48, 32)
 atlas = ExtResource("8_npd3x")
 region = Rect2(48, 96, 48, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh3ih"]
+atlas = ExtResource("8_3eiaw")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46c6w"]
+atlas = ExtResource("8_3eiaw")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv75q"]
+atlas = ExtResource("8_3eiaw")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkvxe"]
+atlas = ExtResource("8_3eiaw")
+region = Rect2(0, 120, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltj16"]
+atlas = ExtResource("8_3eiaw")
+region = Rect2(120, 120, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbdrv"]
+atlas = ExtResource("8_3eiaw")
+region = Rect2(240, 120, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2gj2"]
+atlas = ExtResource("8_3eiaw")
+region = Rect2(0, 240, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nt1o"]
+atlas = ExtResource("8_3eiaw")
+region = Rect2(120, 240, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uji0"]
+atlas = ExtResource("8_3eiaw")
+region = Rect2(240, 240, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbdrc"]
+atlas = ExtResource("8_3eiaw")
+region = Rect2(0, 360, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sjq5"]
+atlas = ExtResource("8_3eiaw")
+region = Rect2(120, 360, 120, 120)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pddpo"]
 atlas = ExtResource("8_j327l")
 region = Rect2(0, 0, 40, 40)
@@ -726,6 +771,44 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qh3ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46c6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv75q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkvxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltj16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbdrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2gj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nt1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uji0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbdrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sjq5")
+}],
+"loop": true,
+"name": &"normalAlien",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pddpo")
 }, {
 "duration": 1.0,
@@ -899,7 +982,8 @@ script = ExtResource("3_qnjyc")
 position = Vector2(336, 347)
 scale = Vector2(5.9, 5.9)
 sprite_frames = SubResource("SpriteFrames_vrqvd")
-animation = &"normalGoblin"
+animation = &"normalAlien"
+frame_progress = 0.0483444
 script = ExtResource("14_vii53")
 
 [node name="upgradeMenu" type="TextureButton" parent="."]
@@ -1126,6 +1210,7 @@ offset_left = 161.0
 offset_top = 34.0
 offset_right = 282.0
 offset_bottom = 90.0
+tooltip_text = "Types a random key every few seconds."
 theme_override_fonts/font = ExtResource("4_3tm58")
 theme_override_font_sizes/font_size = 16
 text = "Grunt
@@ -1162,6 +1247,7 @@ offset_left = 161.0
 offset_top = 94.0
 offset_right = 282.0
 offset_bottom = 150.0
+tooltip_text = "Types one of the shown keys."
 theme_override_fonts/font = ExtResource("4_3tm58")
 theme_override_font_sizes/font_size = 16
 text = "Sniper
@@ -1198,6 +1284,7 @@ offset_left = 161.0
 offset_top = 154.0
 offset_right = 282.0
 offset_bottom = 210.0
+tooltip_text = "Types a random key for every letter shown."
 theme_override_fonts/font = ExtResource("4_3tm58")
 theme_override_font_sizes/font_size = 16
 text = "Brute
@@ -1234,6 +1321,7 @@ offset_left = 161.0
 offset_top = 214.0
 offset_right = 282.0
 offset_bottom = 270.0
+tooltip_text = "Increases the chances of your keymonkeys typing the correct key."
 theme_override_fonts/font = ExtResource("4_3tm58")
 theme_override_font_sizes/font_size = 16
 text = "Mage
@@ -1270,6 +1358,7 @@ offset_left = 161.0
 offset_top = 274.0
 offset_right = 282.0
 offset_bottom = 330.0
+tooltip_text = "j"
 theme_override_fonts/font = ExtResource("4_3tm58")
 theme_override_font_sizes/font_size = 16
 text = "King
@@ -1453,17 +1542,18 @@ text = "debug ($100000)"
 [connection signal="pressed" from="keymonkeyMenu" to="keymonkeyMenu" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyGrunt" method="_on_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="textInput" method="_on_keymonkey_sniper_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeySniper" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyBrute" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyMage" method="_on_pressed"]
-[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_keymonkey_grunt_pressed"]
+[connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="textInput" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" to="keymonkeyMenu/keymonkeyMenuIndicator/keymonkeyKing" method="_on_pressed"]
 [connection signal="focus_entered" from="keymonkeyMenu/keymonkeyTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
 [connection signal="focus_entered" from="keymonkeyMenu/kingTextInput" to="textInput" method="_on_keymonkey_text_input_focus_entered"]
